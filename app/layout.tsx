@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bonhoeffer Irrigation – Smart Irrigation Solutions for Sustainable Agriculture",
+  title: "Silent Diesel Generators | Bonhoeffer Power – Reliable Backup Power Solutions",
   description:
-    "Bonhoeffer Irrigation delivers innovative drip irrigation, sprinkler systems, filtration, automation, and complete irrigation solutions for agriculture, horticulture, landscaping, and commercial projects.",
+    "Explore Bonhoeffer Power's range of Silent Diesel Generators engineered for fuel efficiency, low-noise operation, and dependable performance. Ideal for residential, commercial, industrial, and construction applications.",
   keywords:
-    "drip irrigation, sprinkler irrigation, irrigation system, fertigation, water pump, irrigation automation, agriculture irrigation, Bonhoeffer",
+    "silent diesel generators, diesel generator, backup power, emergency backup generator, industrial generators, commercial generator, Bonhoeffer Power, Bonhoeffer",
 };
 
 export default function RootLayout({
