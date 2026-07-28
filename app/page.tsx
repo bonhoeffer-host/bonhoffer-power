@@ -5,55 +5,87 @@ import { useState } from "react";
 
 const generators = [
   {
-    img: "https://bonhoeffermachines.com/public/machines/BON-DG-20KW-1P.webp",
-    name: "BON-DG-20KW-1P",
-    tag: "20 kW",
-    desc: "20 kW Silent Diesel Generator",
-    highlights: [
-      "High-performance diesel engine",
-      "Low-noise acoustic enclosure",
-      "Fuel-efficient operation",
-      "Stable power output",
-      "Ideal for commercial and industrial applications",
-    ],
-  },
-  {
-    img: "https://bonhoeffermachines.com/public/machines/BON-DG-17KW-1P.webp",
-    name: "BON-DG-17KW-1P",
-    tag: "17 kW",
-    desc: "17 kW Silent Diesel Generator",
-    highlights: [
-      "Reliable backup power",
-      "Heavy-duty construction",
-      "Low maintenance",
-      "Compact silent design",
-      "Easy operation",
-    ],
-  },
-  {
-    img: "https://bonhoeffermachines.com/public/machines/BON-DG-15KW-1P.webp",
-    name: "BON-DG-15KW-1P",
-    tag: "15 kW",
-    desc: "15 kW Silent Diesel Generator",
-    highlights: [
-      "Efficient fuel consumption",
-      "Durable engine",
-      "Stable electrical output",
-      "Quiet performance",
-      "Suitable for residential and commercial use",
-    ],
-  },
-  {
-    img: "https://bonhoeffermachines.com/public/machines/BON-DG-11KW-1P.webp",
+    img: "/BON-DG35Kw (2).jpg",
     name: "BON-DG-11KW-1P",
     tag: "11 kW",
     desc: "11 kW Silent Diesel Generator",
     highlights: [
-      "Compact and portable design",
-      "Silent operation",
-      "Low fuel consumption",
-      "Reliable emergency backup",
-      "Easy maintenance",
+      "Standby ( Kva / Kw) :- 12Kva / 12Kw",
+      "Rated ( Kva / Kw) :- 11Kva / 11Kw",
+      "Phase:- 1-phase",
+      "Power Factor :- 1",
+      "Volt :- 110/220V",
+      "Frequency:- 50 HZ",
+      "Current (A) :- 55",
+      "Engine:- Faw 4DW81-23D",
+      "Alternator:- 1st All QYI184ES",
+      "Controller:- Deepsea DSE4520",
+      "ATS :- Suyang ATS-100A",
+      "Aspiration :- Natural",
+      "Governor :- Mechanical",
+    ],
+  },
+  {
+    img: "/BON-DG35Kw (3).jpg",
+    name: "BON-DG-17KW-1P",
+    tag: "17 kW",
+    desc: "17 kW Silent Diesel Generator",
+    highlights: [
+      "Standby ( Kva / Kw) :- 19Kva / 19Kw",
+      "Rated ( Kva / Kw) :- 17Kva / 17Kw",
+      "Phase:- 1-phase",
+      "Power Factor :- 1",
+      "Volt :- 110/220V",
+      "Frequency:- 50 HZ",
+      "Current (A) :- 84",
+      "Engine:- Faw 4DW92-35D",
+      "Alternator:- 1st All QYI184F",
+      "Controller:- Deepsea DSE4520",
+      "ATS :- Suyang ATS-100A",
+      "Aspiration :- Turbo",
+      "Governor :- Mechanical",
+    ],
+  },
+  {
+    img: "/BON-DG35Kw (4).jpg",
+    name: "BON-DG-20KW-1P",
+    tag: "20 kW",
+    desc: "20 kW Silent Diesel Generator",
+    highlights: [
+      "Standby ( Kva / Kw) :- 28Kva / 22Kw",
+      "Rated ( Kva / Kw) :- 25Kva / 20Kw",
+      "Phase:- 1-phase",
+      "Power Factor :- 0.8",
+      "Volt :- 110/220V",
+      "Frequency:- 50 HZ",
+      "Current (A) :- 100",
+      "Engine:- Faw 4DW92-39D",
+      "Alternator:- 1st All QYI184H",
+      "Controller:- Deepsea DSE4520",
+      "ATS :- Suyang ATS-100A",
+      "Aspiration :- Turbo",
+      "Governor :- Electronic",
+    ],
+  },
+  {
+    img: "/BON-DG35Kw (5).jpg",
+    name: "BON-DG-25KW-1P",
+    tag: "25 kW",
+    desc: "25 kW Silent Diesel Generator",
+    highlights: [
+      "Standby ( Kva / Kw) :- 35Kva / 28Kw",
+      "Rated ( Kva / Kw) :- 31Kva / 25Kw",
+      "Phase:- 1-phase",
+      "Power Factor :- 0.8",
+      "Volt :- 110/220V",
+      "Frequency:- 50 HZ",
+      "Current (A) :- 125",
+      "Engine:- Faw 4DX22-50D",
+      "Alternator:- 1st All QYI224C",
+      "Controller:- Deepsea DSE4520",
+      "ATS :- Suyang ATS-160A",
+      "Aspiration :- Turbo",
+      "Governor :- Mechanical",
     ],
   },
 ];
@@ -292,7 +324,7 @@ export default function Home() {
                   Home
                 </a>
               </li>
-              {["About", "Advantages", "Products", "Applications", "Contact"].map((l) => (
+              {["About", "Products", "Contact"].map((l) => (
                 <li key={l}>
                   {l === "About" ? (
                     <Link
@@ -301,20 +333,20 @@ export default function Home() {
                     >
                       {l}
                     </Link>
-                  ) : l === "Contact" ? (
+                  ) : l === "Products" ? (
+                    <Link
+                      href="/products"
+                      className="text-slate-700 font-semibold text-sm hover:text-primary transition-colors relative py-1 after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all"
+                    >
+                      {l}
+                    </Link>
+                  ) : (
                     <Link
                       href="/contact"
                       className="text-slate-700 font-semibold text-sm hover:text-primary transition-colors relative py-1 after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all"
                     >
                       {l}
                     </Link>
-                  ) : (
-                    <a
-                      href={`#${l.toLowerCase()}`}
-                      className="text-slate-700 font-semibold text-sm hover:text-primary transition-colors relative py-1 after:absolute after:-bottom-0.5 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all"
-                    >
-                      {l}
-                    </a>
                   )}
                 </li>
               ))}
@@ -332,13 +364,13 @@ export default function Home() {
           {menuOpen && (
             <div className="lg:hidden border-t border-slate-100 py-4 flex flex-col gap-3">
               <a href="#home" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">Home</a>
-              {["About", "Advantages", "Products", "Applications", "Contact"].map((l) =>
+              {["About", "Products", "Contact"].map((l) =>
                 l === "About" ? (
                   <Link key={l} href="/about" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</Link>
-                ) : l === "Contact" ? (
-                  <Link key={l} href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</Link>
+                ) : l === "Products" ? (
+                  <Link key={l} href="/products" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</Link>
                 ) : (
-                  <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</a>
+                  <Link key={l} href="/contact" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</Link>
                 )
               )}
               <Link href="/contact" className="bg-primary text-white text-sm font-semibold px-5 py-2.5 rounded-lg text-center mt-2">Request a Quote</Link>
@@ -441,29 +473,30 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {generators.map((g) => (
-                <div key={g.name} className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 transition-all duration-300 group flex flex-col shadow-sm">
-                  <div className="bg-gradient-to-b from-slate-100 to-white p-6 flex items-center justify-center h-60 relative overflow-hidden border-b border-slate-100">
-                    <Image src={g.img} alt={g.name} width={200} height={200} className="object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md" />
-                    <span className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-3 py-1 rounded-full shadow-md">{g.tag}</span>
+                <Link key={g.name} href="/products" className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 transition-all duration-300 group flex flex-col shadow-sm cursor-pointer">
+                  <div className="relative h-60 w-full overflow-hidden border-b border-slate-100 bg-gradient-to-b from-slate-100 to-white">
+                    <Image src={g.img} alt={g.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <span className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-3 py-1 rounded-full shadow-md z-10">{g.tag}</span>
                   </div>
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
                       <h3 className="text-base font-extrabold text-slate-900 mb-1">{g.name}</h3>
                       <p className="text-xs text-primary font-bold bg-primary-pale/80 px-2.5 py-1 rounded-md inline-block mb-4">{g.desc}</p>
-                      <ul className="space-y-2 text-xs text-slate-600 mb-6">
+                      <ul className="space-y-1 text-[11px] text-slate-600 mb-6">
                         {g.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                            <span className="leading-snug">{h}</span>
+                          <li key={i} className="flex items-start gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5" />
+                            <span className="leading-tight">{h}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <Link href="/contact" className="w-full text-center bg-slate-900 hover:bg-primary text-white text-xs font-bold py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-lg">
-                      Request Details & Quote
-                    </Link>
+                    <div className="w-full text-center bg-slate-900 group-hover:bg-primary text-white text-xs font-bold py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-lg flex items-center justify-center gap-2">
+                      View Full Range
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
