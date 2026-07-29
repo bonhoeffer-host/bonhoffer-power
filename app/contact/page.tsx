@@ -119,14 +119,14 @@ export default function ContactPage() {
               <li>
                 <Link href="/" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">Home</Link>
               </li>
-              {["About", "Advantages", "Products", "Applications", "Contact"].map((l) => (
+              {["About", "Products", "Contact"].map((l) => (
                 <li key={l}>
                   {l === "About" ? (
                     <Link href="/about" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">About</Link>
-                  ) : l === "Contact" ? (
-                    <Link href="/contact" className="text-primary font-bold text-sm border-b-2 border-primary pb-1">Contact</Link>
+                  ) : l === "Products" ? (
+                    <Link href="/products" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">Products</Link>
                   ) : (
-                    <Link href={`/#${l.toLowerCase()}`} className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">{l}</Link>
+                    <Link href="/contact" className="text-primary font-bold text-sm border-b-2 border-primary pb-1">Contact</Link>
                   )}
                 </li>
               ))}
@@ -143,13 +143,13 @@ export default function ContactPage() {
           {menuOpen && (
             <div className="lg:hidden border-t border-slate-100 py-4 flex flex-col gap-3">
               <Link href="/" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">Home</Link>
-              {["About", "Advantages", "Products", "Applications", "Contact"].map((l) =>
+              {["About", "Products", "Contact"].map((l) =>
                 l === "About" ? (
                   <Link key={l} href="/about" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">About</Link>
-                ) : l === "Contact" ? (
-                  <Link key={l} href="/contact" onClick={() => setMenuOpen(false)} className="text-primary font-bold py-1">Contact</Link>
+                ) : l === "Products" ? (
+                  <Link key={l} href="/products" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">Products</Link>
                 ) : (
-                  <Link key={l} href={`/#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">{l}</Link>
+                  <Link key={l} href="/contact" onClick={() => setMenuOpen(false)} className="text-primary font-bold py-1">Contact</Link>
                 )
               )}
               <Link href="/contact" className="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg text-center mt-2">Request a Quote</Link>
