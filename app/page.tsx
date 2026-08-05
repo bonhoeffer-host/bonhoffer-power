@@ -90,56 +90,57 @@ const generators = [
   },
 ];
 
+
 const advantages = [
   {
     icon: "⛽",
     title: "High Fuel Efficiency",
-    desc: "Advanced engines maximize power output while minimizing diesel consumption, reducing fuel costs and improving overall operating efficiency.",
+    desc: "Optimized engines deliver maximum power with lower fuel consumption and reduced operating costs.",
   },
   {
     icon: "🔇",
-    title: "Silent Canopy Design",
-    desc: "Advanced acoustic enclosures significantly reduce operating noise, creating a quieter, more comfortable environment for surrounding personnel and communities.",
+    title: "Silent Operation",
+    desc: "Advanced canopy design reduces noise for comfortable and quiet performance.",
   },
   {
     icon: "⚡",
-    title: "Reliable Power Output",
-    desc: "Delivers stable, uninterrupted power for continuous operation, maintaining consistent performance without voltage fluctuations or unexpected power interruptions.",
+    title: "Reliable Power",
+    desc: "Stable and uninterrupted power supply for homes, industries, and businesses.",
   },
   {
     icon: "🏗️",
-    title: "Heavy-Duty Construction",
-    desc: "Built with premium-grade materials and robust components to withstand demanding industrial environments and challenging operating conditions.",
+    title: "Heavy-Duty Design",
+    desc: "Built with durable components to perform in demanding conditions.",
   },
   {
     icon: "🔧",
-    title: "Easy Operation & Maintenance",
-    desc: "User-friendly controls and accessible components simplify operation, servicing, and routine maintenance, reducing downtime and improving overall convenience.",
+    title: "Easy Maintenance",
+    desc: "User-friendly design simplifies servicing and reduces downtime.",
   },
   {
     icon: "💰",
     title: "Low Operating Cost",
-    desc: "Designed for efficient operation, minimal maintenance requirements, and long service life, helping reduce total ownership and operating costs.",
+    desc: "Efficient performance with reduced maintenance and running expenses.",
   },
   {
     icon: "❄️",
-    title: "Excellent Cooling System",
-    desc: "Optimized cooling and ventilation systems maintain efficient engine temperatures, ensuring reliable performance even in demanding hot-weather conditions.",
+    title: "Advanced Cooling",
+    desc: "Efficient cooling system ensures reliable operation in all conditions.",
   },
   {
     icon: "⏳",
     title: "Long Service Life",
-    desc: "Premium-quality components and robust engineering ensure dependable performance and extended service life under demanding operating conditions.",
+    desc: "Premium components ensure durability and extended performance.",
   },
   {
     icon: "🎛️",
-    title: "Stable Voltage & Frequency",
-    desc: "Advanced alternators deliver clean, stable power with consistent voltage and frequency, protecting sensitive electrical and electronic equipment.",
+    title: "Stable Power Output",
+    desc: "Consistent voltage and frequency protect your electrical equipment.",
   },
   {
     icon: "🔄",
-    title: "Suitable for Continuous Operation",
-    desc: "Industrial-grade components and robust engineering enable reliable, extended operation for demanding applications requiring long running hours.",
+    title: "Continuous Operation",
+    desc: "Designed for long hours of reliable industrial performance.",
   },
 ];
 
@@ -149,240 +150,390 @@ const applications = [
     title: "Residential Backup Power",
     img: "/BON-DG35Kw (2).jpg",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for homes during unexpected power outages. Designed to keep essential household systems running, they can support lighting, refrigerators, air conditioning, water pumps, security systems, home offices, and other critical electrical equipment.",
-      "With reliable performance and efficient operation, our generator sets help ensure comfort, safety, and peace of mind for residential properties. Whether used as an automatic standby power solution or for extended backup requirements, our generators deliver dependable power when you need it most.",
+      "Reliable diesel generators provide uninterrupted backup power for homes during outages. They support lighting, AC, refrigerators, water pumps, security systems, and other essential appliances.",
+      "Designed for quiet operation and efficient performance, they ensure comfort, safety, and peace of mind."
     ],
   },
+
   {
     icon: "🏢",
     title: "Commercial Buildings",
     img: "/BON-DG35Kw (3).jpg",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for offices, business centers, corporate buildings, and other commercial facilities. Designed to support essential electrical systems during power outages, they help keep lighting, elevators, HVAC systems, security systems, IT infrastructure, and other critical equipment operating.",
-      "With excellent performance, durability, and efficient operation, our generator sets help businesses maintain continuity and minimize disruption caused by unexpected power failures. Whether used as a standby power solution or for extended backup requirements, our generators deliver reliable power for demanding commercial environments.",
+      "Bonhoeffer generators deliver dependable backup power for offices, business centers, and commercial facilities.",
+      "They support critical systems including lighting, elevators, HVAC, IT infrastructure, and security systems to maintain business continuity."
     ],
   },
+
   {
     icon: "🏗️",
     title: "Construction Sites",
     img: "/BON-DG35Kw (4).jpg",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable power for construction sites, infrastructure projects, and temporary work locations where access to grid electricity may be limited or unavailable. Designed for demanding environments, our generators can support construction tools, heavy machinery, lighting systems, site offices, welding equipment, pumps, and other essential electrical equipment.",
-      "Built for reliable performance and continuous operation, our generator sets help construction teams maintain productivity and minimize downtime. With durable construction and dependable power output, they provide an efficient power solution for projects of different sizes and requirements.",
+      "Built for demanding environments, our generators provide reliable power for construction tools, machinery, lighting, and site operations.",
+      "Durable design ensures continuous performance and reduced downtime at project locations."
     ],
   },
+
   {
     icon: "🏭",
     title: "Industrial Facilities",
     img: "/BON-DG35Kw (5).jpg",
     paras: [
-      "Our reliable industrial diesel generator sets are designed to meet the demanding power requirements of factories, manufacturing plants, processing facilities, and other industrial operations. They provide dependable backup power to support production machinery, manufacturing equipment, control systems, pumps, compressors, lighting, and other critical industrial applications.",
-      "Engineered for reliable performance and continuous operation, our generator sets help minimize downtime and maintain operational continuity during power interruptions. With durable construction, stable power output, and efficient operation, they provide a dependable power solution for demanding industrial environments.",
+      "Our industrial generators deliver stable power for factories, manufacturing units, and processing facilities.",
+      "Designed for heavy-duty applications, they help maintain production and operational efficiency."
     ],
   },
+
   {
     icon: "🏥",
     title: "Hospitals & Healthcare",
     img: "/BON-DG35Kw (6).jpg",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for hospitals, clinics, medical centers, laboratories, and other healthcare facilities. Designed to support critical operations during power interruptions, our generators can provide power for medical equipment, emergency systems, lighting, HVAC systems, refrigeration, communication systems, and other essential healthcare infrastructure.",
-      "With reliable performance and dependable operation, our generator sets help healthcare facilities maintain essential services and minimize disruption during power failures. Built to deliver stable and consistent power, they provide a trusted backup power solution for environments where reliable electricity is essential.",
+      "Reliable backup power solutions for hospitals, clinics, and healthcare facilities where continuous electricity is essential.",
+      "Supports medical equipment, emergency systems, lighting, and critical healthcare operations."
     ],
   },
+
   {
     icon: "🏫",
-    title: "Schools & Educational Institutions",
+    title: "Schools & Institutions",
     img: "/BON-DG35Kw.jpg",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for schools, colleges, universities, training centers, and other educational institutions. During power interruptions, they help maintain essential operations by supporting classroom lighting, computer laboratories, servers, networking systems, security systems, communication equipment, water pumps, and other critical electrical infrastructure.",
-      "Designed for reliable performance and efficient operation, our generator sets help educational institutions continue their academic and administrative activities with minimal disruption. Whether used for emergency backup or extended power requirements, our generators provide a dependable power solution for creating a safe, connected, and productive learning environment.",
+      "Provides dependable backup power for schools, colleges, and educational facilities.",
+      "Keeps classrooms, labs, servers, lighting, and essential systems running during outages."
     ],
   },
+
   {
     icon: "🏨",
     title: "Hotels & Restaurants",
     img: "/a1.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for hotels, resorts, restaurants, cafés, and other hospitality establishments. During power interruptions, they help maintain essential guest services and business operations by supporting lighting, air conditioning, refrigeration, kitchen equipment, elevators, water pumps, security systems, and other critical facilities.",
-      "In the hospitality industry, uninterrupted power is essential for guest comfort and customer satisfaction. Our generator sets are designed to deliver reliable performance and stable power, helping hotels and restaurants continue their operations smoothly while minimizing disruption during unexpected power failures.",
+      "Ensures uninterrupted power for hotels, restaurants, and hospitality businesses.",
+      "Supports lighting, cooling systems, kitchens, refrigeration, and guest services."
     ],
   },
+
   {
     icon: "🏪",
     title: "Retail Stores",
     img: "/a3.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for retail stores, supermarkets, shopping centers, department stores, and other commercial retail facilities. During power interruptions, they help keep essential operations running by supporting lighting, point-of-sale systems, refrigeration and freezers, security systems, elevators, automatic doors, IT equipment, and other critical electrical systems.",
-      "Reliable power is essential for maintaining customer service and protecting business operations. Our generator sets are designed to deliver dependable performance during unexpected power failures, helping retail businesses minimize downtime, protect temperature-sensitive products, and continue serving customers with confidence.",
+      "Reliable generators help retail businesses maintain smooth operations during power failures.",
+      "Supports POS systems, lighting, refrigeration, security, and customer services."
     ],
   },
+
   {
     icon: "📦",
     title: "Warehouses",
     img: "/a4.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for warehouses, distribution centers, logistics facilities, and storage operations. During power interruptions, they help maintain essential operations by supporting warehouse lighting, security and surveillance systems, material-handling equipment, loading and unloading systems, refrigeration and cold-storage units, IT infrastructure, and other critical electrical equipment.",
-      "Designed for reliable performance in demanding operational environments, our generator sets help warehouses minimize downtime and maintain smooth day-to-day operations. Whether used for emergency backup power or extended power requirements, they provide a dependable solution for protecting inventory, supporting logistics, and maintaining business continuity.",
+      "Provides dependable power for warehouses, logistics centers, and storage facilities.",
+      "Supports lighting, security systems, equipment, and operational activities."
     ],
   },
+
   {
     icon: "🌾",
     title: "Agricultural Farms",
     img: "/a5.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable power for agricultural farms, livestock facilities, poultry farms, dairy farms, greenhouses, and other agricultural operations. They help support essential equipment such as irrigation systems, water pumps, ventilation and cooling systems, milking equipment, feeding systems, refrigeration units, lighting, and other farm machinery.",
-      "Designed for reliable performance in both remote and grid-connected locations, our generator sets help agricultural businesses maintain continuous operations during power interruptions. With dependable power and efficient operation, they support productivity, protect livestock and crops, and help ensure the smooth operation of essential agricultural systems.",
+      "Designed to support farms with reliable power for irrigation, pumps, ventilation, and essential equipment.",
+      "Helps maintain productivity and smooth agricultural operations."
     ],
   },
+
   {
     icon: "📡",
     title: "Telecommunications",
     img: "/silent-generator.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable backup power for telecommunications towers, network infrastructure, data transmission facilities, and other critical communication systems. During power interruptions, they help keep essential telecommunications equipment operating, including network systems, communication equipment, signal transmission systems, monitoring systems, and supporting infrastructure.",
-      "Reliable power is essential for maintaining continuous connectivity and communication services. Our generator sets are designed to deliver dependable performance in remote and demanding locations, helping telecommunications operators minimize service interruptions and maintain network availability during grid power failures.",
+      "Provides reliable backup power for telecom towers and communication infrastructure.",
+      "Ensures continuous connectivity by supporting critical network equipment."
     ],
   },
+
   {
     icon: "🎪",
     title: "Event Power Supply",
     img: "/banner.webp",
     paras: [
-      "Our reliable industrial diesel generator sets provide dependable power for concerts, exhibitions, conferences, festivals, sports events, outdoor functions, weddings, and other temporary events. They help support essential event equipment, including stage lighting, sound systems, LED screens, catering equipment, temporary structures, cooling systems, and other electrical installations.",
-      "Designed to deliver reliable and stable power in a wide range of locations, our generator sets help event organizers maintain smooth operations and minimize the risk of power interruptions. Whether for a small private function or a large-scale public event, our dependable power solutions help ensure a successful and uninterrupted event experience.",
+      "Reliable temporary power solutions for concerts, exhibitions, weddings, and outdoor events.",
+      "Supports lighting, sound systems, catering equipment, and event infrastructure."
     ],
   },
 ];
 
-// socialLinks and local navigation states have been refactored into global layout components
-
 export default function Home() {
   const [activeApp, setActiveApp] = useState<number | null>(null);
+        const [selectedProduct, setSelectedProduct] = useState(generators[0]);
+
 
   return (
     <>
-      <main className="pt-16">
+    <main className="pt-16">
+  <section
+    id="home"
+    className="relative flex items-center overflow-hidden min-h-[460px] md:min-h-[440px] lg:min-h-[520px] py-10 md:py-0"
+  >
+    {/* Background */}
+    <div className="absolute inset-0">
+      <Image
+        src="/banner.webp"
+        alt="Bonhoeffer Power Banner"
+        fill
+        priority
+        className="object-cover object-center"
+      />
 
-        {/* ── HERO ── */}
-        <section id="home" className="relative min-h-[460px] md:min-h-[440px] py-10 md:py-0 flex items-center overflow-hidden">
-          <div className="absolute inset-0">
-            <Image src="/banner.webp" alt="Bonhoeffer Power Banner" fill className="object-cover object-center" priority />
-            <div className="absolute inset-0 bg-gradient-to-r from-dark-green/95 via-dark-green/85 to-transparent" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-primary-light text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-                ⚡ Bonhoeffer Power • Silent Diesel Generators
-              </span>
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white leading-snug tracking-tight mb-4">
-                Power You Can Trust.{" "}
-                <span className="text-primary-light">Performance That Never Stops.</span>
-              </h1>
-              <p className="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed mb-6 max-w-xl font-normal">
-                Reliable and fuel-efficient Silent Diesel Generators engineered for homes, commercial facilities, industrial operations, construction sites, and emergency backup power. Bonhoeffer Power delivers dependable electricity with low noise, superior performance, and long service life.
+      <div className="absolute inset-0 bg-gradient-to-r from-dark-green/95 via-dark-green/85 to-transparent" />
+    </div>
+
+    {/* Content */}
+    <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl">
+
+        {/* Badge */}
+        <span className="inline-flex items-center gap-2 mb-5 rounded-full border border-primary/40 bg-primary/20 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-light sm:text-xs">
+          ⚡ Bonhoeffer Power • Silent Diesel Generators
+        </span>
+
+        {/* Heading */}
+        <h1 className="mb-5 text-3xl font-black leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          Trusted Power.
+          <br />
+          <span className="text-primary-light">
+            Lasting Performance.
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="mb-8 max-w-xl text-sm leading-7 text-white/90 sm:text-base md:text-lg">
+          Efficient Silent Diesel Generators providing reliable, low-noise backup
+          power solutions for homes, industries, and businesses.
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4">
+          <a
+            href="#products"
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-xl"
+          >
+            Explore Generators
+          </a>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg border border-white/70 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-white/10"
+          >
+            Request a Quote
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+{/* ── ADVANTAGES SECTION ── */}
+<section
+  id="advantages"
+  className="overflow-hidden bg-white py-24"
+>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    {/* Section Header */}
+    <div className="mb-14 text-center">
+      <span className="mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+        Advantages
+      </span>
+
+      <h2 className="text-3xl font-black text-gray-900 md:text-4xl lg:text-5xl">
+        Why Choose <span className="text-primary">Bonhoeffer Power?</span>
+      </h2>
+
+      <div className="mx-auto my-5 h-1 w-20 rounded-full bg-primary" />
+
+      <p className="mx-auto max-w-2xl text-base leading-7 text-gray-600">
+        Engineered to maximize efficiency, quietness, and performance under
+        demanding industrial and residential operating conditions.
+      </p>
+    </div>
+
+    {/* Advantage Cards */}
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+      {advantages.map((adv, index) => {
+        const images = [
+          "/BON-DG35Kw (2).jpg",
+          "/BON-DG35Kw (3).jpg",
+          "/BON-DG35Kw (4).jpg",
+          "/BON-DG35Kw (5).jpg",
+          "/BON-DG35Kw (2).jpg",
+          "/BON-DG35Kw (3).jpg",
+        ];
+
+        return (
+          <div
+            key={adv.title}
+            className="group relative h-[250px] cursor-pointer overflow-hidden rounded-xl shadow-lg"
+          >
+            {/* Background Image */}
+            <Image
+              src={images[index % images.length]}
+              alt={adv.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/80 transition-all duration-300 group-hover:bg-black/65" />
+
+            {/* Top Accent */}
+            <div className="absolute left-0 top-0 h-1 w-full bg-primary" />
+
+            {/* Card Content */}
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-5 text-center">
+              <h3 className="mb-3 text-sm font-bold uppercase leading-6 tracking-wide text-white">
+                {adv.title}
+              </h3>
+
+              <p className="text-xs leading-5 text-gray-200">
+                {adv.desc}
               </p>
-              <div className="flex flex-wrap gap-3">
-                <a href="#products" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-lg transition-all shadow-md hover:-translate-y-0.5">
-                  Explore Generators
-                </a>
-                <Link href="/contact" className="inline-flex items-center gap-2 border border-white/70 hover:border-white hover:bg-white/10 text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-lg transition-all hover:-translate-y-0.5">
-                  Request a Quote
-                </Link>
-              </div>
             </div>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+{/* ── OUR PRODUCT RANGE ── */}
+<section
+  id="products"
+  className="border-b border-gray-200 bg-white py-20"
+>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* ── ADVANTAGES SECTION ── */}
-        <section id="advantages" className="py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white relative overflow-hidden border-b border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
-              <span className="inline-block bg-primary/20 border border-primary/40 text-lime-400 font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 shadow-md">
-                ADVANTAGES
+    {/* Section Header */}
+    <div className="mb-14 text-center">
+      <span className="mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary">
+        Our Product Range
+      </span>
+
+      <h2 className="text-3xl font-black text-gray-900 lg:text-4xl">
+        Silent Diesel Generators
+      </h2>
+
+      <div className="mx-auto my-5 h-1 w-20 rounded-full bg-primary" />
+
+      <p className="mx-auto max-w-2xl text-gray-600">
+        Explore our robust series of high-performance generators built for
+        continuous reliability, low maintenance, and silent operation.
+      </p>
+    </div>
+
+    {/* Product Layout */}
+    <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[90px_1fr_1fr]">
+
+      {/* Thumbnail Gallery */}
+      <div
+        className="
+          scrollbar-hide
+          flex w-full gap-4 overflow-x-auto pb-2
+          lg:h-[500px] lg:w-[90px] lg:flex-col
+          lg:justify-center lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0
+        "
+      >
+        {generators.map((generator) => (
+          <button
+            key={generator.name}
+            onClick={() => setSelectedProduct(generator)}
+            className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border transition-all duration-300 ${
+              selectedProduct.name === generator.name
+                ? "border-primary ring-2 ring-primary/30 shadow-lg"
+                : "border-gray-200 hover:border-primary"
+            }`}
+          >
+            <Image
+              src={generator.img}
+              alt={generator.name}
+              fill
+              className="object-cover"
+            />
+          </button>
+        ))}
+      </div>
+
+      {/* Product Image */}
+      <div
+        className="
+          relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg
+          h-[280px] sm:h-[380px] md:h-[450px]
+          lg:h-[500px] xl:h-[550px]
+        "
+      >
+        <Image
+          key={selectedProduct.img}
+          src={selectedProduct.img}
+          alt={selectedProduct.name}
+          fill
+          priority
+          className="object-contain p-2 transition-transform duration-500 hover:scale-105 sm:p-4"
+        />
+      </div>
+
+      {/* Product Details */}
+      <div>
+
+        {/* Title */}
+        <h2 className="text-2xl font-black text-gray-900 sm:text-3xl lg:text-4xl">
+          {selectedProduct.name}
+        </h2>
+
+        {/* Description */}
+        <p className="mt-2 mb-6 text-sm text-gray-600 sm:text-base lg:mb-8 lg:text-lg">
+          {selectedProduct.desc}
+        </p>
+
+        {/* Highlights */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+          {selectedProduct.highlights.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-2"
+            >
+              <span className="mt-1 text-primary">⚡</span>
+
+              <span className="text-sm text-gray-700">
+                {item}
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-3 tracking-tight">
-                Why Choose <span className="text-primary-light">Bonhoeffer Power?</span>
-              </h2>
-              <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-lime-400 rounded-full mx-auto mb-4" />
-              <p className="text-slate-400 max-w-2xl mx-auto text-base">
-                Engineered to maximize efficiency, quietness, and performance under demanding industrial and residential operational conditions.
-              </p>
             </div>
+          ))}
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {advantages.map((adv, i) => (
-                <div
-                  key={adv.title}
-                  className="group relative bg-slate-800/50 backdrop-blur-lg border border-slate-700/60 rounded-3xl p-8 hover:bg-slate-800/90 hover:border-primary/60 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/10 flex flex-col justify-between"
-                >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full group-hover:bg-primary/20 transition-colors pointer-events-none" />
-                  <div>
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-pale/20 to-primary/30 border border-primary/30 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform shadow-inner">
-                      {adv.icon}
-                    </div>
-                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-lime-300 transition-colors">
-                      {adv.title}
-                    </h3>
-                    <p className="text-slate-300 text-sm leading-relaxed font-normal">
-                      {adv.desc}
-                    </p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-500 group-hover:text-slate-300">
-                    <span className="font-mono">BENEFIT 0{i + 1}</span>
-                    <span className="text-primary group-hover:translate-x-1 transition-transform">✓ Certified</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Action Buttons */}
+        <div className="mt-10 flex flex-wrap gap-4">
+          <button className="rounded-md bg-primary px-8 py-3 font-bold text-white transition-colors hover:bg-primary-hover">
+            REQUEST A QUOTE
+          </button>
 
-        {/* ── OUR PRODUCT RANGE (PLACED IN THE MIDDLE) ── */}
-        <section id="products" className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-block bg-primary-pale border border-primary/20 text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 shadow-sm">
-                OUR PRODUCT RANGE
-              </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">
-                Silent Diesel Generators
-              </h2>
-              <div className="w-16 h-1.5 bg-primary rounded-full mx-auto mb-4" />
-              <p className="text-slate-600 max-w-2xl mx-auto text-base">
-                Explore our robust series of high-performance generators built for continuous reliability, low maintenance, and silent operation.
-              </p>
-            </div>
+          <button className="rounded-md border border-gray-300 px-8 py-3 font-bold transition-colors hover:border-primary">
+            DOWNLOAD BROCHURE
+          </button>
+        </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {generators.map((g) => (
-                <Link key={g.name} href="/products" className="bg-white rounded-3xl border border-slate-200/80 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-primary/50 transition-all duration-300 group flex flex-col shadow-sm cursor-pointer">
-                  <div className="relative h-60 w-full overflow-hidden border-b border-slate-100 bg-gradient-to-b from-slate-100 to-white">
-                    <Image src={g.img} alt={g.name} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <span className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-3 py-1 rounded-full shadow-md z-10">{g.tag}</span>
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-base font-extrabold text-slate-900 mb-1">{g.name}</h3>
-                      <p className="text-xs text-primary font-bold bg-primary-pale/80 px-2.5 py-1 rounded-md inline-block mb-4">{g.desc}</p>
-                      <ul className="space-y-1 text-[11px] text-slate-600 mb-6">
-                        {g.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-1.5">
-                            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                            <span className="leading-tight">{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="w-full text-center bg-slate-900 group-hover:bg-primary text-white text-xs font-bold py-3.5 rounded-xl transition-all shadow-md group-hover:shadow-lg flex items-center justify-center gap-2">
-                      View Full Range
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Specifications */}
+        <button className="mt-8 w-full rounded-md bg-gray-900 py-4 font-bold text-white transition-colors hover:bg-primary">
+          VIEW FULL SPECIFICATIONS
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ── APPLICATION SECTION ── */}
         <section id="applications" className="py-24 bg-white relative overflow-hidden">
