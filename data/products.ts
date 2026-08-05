@@ -12,9 +12,20 @@ function cycleImg(index: number) {
   return allImages[index % allImages.length];
 }
 
+// export interface Product {
+//   img: string;
+//   name: string;
+//   tag: string;
+//   phase: string;
+//   series: string;
+//   desc: string;
+//   highlights: string[];
+//   model?: string;
+// }
 export interface Product {
   img: string;
   name: string;
+  slug: string;
   tag: string;
   phase: string;
   series: string;
@@ -28,6 +39,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BON-DG-11KW-1P",
+    slug: "bon-dg-11kw-1p",
     tag: "11 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -51,6 +63,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BON-DG-17KW-1P",
+    slug: "bon-dg-17kw-1p",
     tag: "17 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -74,6 +87,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BON-DG-20KW-1P",
+    slug: "bon-dg-20kw-1p",
     tag: "20 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -97,6 +111,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BON-DG-25KW-1P",
+    slug: "bon-dg-25kw-1p",
     tag: "25 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -120,6 +135,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BON-DG-30KW-1P",
+    slug: "bon-dg-30kw-1p",
     tag: "30 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -143,6 +159,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BON-DG-36KW-1P",
+    slug: "bon-dg-36kw-1p",
     tag: "36 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -166,6 +183,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BON-DG-40KW-1P",
+    slug: "bon-dg-40kw-1p",
     tag: "40 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -189,6 +207,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BON-DG-55KW-1P",
+    slug: "bon-dg-55kw-1p",
     tag: "55 kW",
     phase: "1-Phase",
     series: "Standard",
@@ -210,10 +229,11 @@ export const allProducts: Product[] = [
     ],
   },
 
-  // ── STANDARD 3-PHASE GENERATORS (8) ──
+  // // ── STANDARD 3-PHASE GENERATORS (8) ──
   {
     img: cycleImg(2),
     name: "BON-DG-11KW-3P",
+    slug: "bon-dg-11kw-3p",
     tag: "11 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -237,6 +257,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BON-DG-17KW-3P",
+    slug: "bon-dg-17kw-3p",
     tag: "17 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -260,6 +281,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BON-DG-20KW-3P",
+    slug: "bon-dg-20kw-3p",
     tag: "20 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -283,6 +305,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BON-DG-25KW-3P",
+    slug: "bon-dg-25kw-3p",
     tag: "25 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -306,6 +329,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BON-DG-30KW-3P",
+    slug: "bon-dg-30kw-3p",
     tag: "30 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -329,6 +353,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BON-DG-36KW-3P",
+    slug: "bon-dg-36kw-3p",
     tag: "36 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -352,6 +377,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BON-DG-40KW-3P",
+    slug: "bon-dg-40kw-3p",
     tag: "40 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -375,6 +401,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BON-DG-55KW-3P",
+    slug: "bon-dg-55kw-3p",
     tag: "55 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -396,10 +423,11 @@ export const allProducts: Product[] = [
     ],
   },
 
-  // ── HIGH-POWER CUMMINS GENERATORS (3) ──
+  // // ── HIGH-POWER CUMMINS GENERATORS (3) ──
   {
     img: cycleImg(4),
     name: "BON-DG-116KW-3P",
+    slug: "bon-dg-116kw-3p",
     tag: "116 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -423,6 +451,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BON-DG-130KW-3P",
+    slug: "bon-dg-130kw-3p",
     tag: "130 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -446,6 +475,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BON-DG-150KW-3P",
+    slug: "bon-dg-150kw-3p",
     tag: "150 kW",
     phase: "3-Phase",
     series: "Standard",
@@ -467,10 +497,11 @@ export const allProducts: Product[] = [
     ],
   },
 
-  // ── AQUAMAX 1-PHASE (115/230V) (8) ──
+  // // ── AQUAMAX 1-PHASE (115/230V) (8) ──
   {
     img: cycleImg(1),
     name: "BDGW11-1P230-AquamaX",
+    slug: "bdgw11-1p230-aquamax",
     model: "BON-DG-11KW-1P",
     tag: "11 kW",
     phase: "1-Phase",
@@ -495,6 +526,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BDGW17-1P230-AquamaX",
+    slug: "bdgw17-1p230-aquamax",
     model: "BON-DG-17KW-1P",
     tag: "17 kW",
     phase: "1-Phase",
@@ -519,6 +551,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BDGW20-1P230-AquamaX",
+    slug: "bdgw20-1p230-aquamax",
     model: "BON-DG-20KW-1P",
     tag: "20 kW",
     phase: "1-Phase",
@@ -543,6 +576,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BDGW25-1P230-AquamaX",
+    slug: "bdgw25-1p230-aquamax",
     model: "BON-DG-25KW-1P",
     tag: "25 kW",
     phase: "1-Phase",
@@ -567,6 +601,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BDGW30-1P230-AquamaX",
+    slug: "bdgw30-1p230-aquamax",
     model: "BON-DG-30KW-1P",
     tag: "30 kW",
     phase: "1-Phase",
@@ -591,6 +626,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BDGW36-1P230-AquamaX",
+    slug: "bdgw36-1p230-aquamax",
     model: "BON-DG-36KW-1P",
     tag: "36 kW",
     phase: "1-Phase",
@@ -615,6 +651,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BDGW40-1P230-AquamaX",
+    slug: "bdgw40-1p230-aquamax",
     model: "BON-DG-40KW-1P",
     tag: "40 kW",
     phase: "1-Phase",
@@ -639,6 +676,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BDGW55-1P230-AquamaX",
+    slug: "bdgw55-1p230-aquamax",
     model: "BON-DG-55KW-1P",
     tag: "55 kW",
     phase: "1-Phase",
@@ -661,10 +699,11 @@ export const allProducts: Product[] = [
     ],
   },
 
-  // ── AQUAMAX 3-PHASE (220/127V) (9) ──
+  // // ── AQUAMAX 3-PHASE (220/127V) (9) ──
   {
     img: cycleImg(3),
     name: "BDGV11-3P220-AquamaX",
+    slug: "bdgv11-3p220-aquamax",
     model: "BON-DG-11KW-3P",
     tag: "11 kW",
     phase: "3-Phase",
@@ -689,6 +728,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BDGV17-3P220-AquamaX",
+    slug: "bdgv17-3p220-aquamax",
     model: "BON-DG-17KW-3P",
     tag: "17 kW",
     phase: "3-Phase",
@@ -713,6 +753,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BDGV20-3P220-AquamaX",
+    slug: "bdgv20-3p220-aquamax",
     model: "BON-DG-20KW-3P",
     tag: "20 kW",
     phase: "3-Phase",
@@ -737,6 +778,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BDGV25-3P220-AquamaX",
+    slug: "bdgv25-3p220-aquamax",
     model: "BON-DG-25KW-3P",
     tag: "25 kW",
     phase: "3-Phase",
@@ -761,6 +803,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BDGV30-3P220-AquamaX",
+    slug: "bdgv30-3p220-aquamax",
     model: "BON-DG-30KW-3P",
     tag: "30 kW",
     phase: "3-Phase",
@@ -785,6 +828,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BDGV36-3P220-AquamaX",
+    slug: "bdgv36-3p220-aquamax",
     model: "BON-DG-36KW-3P",
     tag: "36 kW",
     phase: "3-Phase",
@@ -809,6 +853,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BDGW40-3P220-AquamaX",
+    slug: "bdgw40-3p220-aquamax",
     model: "BON-DG-40KW-3P",
     tag: "40 kW",
     phase: "3-Phase",
@@ -833,6 +878,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BDGW55-3P220-AquamaX",
+    slug: "bdgw55-3p220-aquamax",
     model: "BON-DG-55KW-3P",
     tag: "55 kW",
     phase: "3-Phase",
@@ -857,6 +903,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BDGW116-3P220-AquamaX",
+    slug: "bdgw116-3p220-aquamax",
     model: "BON-DG-116KW-3P",
     tag: "116 kW",
     phase: "3-Phase",
@@ -883,6 +930,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BDGW11-3P380-AquamaX",
+    slug: "bdgw11-3p380-aquamax",
     model: "BON-DG-11KW-3P",
     tag: "11 kW",
     phase: "3-Phase",
@@ -907,6 +955,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BDGW17-3P380-AquamaX",
+    slug: "bdgw17-3p380-aquamax",
     model: "BON-DG-17KW-3P",
     tag: "17 kW",
     phase: "3-Phase",
@@ -931,6 +980,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BDGW20-3P380-AquamaX",
+    slug: "bdgw20-3p380-aquamax",
     model: "BON-DG-20KW-3P",
     tag: "20 kW",
     phase: "3-Phase",
@@ -955,6 +1005,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(3),
     name: "BDGW25-3P380-AquamaX",
+    slug: "bdgw25-3p380-aquamax",
     model: "BON-DG-25KW-3P",
     tag: "25 kW",
     phase: "3-Phase",
@@ -979,6 +1030,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(4),
     name: "BDGW30-3P380-AquamaX",
+    slug: "bdgw30-3p380-aquamax",
     model: "BON-DG-30KW-3P",
     tag: "30 kW",
     phase: "3-Phase",
@@ -1003,6 +1055,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(5),
     name: "BDGW36-3P380-AquamaX",
+    slug: "bdgw36-3p380-aquamax",
     model: "BON-DG-36KW-3P",
     tag: "36 kW",
     phase: "3-Phase",
@@ -1027,6 +1080,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(0),
     name: "BDGW40-3P380-AquamaX",
+    slug: "bdgw40-3p380-aquamax",
     model: "BON-DG-40KW-3P",
     tag: "40 kW",
     phase: "3-Phase",
@@ -1051,6 +1105,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(1),
     name: "BDGW55-3P380-AquamaX",
+    slug: "bdgw55-3p380-aquamax",
     model: "BON-DG-55KW-3P",
     tag: "55 kW",
     phase: "3-Phase",
@@ -1075,6 +1130,7 @@ export const allProducts: Product[] = [
   {
     img: cycleImg(2),
     name: "BDGW130-3P380-AquamaX",
+    slug: "bdgw30-3p380-aquamax",
     model: "BON-DG-130KW-3P",
     tag: "130 kW",
     phase: "3-Phase",
