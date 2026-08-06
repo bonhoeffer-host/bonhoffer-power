@@ -45,6 +45,7 @@ const currentProducts = filteredProducts.slice(
 
   return (
     <>
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* ── NAVBAR ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,9 +210,8 @@ const currentProducts = filteredProducts.slice(
 
 </div>
 
-    <div className="overflow-x-auto rounded-2xl shadow-lg border border-slate-200 bg-white">
-
-      <table className="min-w-full">
+   <div className="w-full overflow-x-auto rounded-2xl shadow-lg border border-slate-200 bg-white">
+  <table className="w-full min-w-[900px]">
 
         <thead className="bg-primary text-white">
           <tr>
@@ -384,9 +384,12 @@ const currentProducts = filteredProducts.slice(
           <p>Silent Diesel Generators – Power You Can Trust.</p>
         </div>
       </footer>
+      </div>
     </>
   );
+
 }
+
 
 
         {/* ── PRODUCT GRID ── 
