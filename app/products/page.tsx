@@ -1,11 +1,48 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { allProducts } from "@/data/products";
 
 
 
+const ITEMS_PER_PAGE = 10;
 export default function ProductsPage() {
+ 
+
+const [currentPage, setCurrentPage] = useState(1);
+
+const [selectedPhase, setSelectedPhase] = useState("All");
+const [selectedFrequency, setSelectedFrequency] = useState("All");
+
+const filteredProducts = allProducts.filter((product) => {
+
+  const phaseMatch =
+    selectedPhase === "All" ||
+    product.phase.toLowerCase().includes(selectedPhase.toLowerCase());
+
+  const frequencyText =
+    product.highlights.find((item) =>
+      item.toLowerCase().includes("frequency")
+    ) || "";
+
+  const frequencyMatch =
+    selectedFrequency === "All" ||
+    frequencyText.toLowerCase().includes(selectedFrequency.toLowerCase());
+
+  return phaseMatch && frequencyMatch;
+
+});
+// const totalPages = Math.ceil(allProducts.length / ITEMS_PER_PAGE);
+const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+
+const currentProducts = filteredProducts.slice(
+  (currentPage - 1) * ITEMS_PER_PAGE,
+  currentPage * ITEMS_PER_PAGE
+);
+
+
+
   return (
     <>
       {/* ── NAVBAR ── */}
@@ -85,70 +122,225 @@ export default function ProductsPage() {
 
           </div>
         </section>
+<section className="py-16 bg-slate-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <div className="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4">
 
-        {/* ── PRODUCT GRID ── */}
-        <section className="py-16 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
-              {allProducts.map((g, idx) => (
-                <div
-                  key={g.name + idx}
-                  className={`bg-white rounded-3xl border overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-sm ${g.series === "AquamaX"
-                      ? "border-teal-200/80 hover:border-teal-400/60"
-                      : "border-slate-200/80 hover:border-primary/50"
-                    }`}
-                >
-                  {/* Image — edge-to-edge */}
-                 <Link href={`/products/${g.slug}`}>
-  <div className="relative h-56 w-full overflow-hidden border-b border-slate-100 cursor-pointer">
-    <Image
-      src={g.img}
-      alt={g.name}
-      fill
-      className="object-cover group-hover:scale-105 transition-transform duration-500"
-    />
+  {/* LEFT */}
+  <div className="flex flex-wrap gap-3">
 
-    <span className="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">
-      {g.phase}
-    </span>
+    <button
+      onClick={() => {
+        setSelectedPhase("All");
+        setSelectedFrequency("All");
+        setCurrentPage(1);
+      }}
+      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+        selectedPhase === "All" && selectedFrequency === "All"
+          ? "bg-primary text-white"
+          : "bg-white border border-slate-300"
+      }`}
+    >
+      All Products
+    </button>
 
-    <span className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-3 py-1 rounded-full shadow-md z-10">
-      {g.tag}
-    </span>
+    <button
+      onClick={() => {
+        setSelectedFrequency("50");
+        setCurrentPage(1);
+      }}
+      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+        selectedFrequency === "50"
+          ? "bg-primary text-white"
+          : "bg-white border border-slate-300"
+      }`}
+    >
+      50 Hz
+    </button>
+
+    <button
+      onClick={() => {
+        setSelectedFrequency("60");
+        setCurrentPage(1);
+      }}
+      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+        selectedFrequency === "60"
+          ? "bg-primary text-white"
+          : "bg-white border border-slate-300"
+      }`}
+    >
+      60 Hz
+    </button>
+
   </div>
-</Link>
 
-                  {/* Content */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-sm font-extrabold text-slate-900 mb-1">
-                        {g.name} 
-                      </h3> 
-                      <p className="text-[11px] text-primary font-bold bg-primary-pale/80 px-2 py-0.5 rounded-md inline-block mb-3">
-                        {g.desc}
-                      </p>
-                      {/* <ul className="space-y-1 text-[11px] text-slate-600 mb-5">
-                        {g.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-1.5">
-                            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5" />
-                            <span className="leading-tight">{h}</span>
-                          </li>
-                        ))}
-                      </ul> */}
-                    </div> 
-                    <Link
-                      href="/contact"
-                      className="w-full text-center bg-slate-900 hover:bg-primary text-white text-xs font-bold py-3 rounded-xl transition-all shadow-md group-hover:shadow-lg"
-                    >
-                      Request a Quote
-                    </Link>
-                  </div>
-                // </div>
-              ))}
-            </div>
-          </div>
-        </section>
+  {/* RIGHT */}
+  <div className="flex flex-wrap gap-3">
 
+    <button
+      onClick={() => {
+        setSelectedPhase("3-phase");
+        setCurrentPage(1);
+      }}
+      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+        selectedPhase === "3-phase"
+          ? "bg-primary text-white"
+          : "bg-white border border-slate-300"
+      }`}
+    >
+      Three Phase
+    </button>
+
+    <button
+      onClick={() => {
+        setSelectedPhase("1-phase");
+        setCurrentPage(1);
+      }}
+      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+        selectedPhase === "1-phase"
+          ? "bg-primary text-white"
+          : "bg-white border border-slate-300"
+      }`}
+    >
+      Single Phase
+    </button>
+
+  </div>
+
+</div>
+
+    <div className="overflow-x-auto rounded-2xl shadow-lg border border-slate-200 bg-white">
+
+      <table className="min-w-full">
+
+        <thead className="bg-primary text-white">
+          <tr>
+            <th className="px-6 py-4 text-left">Product Model</th>
+            <th className="px-6 py-4 text-center">Phase</th>
+            <th className="px-6 py-4 text-center">Series</th>
+            <th className="px-6 py-4 text-center">Description</th>
+            <th className="px-6 py-4 text-center">Details</th>
+          </tr>
+        </thead>
+
+        <tbody>
+{currentProducts.map((g, index) => (
+          // {allProducts.map((g, index) => (
+
+            <tr
+              key={g.slug}
+              className={`border-b hover:bg-slate-50 transition ${
+                index % 2 === 0 ? "bg-white" : "bg-slate-100"
+              }`}
+            >
+
+              {/* Product Name */}
+              <td className="px-6 py-4 font-semibold text-red-600">
+                <Link
+                  href={`/products/${g.slug}`}
+                  className="hover:text-primary"
+                >
+                  {g.name}
+                </Link>
+              </td>
+
+              {/* Phase */}
+              <td className="px-6 py-4 text-center">
+                {g.phase}
+              </td>
+
+              {/* Series */}
+              <td className="px-6 py-4 text-center">
+                {g.series}
+              </td>
+
+              {/* Description */}
+              <td className="px-6 py-4 text-center">
+                {g.desc}
+              </td>
+
+              {/* Specification */}
+              <td className="px-6 py-4 text-center">
+
+                <Link
+                  href={`/products/${g.slug}`}
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Specifications
+                </Link>
+
+              </td>
+
+            </tr>
+
+          ))}
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div className="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
+
+  <p className="text-sm text-slate-600">
+    Showing{" "}
+    <span className="font-semibold">
+      {(currentPage - 1) * ITEMS_PER_PAGE + 1}
+    </span>
+    {" "}to{" "}
+    <span className="font-semibold">
+      {/* {Math.min(currentPage * ITEMS_PER_PAGE, allProducts.length)} */}
+      {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}
+    </span>
+    {" "}of{" "}
+    <span className="font-semibold">
+      {/* {allProducts.length} */}
+      {filteredProducts.length}
+    </span>{" "}
+    Products
+  </p>
+
+  <div className="flex items-center gap-2">
+
+    <button
+      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+      disabled={currentPage === 1}
+      className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
+    >
+      Previous
+    </button>
+
+    {Array.from({ length: totalPages }).map((_, i) => (
+      <button
+        key={i}
+        onClick={() => setCurrentPage(i + 1)}
+        className={`w-10 h-10 rounded-lg font-semibold transition ${
+          currentPage === i + 1
+            ? "bg-primary text-white"
+            : "bg-white border border-slate-300 hover:bg-slate-100"
+        }`}
+      >
+        {i + 1}
+      </button>
+    ))}
+
+    <button
+      onClick={() =>
+        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+      }
+      disabled={currentPage === totalPages}
+      className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
+    >
+      Next
+    </button>
+
+  </div>
+
+</div>
+
+  </div>
+</section>
         {/* ── CTA SECTION ── */}
         <section className="py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white text-center relative overflow-hidden border-t border-slate-800">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/25 rounded-full blur-3xl pointer-events-none" />
@@ -195,3 +387,69 @@ export default function ProductsPage() {
     </>
   );
 }
+
+
+        {/* ── PRODUCT GRID ── 
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+              {allProducts.map((g, idx) => (
+                <div
+                  key={g.name + idx}
+                  className={`bg-white rounded-3xl border overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group flex flex-col shadow-sm ${g.series === "AquamaX"
+                      ? "border-teal-200/80 hover:border-teal-400/60"
+                      : "border-slate-200/80 hover:border-primary/50"
+                    }`}
+                >
+                  {/* Image — edge-to-edge
+                 <Link href={`/products/${g.slug}`}>
+  <div className="relative h-56 w-full overflow-hidden border-b border-slate-100 cursor-pointer">
+    <Image
+      src={g.img}
+      alt={g.name}
+      fill
+      className="object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+
+    <span className="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10">
+      {g.phase}
+    </span>
+
+    <span className="absolute top-3 right-3 bg-gradient-to-r from-primary to-primary-hover text-white text-xs font-black px-3 py-1 rounded-full shadow-md z-10">
+      {g.tag}
+    </span>
+  </div>
+</Link>
+
+                  {/* Content 
+                  <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-sm font-extrabold text-slate-900 mb-1">
+                        {g.name} 
+                      </h3> 
+                      <p className="text-[11px] text-primary font-bold bg-primary-pale/80 px-2 py-0.5 rounded-md inline-block mb-3">
+                        {g.desc}
+                      </p>
+                      {/* <ul className="space-y-1 text-[11px] text-slate-600 mb-5">
+                        {g.highlights.map((h, i) => (
+                          <li key={i} className="flex items-start gap-1.5">
+                            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5" />
+                            <span className="leading-tight">{h}</span>
+                          </li>
+                        ))}
+                      </ul> 
+                    </div> 
+                    <Link
+                      href="/contact"
+                      className="w-full text-center bg-slate-900 hover:bg-primary text-white text-xs font-bold py-3 rounded-xl transition-all shadow-md group-hover:shadow-lg"
+                    >
+                      Request a Quote
+                    </Link>
+                  </div>
+                // </div>
+              ))}
+            </div>
+          </div>
+        </section>  */}
+
+        

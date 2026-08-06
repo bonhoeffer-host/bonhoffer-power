@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const generators = [
   {
@@ -268,6 +269,7 @@ const applications = [
 
 export default function Home() {
   const [activeApp, setActiveApp] = useState<number | null>(null);
+  
         const [selectedProduct, setSelectedProduct] = useState(generators[0]);
 
 
@@ -338,14 +340,14 @@ export default function Home() {
 
 
 
-{/* ── ADVANTAGES SECTION ── */}
+{/* ── ADVANTAGES SECTION ──
 <section
   id="advantages"
   className="overflow-hidden bg-white py-24"
 >
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-    {/* Section Header */}
+    {/* Section Header 
     <div className="mb-14 text-center">
       <span className="mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
         Advantages
@@ -363,7 +365,7 @@ export default function Home() {
       </p>
     </div>
 
-    {/* Advantage Cards */}
+    {/* Advantage Cards 
     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
       {advantages.map((adv, index) => {
         const images = [
@@ -380,7 +382,7 @@ export default function Home() {
             key={adv.title}
             className="group relative h-[250px] cursor-pointer overflow-hidden rounded-xl shadow-lg"
           >
-            {/* Background Image */}
+            {/* Background Image 
             <Image
               src={images[index % images.length]}
               alt={adv.title}
@@ -388,13 +390,13 @@ export default function Home() {
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
 
-            {/* Overlay */}
+            {/* Overlay 
             <div className="absolute inset-0 bg-black/80 transition-all duration-300 group-hover:bg-black/65" />
 
-            {/* Top Accent */}
+            {/* Top Accent 
             <div className="absolute left-0 top-0 h-1 w-full bg-primary" />
 
-            {/* Card Content */}
+            {/* Card Content 
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-5 text-center">
               <h3 className="mb-3 text-sm font-bold uppercase leading-6 tracking-wide text-white">
                 {adv.title}
@@ -408,6 +410,74 @@ export default function Home() {
         );
       })}
     </div>
+  </div>
+</section> */}
+
+
+
+{/* ── ADVANTAGES SECTION ── */}
+<section
+  id="advantages"
+  className="py-20 bg-white"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Heading */}
+
+    <div className="mb-14">
+
+      <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
+        Advantages
+      </span>
+
+      <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">
+        Why Choose Bonhoeffer Power?
+      </h2>
+
+      <p className="mt-5 max-w-3xl text-gray-600 leading-8">
+        Engineered to maximize efficiency, quietness, and performance under
+        demanding industrial and residential operational conditions.
+      </p>
+
+    </div>
+
+    {/* Cards */}
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      {advantages.map((adv) => (
+
+        <div
+          key={adv.title}
+          className="bg-white border border-gray-200 rounded-md p-6 transition-all duration-300 hover:border-primary hover:shadow-lg"
+        >
+
+          {/* Icon + Title */}
+
+          <div className="flex items-start gap-3 mb-4">
+
+            <div className="flex items-center justify-center w-9 h-9 rounded-md bg-primary/10 text-primary text-lg flex-shrink-0">
+              {adv.icon}
+            </div>
+
+            <h3 className="text-[18px] font-bold text-gray-900 leading-6">
+              {adv.title}
+            </h3>
+
+          </div>
+
+          {/* Description */}
+
+          <p className="text-[14px] text-gray-600 leading-7">
+            {adv.desc}
+          </p>
+
+        </div>
+
+      ))}
+
+    </div>
+
   </div>
 </section>
 {/* ── OUR PRODUCT RANGE ── */}
