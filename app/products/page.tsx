@@ -123,108 +123,77 @@ const currentProducts = filteredProducts.slice(
 
           </div>
         </section>
-<section className="py-16 bg-slate-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-   <div className="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4">
-
-  {/* LEFT */}
-  <div className="flex flex-wrap gap-3">
-
-    <button
-      onClick={() => {
-        setSelectedPhase("All");
-        setSelectedFrequency("All");
-        setCurrentPage(1);
-      }}
-      className={`px-6 py-2.5 rounded-xl font-bold transition ${
-        selectedPhase === "All" && selectedFrequency === "All"
-          ? "bg-primary text-white"
+        <section className="py-16 bg-slate-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center mb-6 gap-4">
+          {/* LEFT */}
+         <div className="flex flex-wrap gap-3">
+           <button
+            onClick={() => {
+            setSelectedPhase("All");
+            setSelectedFrequency("All");
+            setCurrentPage(1);
+          }}
+          className={`px-6 py-2.5 rounded-xl font-bold transition ${
+          selectedPhase === "All" && selectedFrequency === "All"
+            ? "bg-primary text-white"
           : "bg-white border border-slate-300"
-      }`}
-    >
-      All Products
-    </button>
+            }`}
+          >
+            All Products
+          </button>
 
-    <button
-      onClick={() => {
-        setSelectedFrequency("50");
-        setCurrentPage(1);
-      }}
+    <button onClick={() => {setSelectedFrequency("50"); setCurrentPage(1); }}
       className={`px-6 py-2.5 rounded-xl font-bold transition ${
         selectedFrequency === "50"
           ? "bg-primary text-white"
-          : "bg-white border border-slate-300"
-      }`}
-    >
-      50 Hz
-    </button>
+          : "bg-white border border-slate-300"}`}>
+          50 Hz
+      </button>
 
-    <button
-      onClick={() => {
-        setSelectedFrequency("60");
-        setCurrentPage(1);
-      }}
-      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+      <button onClick={() => { setSelectedFrequency("60"); setCurrentPage(1); }}
+        className={`px-6 py-2.5 rounded-xl font-bold transition ${
         selectedFrequency === "60"
           ? "bg-primary text-white"
-          : "bg-white border border-slate-300"
-      }`}
-    >
-      60 Hz
-    </button>
+          : "bg-white border border-slate-300" }`} >
+          60 Hz
+      </button>
+       </div>
 
-  </div>
-
-  {/* RIGHT */}
-  <div className="flex flex-wrap gap-3">
-
-    <button
-      onClick={() => {
-        setSelectedPhase("3-phase");
-        setCurrentPage(1);
-      }}
-      className={`px-6 py-2.5 rounded-xl font-bold transition ${
+      {/* RIGHT */}
+      <div className="flex flex-wrap gap-3">
+        
+       <button onClick={() => { setSelectedPhase("3-phase"); setCurrentPage(1);}}
+        className={`px-6 py-2.5 rounded-xl font-bold transition ${
         selectedPhase === "3-phase"
           ? "bg-primary text-white"
-          : "bg-white border border-slate-300"
-      }`}
-    >
-      Three Phase
-    </button>
+          : "bg-white border border-slate-300" }`}>
+          Three Phase
+          </button>
+          
+            <button  onClick={() => { setSelectedPhase("1-phase"); setCurrentPage(1);}}
+            className={`px-6 py-2.5 rounded-xl font-bold transition ${
+            selectedPhase === "1-phase"
+            ? "bg-primary text-white"
+            : "bg-white border border-slate-300"}`} >
+            Single Phase
+           </button>  
+             </div>
+             </div>
 
-    <button
-      onClick={() => {
-        setSelectedPhase("1-phase");
-        setCurrentPage(1);
-      }}
-      className={`px-6 py-2.5 rounded-xl font-bold transition ${
-        selectedPhase === "1-phase"
-          ? "bg-primary text-white"
-          : "bg-white border border-slate-300"
-      }`}
-    >
-      Single Phase
-    </button>
-
-  </div>
-
-</div>
-
-   <div className="w-full overflow-x-auto rounded-2xl shadow-lg border border-slate-200 bg-white">
-  <table className="w-full min-w-[900px]">
-
-        <thead className="bg-primary text-white">
-          <tr>
-            <th className="px-6 py-4 text-left">Product Model</th>
-            <th className="px-6 py-4 text-center">Phase</th>
-            <th className="px-6 py-4 text-center">Series</th>
-            <th className="px-6 py-4 text-center">Description</th>
-            <th className="px-6 py-4 text-center">Details</th>
-          </tr>
-        </thead>
-
-        <tbody>
-{currentProducts.map((g, index) => (
+            <div className="w-full overflow-x-auto rounded-2xl shadow-lg border border-slate-200 bg-white">
+            <table className="w-full min-w-[900px]">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th className="px-6 py-4 text-left">Product Model</th>
+                <th className="px-6 py-4 text-center">Phase</th>
+                <th className="px-6 py-4 text-center">Series</th>
+                <th className="px-6 py-4 text-center">Description</th>
+                <th className="px-6 py-4 text-center">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentProducts.map((g, index) => (
           // {allProducts.map((g, index) => (
 
             <tr
@@ -245,99 +214,71 @@ const currentProducts = filteredProducts.slice(
               </td>
 
               {/* Phase */}
+              <td className="px-6 py-4 text-center"> {g.phase} </td>
+              <td className="px-6 py-4 text-center"> {g.series} </td>
+              <td className="px-6 py-4 text-center">{g.desc} </td>
               <td className="px-6 py-4 text-center">
-                {g.phase}
-              </td>
-
-              {/* Series */}
-              <td className="px-6 py-4 text-center">
-                {g.series}
-              </td>
-
-              {/* Description */}
-              <td className="px-6 py-4 text-center">
-                {g.desc}
-              </td>
-
-              {/* Specification */}
-              <td className="px-6 py-4 text-center">
-
-                <Link
-                  href={`/products/${g.slug}`}
-                  className="text-green-600 font-semibold hover:underline"
-                >
+                 <Link href={`/products/${g.slug}`}
+                  className="text-green-600 font-semibold hover:underline">
                   Specifications
                 </Link>
+               </td>
+                </tr>
+                ))}
+             </tbody>
+            </table>
+            </div>
 
-              </td>
+            <div className="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
+              <p className="text-sm text-slate-600"> Showing{" "} <span className="font-semibold">
+              {(currentPage - 1) * ITEMS_PER_PAGE + 1}
+              </span> {" "}to{" "} 
+              <span className="font-semibold">
+              {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}
+             </span>
+              {" "}of{" "}
+              <span className="font-semibold">
+                {/* {allProducts.length} */}
+                {filteredProducts.length}
+              </span>{" "}
+              Products
+            </p>
+            <div className="flex items-center gap-2">
+             <button
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
+            >
+              Previous
+            </button>
 
-            </tr>
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`w-10 h-10 rounded-lg font-semibold transition ${
+                  currentPage === i + 1
+                    ? "bg-primary text-white"
+                    : "bg-white border border-slate-300 hover:bg-slate-100"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
 
-          ))}
+            <button
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
+            >
+              Next
+            </button>
 
-        </tbody>
+          </div>
 
-      </table>
-
-    </div>
-
-    <div className="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
-
-  <p className="text-sm text-slate-600">
-    Showing{" "}
-    <span className="font-semibold">
-      {(currentPage - 1) * ITEMS_PER_PAGE + 1}
-    </span>
-    {" "}to{" "}
-    <span className="font-semibold">
-      {/* {Math.min(currentPage * ITEMS_PER_PAGE, allProducts.length)} */}
-      {Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length)}
-    </span>
-    {" "}of{" "}
-    <span className="font-semibold">
-      {/* {allProducts.length} */}
-      {filteredProducts.length}
-    </span>{" "}
-    Products
-  </p>
-
-  <div className="flex items-center gap-2">
-
-    <button
-      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-      disabled={currentPage === 1}
-      className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
-    >
-      Previous
-    </button>
-
-    {Array.from({ length: totalPages }).map((_, i) => (
-      <button
-        key={i}
-        onClick={() => setCurrentPage(i + 1)}
-        className={`w-10 h-10 rounded-lg font-semibold transition ${
-          currentPage === i + 1
-            ? "bg-primary text-white"
-            : "bg-white border border-slate-300 hover:bg-slate-100"
-        }`}
-      >
-        {i + 1}
-      </button>
-    ))}
-
-    <button
-      onClick={() =>
-        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-      }
-      disabled={currentPage === totalPages}
-      className="px-4 py-2 rounded-lg border border-slate-300 bg-white disabled:opacity-50 hover:bg-primary hover:text-white transition"
-    >
-      Next
-    </button>
-
-  </div>
-
-</div>
+        </div>
 
   </div>
 </section>
