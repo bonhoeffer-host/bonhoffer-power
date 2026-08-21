@@ -101,15 +101,31 @@ export default function ProductsPage() {
         {/* =========================================================
             HERO / SILENT DIESEL SERIES BANNER
         ========================================================= */}
-       <section className="relative h-[320px] sm:h-[380px] md:h-[430px] lg:h-[450px] overflow-hidden bg-black">
+<section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
   <Image
-    src="/banner/product-banner-img.webp"
-    alt="Silent Diesel Series"
+    src="/banner/contact-banner.webp"
+    alt="Product"
     fill
     priority
     sizes="100vw"
     className="object-cover object-[15%_center] sm:object-center"
   />
+
+ 
+
+  {/* White Text */}
+  <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+    <div className="max-w-2xl">
+      <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
+         Power Solutions
+      </h1>
+
+      <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg">
+        Explore our reliable range of high-performance generators, built for
+        dependable power and lasting performance.
+      </p>
+    </div>
+  </div>
 </section>
   {/* ── BANNER TAGLINE ── */}
 <section className="w-full h-[80px] sm:h-[86px] bg-[#EAE9E9] border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">

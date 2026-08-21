@@ -113,21 +113,31 @@ export default function ContactPage() {
       <main className="pt-16">
 
         {/* ── HERO BANNER ── */}
-        <section className="relative h-[220px] md:h-[260px] flex items-center overflow-hidden bg-slate-950">
-          <div className="absolute inset-0">
-            <Image src="/banner.webp" alt="Contact Bonhoeffer Power" fill className="object-cover object-center opacity-30 scale-105" priority />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <span className="font-mono inline-block bg-primary/25 border border-primary/40 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 shadow-md">
-              CONTACT &amp; INQUIRY
-            </span>
-            <h1 className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
-              Get In Touch With <span className="font-display text-primary-light">Bonhoeffer</span>
-            </h1>
-            <p className="text-slate-300 text-sm md:text-base mt-2 max-w-xl">We are here to assist with product inquiries, distributor applications, and technical support.</p>
-          </div>
-        </section>
+       <section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
+  <Image
+    src="/banner/contact-banner.webp"
+    alt="Contact Us"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-[15%_center] sm:object-center"
+  />
+
+
+  {/* White Text */}
+  <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+    <div className="max-w-2xl">
+      <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
+        Get In Touch
+      </h1>
+
+      <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg">
+        Have questions or need assistance? Our team is here to help with
+        reliable power solutions and expert support.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* ── CONTACT INFO CARDS ── */}
         <section className="py-20 bg-slate-50">
@@ -163,7 +173,7 @@ export default function ContactPage() {
                 {
                   icon: "🕒",
                   label: "WORKING HOURS",
-                  lines: ["MONDAY - FRIDAY", "9:00 AM – 6:00 PM"],
+                  lines: ["24/7"],
                   href: null,
                   cta: null,
                 },
