@@ -3,10 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 // import { useState } from "react";
 import { useState, useEffect } from "react";
+import {Fuel, VolumeX, Zap, HardHat, Wrench, CircleDollarSign, Snowflake,SlidersHorizontal,RefreshCw,
+} from "lucide-react";
 
 const generators = [
   {
-    img: "/BON-DG35Kw (2).jpg",
+    img: "/products/Front view 1.webp",
     name: "BON-DG-11KW-1P",
     tag: "11 kW",
     desc: "11 kW Silent Diesel Generator",
@@ -27,7 +29,7 @@ const generators = [
     ],
   },
   {
-    img: "/BON-DG35Kw (3).jpg",
+    img: "/products/Front view 2.webp",
     name: "BON-DG-17KW-1P",
     tag: "17 kW",
     desc: "17 kW Silent Diesel Generator",
@@ -48,7 +50,7 @@ const generators = [
     ],
   },
   {
-    img: "/BON-DG35Kw (4).jpg",
+    img: "/products/2 pt. view 2 1.webp",
     name: "BON-DG-20KW-1P",
     tag: "20 kW",
     desc: "20 kW Silent Diesel Generator",
@@ -69,7 +71,7 @@ const generators = [
     ],
   },
   {
-    img: "/BON-DG35Kw (5).jpg",
+    img: "/products/2 pt. view 1.webp",
     name: "BON-DG-25KW-1P",
     tag: "25 kW",
     desc: "25 kW Silent Diesel Generator",
@@ -92,633 +94,1264 @@ const generators = [
 ];
 
 
-const advantages = [
+const faqs = [
   {
-    icon: "⛽",
-    title: "High Fuel Efficiency",
-    desc: "Optimized engines deliver maximum power with lower fuel consumption and reduced operating costs.",
+    question: "What size generator do I need for my home?",
+    answer:
+      "Size depends on the critical loads you want to keep running (HVAC, lights, fridge, well pump). Use our sizing calculator or consult a licensed electrician for a precise load calculation.",
   },
   {
-    icon: "🔇",
-    title: "Silent Operation",
-    desc: "Advanced canopy design reduces noise for comfortable and quiet performance.",
+    question: "How often should I maintain my portable generator?",
+    answer:
+      "Check oil and filters after every 50 hours of use. Run a monthly exercise cycle (5–10 minutes) to keep the engine and alternator healthy. Store fuel with a stabilizer when not in use.",
   },
   {
-    icon: "⚡",
-    title: "Reliable Power",
-    desc: "Stable and uninterrupted power supply for homes, industries, and businesses.",
+    question: "Can I install a standby generator myself?",
+    answer:
+      "No. Standby installations require a licensed electrician to ensure safe connection to your electrical panel and meet local building codes.",
   },
   {
-    icon: "🏗️",
-    title: "Heavy-Duty Design",
-    desc: "Built with durable components to perform in demanding conditions.",
-  },
-  {
-    icon: "🔧",
-    title: "Easy Maintenance",
-    desc: "User-friendly design simplifies servicing and reduces downtime.",
-  },
-  {
-    icon: "💰",
-    title: "Low Operating Cost",
-    desc: "Efficient performance with reduced maintenance and running expenses.",
-  },
-  {
-    icon: "❄️",
-    title: "Advanced Cooling",
-    desc: "Efficient cooling system ensures reliable operation in all conditions.",
-  },
-  {
-    icon: "⏳",
-    title: "Long Service Life",
-    desc: "Premium components ensure durability and extended performance.",
-  },
-  {
-    icon: "🎛️",
-    title: "Stable Power Output",
-    desc: "Consistent voltage and frequency protect your electrical equipment.",
-  },
-  {
-    icon: "🔄",
-    title: "Continuous Operation",
-    desc: "Designed for long hours of reliable industrial performance.",
+    question: "What is the recommended runtime before refueling?",
+    answer:
+      "Refuel when the tank reaches 1/4 full. Running too low can cause condensation in the tank and reduce engine life. Always follow safe shutdown and refueling procedures.",
   },
 ];
-
 const applications = [
   {
-    icon: "🏠",
-    title: "Residential Backup Power",
-    img: "/BON-DG35Kw (2).jpg",
-    paras: [
-      "Reliable diesel generators provide uninterrupted backup power for homes during outages. They support lighting, AC, refrigerators, water pumps, security systems, and other essential appliances.",
-      "Designed for quiet operation and efficient performance, they ensure comfort, safety, and peace of mind."
-    ],
+    title: "Residential",
+    img: "Applications/Residential.webp",
   },
 
   {
-    icon: "🏢",
-    title: "Commercial Buildings",
-    img: "/BON-DG35Kw (3).jpg",
-    paras: [
-      "Bonhoeffer generators deliver dependable backup power for offices, business centers, and commercial facilities.",
-      "They support critical systems including lighting, elevators, HVAC, IT infrastructure, and security systems to maintain business continuity."
-    ],
+    title: "CONSTRUCTION",
+    img: "Applications/Construction.webp",
+
   },
 
   {
-    icon: "🏗️",
-    title: "Construction Sites",
-    img: "/BON-DG35Kw (4).jpg",
-    paras: [
-      "Built for demanding environments, our generators provide reliable power for construction tools, machinery, lighting, and site operations.",
-      "Durable design ensures continuous performance and reduced downtime at project locations."
-    ],
+    title: "COMMERCIAL",
+    img: "Applications/Commercial.webp",
+    },
+
+  {
+    title: "INDUSTRIAL",
+    img: "Applications/Commercial.webp",
   },
 
   {
-    icon: "🏭",
-    title: "Industrial Facilities",
-    img: "/BON-DG35Kw (5).jpg",
-    paras: [
-      "Our industrial generators deliver stable power for factories, manufacturing units, and processing facilities.",
-      "Designed for heavy-duty applications, they help maintain production and operational efficiency."
-    ],
+    title: "HOSPITAL & HEALTHCARE",
+    img: "Applications/Hospital.webp",
   },
 
   {
-    icon: "🏥",
-    title: "Hospitals & Healthcare",
-    img: "/BON-DG35Kw (6).jpg",
-    paras: [
-      "Reliable backup power solutions for hospitals, clinics, and healthcare facilities where continuous electricity is essential.",
-      "Supports medical equipment, emergency systems, lighting, and critical healthcare operations."
-    ],
+    title: "HOTEL & Restaurants",
+    img: "Applications/Hotel.webp",
+   
   },
 
   {
-    icon: "🏫",
-    title: "Schools & Institutions",
-    img: "/BON-DG35Kw.jpg",
-    paras: [
-      "Provides dependable backup power for schools, colleges, and educational facilities.",
-      "Keeps classrooms, labs, servers, lighting, and essential systems running during outages."
-    ],
-  },
-
-  {
-    icon: "🏨",
-    title: "Hotels & Restaurants",
-    img: "/a1.webp",
-    paras: [
-      "Ensures uninterrupted power for hotels, restaurants, and hospitality businesses.",
-      "Supports lighting, cooling systems, kitchens, refrigeration, and guest services."
-    ],
-  },
-
-  {
-    icon: "🏪",
     title: "Retail Stores",
-    img: "/a3.webp",
-    paras: [
-      "Reliable generators help retail businesses maintain smooth operations during power failures.",
-      "Supports POS systems, lighting, refrigeration, security, and customer services."
-    ],
+    img: "Applications/Retail.webp",
   },
 
   {
-    icon: "📦",
-    title: "Warehouses",
-    img: "/a4.webp",
-    paras: [
-      "Provides dependable power for warehouses, logistics centers, and storage facilities.",
-      "Supports lighting, security systems, equipment, and operational activities."
-    ],
-  },
-
-  {
-    icon: "🌾",
-    title: "Agricultural Farms",
-    img: "/a5.webp",
-    paras: [
-      "Designed to support farms with reliable power for irrigation, pumps, ventilation, and essential equipment.",
-      "Helps maintain productivity and smooth agricultural operations."
-    ],
-  },
-
-  {
-    icon: "📡",
-    title: "Telecommunications",
-    img: "/silent-generator.webp",
-    paras: [
-      "Provides reliable backup power for telecom towers and communication infrastructure.",
-      "Ensures continuous connectivity by supporting critical network equipment."
-    ],
-  },
-
-  {
-    icon: "🎪",
     title: "Event Power Supply",
-    img: "/banner.webp",
-    paras: [
-      "Reliable temporary power solutions for concerts, exhibitions, weddings, and outdoor events.",
-      "Supports lighting, sound systems, catering equipment, and event infrastructure."
-    ],
+    img: "Applications/Event.webp",
+  },
+
+  {
+    title: "WAREHOUSES",
+    img: "Applications/Warehouse.webp",
+  },
+
+  
+];
+const slides = [
+  {
+    image: "/banner/banner2.jpeg",
+    label: "Built for Reliability",
+    title: (
+      <>
+        Trusted Power.
+        <br />
+        Lasting Performance.
+      </>
+    ),
+    description:
+      "VoltForge generators deliver heavy-duty performance with industrial-grade fuel efficiency, quiet operation, and weatherproof construction. Built to keep you running—no matter what.",
+  },
+  {
+    image: "/banner/BON Power .webp",
+    label: "Built for Reliability",
+    title: (
+      <>
+        Power You Can
+        <br />
+        Count On.
+      </>
+    ),
+    description:
+      "Dependable generator solutions engineered for consistent performance, fuel efficiency, and long-lasting operation in demanding conditions.",
+  },
+  {
+    image: "/banner/Power-banner-4.webp",
+    label: "Built for Reliability",
+    title: (
+      <>
+        Performance That
+        <br />
+        Goes Further.
+      </>
+    ),
+    description:
+      "Advanced power technology designed to deliver efficient operation, strong performance, and dependable power whenever you need it.",
+  },{
+    image: "/banner/Power-banner2.webp",
+    label: "Built for Reliability",
+    title: (
+      <>
+        Stay Powered.
+        <br />
+        Stay Productive.
+      </>
+    ),
+    description:
+      "Keep your home, business, and essential equipment running with reliable generators built for continuous and efficient power delivery.",
+  },
+  {
+    image: "/banner/Power-banner5.webp",
+    label: "Built for Reliability",
+    title: (
+       <>
+        Powerful Solutions.
+        <br />
+        Proven Reliability.
+      </>
+    ),
+    description:
+      "From everyday backup power to demanding applications, our generators are built to deliver dependable performance when it matters most.",
+  },
+  {
+    image: "/banner/Power-banner6.webp",
+    label: "Built for Reliability",
+    title: (
+      <>
+        Ready for the
+        <br />
+        Toughest Jobs.
+      </>
+    ),
+    description:
+      "Rugged generator solutions built to perform across residential, commercial, agricultural, and industrial environments.",
+  },
+  {
+    image: "/banner/web banner power.webp",
+    label: "Engineered for Performance",
+    title: (
+      <>
+        Power When.
+        <br />
+        You Need It Most.
+      </>
+    ),
+    description:
+      "Advanced generator technology delivers dependable power, efficient operation, and rugged durability for homes, businesses, and demanding industrial applications.",
   },
 ];
+
 
 export default function Home() {
   const [activeApp, setActiveApp] = useState<number | null>(null);
   
         const [selectedProduct, setSelectedProduct] = useState(generators[0]);
+        const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+        const getSpec = (highlights: string[], label: string) => {
+  const item = highlights.find((text) =>
+    text.toLowerCase().startsWith(label.toLowerCase())
+  );
+
+  if (!item) return "-";
+
+  return item.split(":-")[1]?.trim() || "-";
+};
+ const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const slide = slides[currentSlide];
+
 
 
   return (
     <>
     <main className="pt-16">
-  <section
-    id="home"
-    className="relative flex items-center overflow-hidden min-h-[460px] md:min-h-[440px] lg:min-h-[520px] py-10 md:py-0"
-  >
-    {/* Background */}
-    <div className="absolute inset-0">
-      <Image
-        src="/banner.webp"
-        alt="Bonhoeffer Power Banner"
+    <section
+      id="home"
+      className="relative min-h-[520px] overflow-hidden sm:min-h-[560px] lg:min-h-[650px] xl:min-h-[680px]"
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+       <Image
+        key={currentSlide}
+        src={slide.image}
+        alt="Bonhoeffer Power Generator"
         fill
         priority
-        className="object-cover object-center"
+        className="object-cover object-center transition-opacity duration-700"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-dark-green/95 via-dark-green/85 to-transparent" />
-    </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/5" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/30 to-transparent" />  </div>
 
-    {/* Content */}
-    <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl">
+      {/* Top Status */}
+      <div className="absolute right-6 top-6 z-10 hidden text-[9px] font-mono uppercase tracking-[0.18em] text-white/60 sm:block md:right-10 md:top-8">
+        <div>
+          SYS.STAT: <span className="text-green-400">ONLINE</span>
+        </div>
 
-        {/* Badge */}
-        <span className="inline-flex items-center gap-2 mb-5 rounded-full border border-primary/40 bg-primary/20 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-light sm:text-xs">
-          ⚡ Bonhoeffer Power • Silent Diesel Generators
-        </span>
+        <div>
+          PWR.OUT: <span className="text-white">MAX</span>
+        </div>
+
+        <div>
+          NOISE.LVL: <span className="text-yellow-400">LOW</span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 flex min-h-[520px] items-end sm:min-h-[560px] lg:min-h-[650px] xl:min-h-[680px]">
+        <div className="mx-auto w-full max-w-7xl px-5 pb-14 sm:px-8 sm:pb-16 lg:px-10 lg:pb-20">
+          <div className="max-w-3xl">
+
+            {/* Small Label */}
+            <div
+              key={`label-${currentSlide}`}
+              className="mb-3 animate-[fadeIn_0.6s_ease-in-out] text-[10px] font-bold uppercase tracking-[0.16em] text-primary-light sm:text-xs"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              {slide.label}
+            </div>
+
+            {/* Heading */}
+            <h1
+              key={`title-${currentSlide}`}
+              className="font-display mb-6 animate-[fadeIn_0.7s_ease-in-out] text-3xl font-black uppercase leading-[0.98] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[52px]"
+            >
+              {slide.title}
+            </h1>
+
+            {/* Description */}
+            <p
+              key={`description-${currentSlide}`}
+              className="font-sans mb-8 max-w-[500px] animate-[fadeIn_0.8s_ease-in-out] text-sm leading-7 text-white/85 sm:text-base md:text-lg"
+            >
+              {slide.description}
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="/contact"
+                className="font-mono inline-flex min-h-[40px] items-center justify-center border border-white/80 bg-black/30 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-white hover:text-black sm:min-h-[44px] sm:px-6 sm:text-xs"
+              >
+                Request a Quote
+
+                <span className="ml-2 text-sm">
+                  →
+                </span>
+              </Link>
+
+              <a
+                href="#products"
+                className="font-mono inline-flex min-h-[40px] items-center justify-center border border-white/50 bg-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#353535] backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black sm:min-h-[44px] sm:px-6 sm:text-xs"
+              >
+                Explore Generator
+
+                <span className="ml-2 text-sm">
+                  →
+                </span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Slider Dots */}
+      <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2 sm:right-10">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`h-1.5 transition-all duration-300 ${
+              currentSlide === index
+                ? "w-8 bg-white"
+                : "w-3 bg-white/40 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Slide Number */}
+      <div className="absolute bottom-6 left-6 z-20 font-mono text-[9px] tracking-[0.2em] text-white/60 sm:left-10">
+        0{currentSlide + 1} / 0{slides.length}
+      </div>
+    </section>
+
+
+{/* Trust Strip */}
+<section className="w-full bg-white">
+  <div className="mx-auto flex min-h-[100px] items-center justify-center px-4 py-7 sm:min-h-[110px] sm:py-8 md:min-h-[120px]">
+    <p className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm"
+    >
+      Trusted by Contractors, Homeowners, and Site Operators Worldwide
+    </p>
+  </div>
+</section>
+
+
+
+{/* GLOBAL PRESENCE */}
+<section className="relative overflow-hidden bg-[#050505] py-16 sm:py-20 lg:py-24">
+  <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-5 sm:px-8 lg:flex-row lg:gap-14 lg:px-10">
+
+    {/* LEFT CONTENT */}
+    <div className="relative z-10 w-full lg:w-[44%]">
+
+      {/* Heading Area */}
+      <div className="relative">
+
+        {/* Small Label */}
+        <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#9a9c3b]/30 bg-[#9a9c3b]/5 px-4 py-2">
+          <span className="h-2 w-2 rounded-full bg-[#9a9c3b] shadow-[0_0_12px_#9a9c3b]" />
+
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#b4b65a] sm:text-[11px]">
+            Our Global Reach
+          </span>
+        </div>
 
         {/* Heading */}
-        <h1 className="mb-5 text-3xl font-black leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-          Trusted Power.
+        <h2 className="max-w-[520px] text-[48px] font-black uppercase leading-[0.88] tracking-[-0.045em] text-white sm:text-[60px] lg:text-[70px]">
+          Global
           <br />
-          <span className="text-primary-light">
-            Lasting Performance.
+
+          <span className="text-transparent [-webkit-text-stroke:1px_#ffffff]">
+            Presence
           </span>
-        </h1>
+        </h2>
+
+        {/* Accent */}
+        <div className="mt-7 flex items-center gap-3">
+          <span className="h-[4px] w-20 bg-[#9a9c3b]" />
+          <span className="h-[4px] w-8 bg-white/20" />
+          <span className="h-[4px] w-3 bg-white/10" />
+        </div>
 
         {/* Description */}
-        <p className="mb-8 max-w-xl text-sm leading-7 text-white/90 sm:text-base md:text-lg">
-          Efficient Silent Diesel Generators providing reliable, low-noise backup
-          power solutions for homes, industries, and businesses.
+        <p className="mt-6 max-w-[450px] text-[13px] leading-6 text-white/55 sm:text-[14px]">
+          Delivering reliable power solutions across borders, industries
+          and markets with a growing global network.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="#products"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-xl"
-          >
-            Explore Generators
-          </a>
+      </div>
 
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg border border-white/70 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-white/10"
-          >
-            Request a Quote
-          </Link>
+
+      {/* STATS */}
+      <div className="relative mt-9 space-y-3">
+
+        {/* Vertical Accent */}
+        <div className="absolute bottom-5 left-0 top-5 w-[2px] bg-gradient-to-b from-[#9a9c3b] via-[#9a9c3b]/50 to-transparent" />
+
+        {/* CONTINENTS */}
+        <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+
+          {/* Hover Glow */}
+          <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="relative flex items-center gap-5">
+
+            <div className="min-w-[105px]">
+              <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+                3<span className="text-[25px] align-top">+</span>
+              </span>
+            </div>
+
+            <div className="h-10 w-px bg-white/10" />
+
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+                Reach Across
+              </p>
+
+              <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+                Continents
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+
+        {/* COUNTRIES */}
+        <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+
+          <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="relative flex items-center gap-5">
+
+            <div className="min-w-[105px]">
+              <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+                23<span className="text-[25px] align-top">+</span>
+              </span>
+            </div>
+
+            <div className="h-10 w-px bg-white/10" />
+
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+                Worldwide
+              </p>
+
+              <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+                Countries
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+
+        {/* PRODUCTS */}
+        <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+
+          <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          <div className="relative flex items-center gap-5">
+
+            <div className="min-w-[105px]">
+              <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+                4500<span className="text-[25px] align-top">+</span>
+              </span>
+            </div>
+
+            <div className="h-10 w-px bg-white/10" />
+
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+                Complete Range
+              </p>
+
+              <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+                Products
+              </p>
+            </div>
+
+          </div>
         </div>
 
       </div>
     </div>
-  </section>
 
 
+    {/* RIGHT GIF */}
+    <div className="relative flex w-full items-center justify-center lg:w-[56%]">
 
-{/* ── ADVANTAGES SECTION ──
-<section
-  id="advantages"
-  className="overflow-hidden bg-white py-24"
->
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Glow */}
+      <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#9a9c3b]/10 blur-[90px] sm:h-[420px] sm:w-[420px]" />
 
-    {/* Section Header 
-    <div className="mb-14 text-center">
-      <span className="mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
-        Advantages
-      </span>
+      <img
+        src="https://bonhoeffermachines.com/public/index_files/Global%20Presence.gif"
+        alt="Bonhoeffer Machines Global Presence"
+        className="relative z-10 h-auto w-full max-w-[650px] object-contain"
+      />
 
-      <h2 className="text-3xl font-black text-gray-900 md:text-4xl lg:text-5xl">
-        Why Choose <span className="text-primary">Bonhoeffer Power?</span>
-      </h2>
-
-      <div className="mx-auto my-5 h-1 w-20 rounded-full bg-primary" />
-
-      <p className="mx-auto max-w-2xl text-base leading-7 text-gray-600">
-        Engineered to maximize efficiency, quietness, and performance under
-        demanding industrial and residential operating conditions.
-      </p>
     </div>
 
-    {/* Advantage Cards 
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-      {advantages.map((adv, index) => {
-        const images = [
-          "/BON-DG35Kw (2).jpg",
-          "/BON-DG35Kw (3).jpg",
-          "/BON-DG35Kw (4).jpg",
-          "/BON-DG35Kw (5).jpg",
-          "/BON-DG35Kw (2).jpg",
-          "/BON-DG35Kw (3).jpg",
-        ];
+  </div>
+</section>
 
-        return (
-          <div
-            key={adv.title}
-            className="group relative h-[250px] cursor-pointer overflow-hidden rounded-xl shadow-lg"
-          >
-            {/* Background Image 
-            <Image
-              src={images[index % images.length]}
-              alt={adv.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
-            />
 
-            {/* Overlay 
-            <div className="absolute inset-0 bg-black/80 transition-all duration-300 group-hover:bg-black/65" />
 
-            {/* Top Accent 
-            <div className="absolute left-0 top-0 h-1 w-full bg-primary" />
 
-            {/* Card Content 
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-5 text-center">
-              <h3 className="mb-3 text-sm font-bold uppercase leading-6 tracking-wide text-white">
-                {adv.title}
-              </h3>
+{/* ── APPLICATION SECTION ── */}
+<section
+  id="applications"
+  className="overflow-hidden border-b border-white/20 bg-black py-0"
+>
+  {/* Section Header */}
+  <div className="border-b border-white/25">
+    <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
-              <p className="text-xs leading-5 text-gray-200">
-                {adv.desc}
-              </p>
-            </div>
-          </div>
-        );
-      })}
+      <h2 className="font-mono text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base"
+      >
+        Versatile Power Applications
+      </h2>
+
+      <span className="font-mono hidden font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-light sm:block"
+      >
+        [ DEPLOYMENT ZONES ]
+      </span>
+
     </div>
   </div>
-</section> */}
+
+{/* Applications Grid */}
+<div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+
+    {applications.map((app) => (
+
+      <Link
+        href="/contact"
+        key={app.title}
+        className="group block overflow-hidden rounded-[3px] border border-white/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-light hover:shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+      >
+
+        {/* Card Title */}
+        <div className="flex h-[36px] items-center justify-center bg-white px-3">
+          <h3 className="font-mono font-bold text-[10px]  uppercase tracking-[0.12em] text-[#000000] sm:text-[16px]">
+            {app.title}
+          </h3>
+        </div>
+
+        {/* Image */}
+        <div className="relative aspect-[301/153] w-full overflow-hidden bg-gray-200">
+
+          <Image
+            src={app.img}
+            alt={app.title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+
+          {/* Black Overlay */}
+          <div className="absolute inset-0 bg-black/25 transition-all duration-300 group-hover:bg-black/15" />
+
+        </div>
+
+      </Link>
+
+    ))}
+
+  </div>
+
+</div>
+</section>
 
 
 
-{/* ── ADVANTAGES SECTION ── */}
+{/* ── OUR PRODUCT RANGE ── */}
 <section
-  id="advantages"
-  className="py-20 bg-white"
+  id="products"
+  className="border-b border-gray-200 bg-white"
 >
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* Section Header */}
+  <div className="bg-[#eeeeee] px-4 py-10 text-center sm:py-12 lg:py-14">
 
-    {/* Heading */}
+    <span className="font-sans inline-flex items-center rounded-full bg-[#555555] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.08em] text-white sm:text-[10px]"
+    >
+      Engineered for the Field
+    </span>
 
-    <div className="mb-14">
+    <h2 className="font-sans mt-3 text-3xl font-black tracking-tight text-[#444444] sm:text-4xl md:text-5xl"
+    >
+      Built for real-world reliability
+    </h2>
 
-      <span className="text-primary text-xs font-bold uppercase tracking-[0.2em]">
-        Advantages
-      </span>
+  </div>
 
-      <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-gray-900">
-        Why Choose Bonhoeffer Power?
-      </h2>
 
-      <p className="mt-5 max-w-3xl text-gray-600 leading-8">
-        Engineered to maximize efficiency, quietness, and performance under
-        demanding industrial and residential operational conditions.
-      </p>
+  {/* Product Showcase */}
+  <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
 
-    </div>
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(340px,0.75fr)] lg:items-stretch lg:gap-10">
 
-    {/* Cards */}
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* ================================================= */}
+      {/* LEFT SIDE */}
+      {/* ================================================= */}
 
-      {advantages.map((adv) => (
+      <div className="min-w-0">
 
-        <div
-          key={adv.title}
-          className="bg-white border border-gray-200 rounded-md p-6 transition-all duration-300 hover:border-primary hover:shadow-lg"
-        >
+        {/* Main Product Image */}
+        <div className="relative h-[280px] overflow-hidden border border-[#888888] bg-[#f7f7f7] sm:h-[380px] md:h-[430px] lg:h-[430px] xl:h-[450px]">
 
-          {/* Icon + Title */}
+          <Image
+            key={selectedProduct.img}
+            src={selectedProduct.img}
+            alt={selectedProduct.name}
+            fill
+            priority
+            className="object-contain p-3 transition-all duration-500 sm:p-5"
+          />
 
-          <div className="flex items-start gap-3 mb-4">
+        </div>
 
-            <div className="flex items-center justify-center w-9 h-9 rounded-md bg-primary/10 text-primary text-lg flex-shrink-0">
-              {adv.icon}
-            </div>
 
-            <h3 className="text-[18px] font-bold text-gray-900 leading-6">
-              {adv.title}
-            </h3>
+        {/* Thumbnail Gallery */}
+        <div className="mt-2 grid grid-cols-3 gap-2 sm:gap-3">
 
-          </div>
+          {generators.slice(0, 3).map((generator) => (
 
-          {/* Description */}
+            <button
+              key={generator.name}
+              type="button"
+              onClick={() => setSelectedProduct(generator)}
+              className={`
+                relative h-[80px] overflow-hidden border
+                bg-[#f5f5f5]
+                transition-all duration-300
+                sm:h-[95px]
+                md:h-[105px]
+                ${
+                  selectedProduct.name === generator.name
+                    ? "border-[#333333] ring-1 ring-[#333333]"
+                    : "border-[#999999] hover:border-[#444444]"
+                }
+              `}
+            >
 
-          <p className="text-[14px] text-gray-600 leading-7">
-            {adv.desc}
+              <Image
+                src={generator.img}
+                alt={generator.name}
+                fill
+                className="object-contain p-1.5 sm:p-2"
+              />
+
+            </button>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* ================================================= */}
+      {/* RIGHT SIDE */}
+      {/* ================================================= */}
+
+      <div className="flex flex-col">
+
+
+        {/* Product Name */}
+        <div className="flex min-h-[56px] items-center justify-between bg-[#eeeeee] px-4 sm:px-5">
+
+          <h3 className="font-display text-base  uppercase tracking-wide text-[#111111] sm:text-lg"
+          >
+            {selectedProduct.name}
+          </h3>
+
+          <span className="text-xl leading-none text-gray-500">
+            ↓
+          </span>
+
+        </div>
+
+
+        {/* Classification */}
+        <div className="mt-6">
+
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-400 sm:text-xs"
+          >
+            Classification
+          </p>
+
+          <p className=" font-display mt-2 text-sm  uppercase text-[#222222] sm:text-base"
+          >
+         
+            {selectedProduct.desc}
           </p>
 
         </div>
 
-      ))}
+
+        {/* ================================================= */}
+        {/* SPECIFICATIONS */}
+        {/* ================================================= */}
+
+        <div className="mt-6 grid grid-cols-2 border-y border-gray-300 py-4">
+
+
+          {/* LEFT SPECIFICATIONS */}
+          <div className="border-r border-gray-300 pr-5">
+
+            {/* Rated */}
+            <div className="flex items-center justify-between gap-3">
+
+              <span className="font-mono text-[10px] font-semibold uppercase text-gray-500 sm:text-xs"
+              >
+                Rated
+              </span>
+
+              <span className="font-mono text-[10px] font-bold text-gray-400 sm:text-xs"
+              >
+              
+                {getSpec(selectedProduct.highlights, "Rated")}
+              </span>
+
+            </div>
+
+
+            {/* Volt */}
+            <div className="mt-3 flex items-center justify-between gap-3">
+
+              <span className="font-mono text-[10px] font-semibold uppercase text-gray-500 sm:text-xs"
+              >
+                Volt
+              </span>
+
+              <span className="font-mono text-[10px] font-bold text-gray-400 sm:text-xs"
+              >
+                {getSpec(selectedProduct.highlights, "Volt")}
+              </span>
+
+            </div>
+
+          </div>
+
+
+          {/* RIGHT SPECIFICATIONS */}
+          <div className="pl-5">
+
+            {/* Phase */}
+            <div className="flex items-center justify-between gap-3">
+
+              <span className="font-mono text-[10px] font-semibold uppercase text-gray-500 sm:text-xs"
+              >
+                Phase
+              </span>
+
+              <span className="font-mono text-[10px] font-bold text-gray-400 sm:text-xs"
+              >
+                {getSpec(selectedProduct.highlights, "Phase")}
+              </span>
+
+            </div>
+
+
+            {/* Frequency */}
+            <div className="mt-3 flex items-center justify-between gap-3">
+
+              <span className="font-mono text-[10px] font-semibold uppercase text-gray-500 sm:text-xs"
+              >
+                Freq
+              </span>
+
+              <span className="font-mono text-[10px] font-bold text-gray-400 sm:text-xs"
+              >
+                {getSpec(selectedProduct.highlights, "Frequency")}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* ================================================= */}
+        {/* TECHNICAL INFORMATION */}
+        {/* ================================================= */}
+
+        <div className="mt-5 bg-[#101417] px-5 py-5 sm:px-6">
+
+          <div className="grid grid-cols-[100px_1fr] gap-y-3 text-[10px] sm:grid-cols-[120px_1fr] sm:text-xs">
+
+
+            {/* Engine */}
+            <span className="font-mono font-semibold uppercase tracking-wide text-white/70"
+            >
+              Engine:
+            </span>
+
+            <span className="font-mono font-medium text-[#d8df00]"
+            >
+              {getSpec(selectedProduct.highlights, "Engine")}
+            </span>
+
+
+            {/* Controller */}
+            <span className="font-mono font-semibold uppercase tracking-wide text-white/70"
+            >
+              Controller:
+            </span>
+
+            <span className="font-mono font-medium text-white/85"
+            >
+              {getSpec(selectedProduct.highlights, "Controller")}
+            </span>
+
+
+            {/* ATS */}
+            <span className="font-mono font-semibold uppercase tracking-wide text-white/70"
+            >
+              ATS:
+            </span>
+
+            <span className="font-mono font-medium text-white/85"
+            >
+              {getSpec(selectedProduct.highlights, "ATS")}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* ================================================= */}
+        {/* BUTTONS */}
+        {/* ================================================= */}
+
+        <div className="mt-auto pt-7">
+
+          <div className="grid grid-cols-1 gap-3">
+
+
+            <Link
+              href="/contact"
+              className="font-mono flex min-h-[44px] items-center justify-center border border-gray-400 bg-white px-5 text-[10px] font-bold uppercase tracking-[0.16em] text-gray-600 transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:text-xs"
+             >
+              Request a Quote
+
+              <span className="ml-2 text-sm">
+                →
+              </span>
+
+            </Link>
+
+
+            <a
+              href="#"
+              className="font-mono flex min-h-[44px] items-center justify-center bg-black px-5 text-[10px] font-bold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-primary sm:text-xs"
+           >
+              Explore Generator
+
+              <span className="ml-2 text-sm">
+                →
+              </span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
+
 </section>
-{/* ── OUR PRODUCT RANGE ── */}
-<section
-  id="products"
-  className="border-b border-gray-200 bg-white py-20"
->
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+{/* Advantages Section */}
+<section className="relative overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
+  <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
     {/* Section Header */}
-    <div className="mb-14 text-center">
-      <span className="mb-4 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-xs font-bold uppercase tracking-widest text-primary">
-        Our Product Range
-      </span>
+    <div className="mb-10 border-b border-white/20 pb-6 sm:mb-12 lg:mb-14">
+      <div className="flex items-start justify-between gap-6">
 
-      <h2 className="text-3xl font-black text-gray-900 lg:text-4xl">
-        Silent Diesel Generators
-      </h2>
+        <div className="max-w-3xl">
+          <h2 className="font-mono text-xl font-bold uppercase tracking-[0.14em] text-white sm:text-base"
+          >
+           SYSTEM ADVANTAGES
+         </h2>  
 
-      <div className="mx-auto my-5 h-1 w-20 rounded-full bg-primary" />
+          {/* <h2 className="mt-3 text-3xl font-black uppercase leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+            Why Choose Bonhoeffer Power?
+          </h2>
 
-      <p className="mx-auto max-w-2xl text-gray-600">
-        Explore our robust series of high-performance generators built for
-        continuous reliability, low maintenance, and silent operation.
-      </p>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+            Engineered to maximize efficiency, quietness, and performance under
+            demanding industrial and residential operational conditions.
+          </p> */}
+        </div>
+
+        <span className="hidden pt-2 text-[12px] font-mono uppercase tracking-[0.18em] text-primary-light md:block">
+          [ METRICS ]
+        </span>
+
+      </div>
     </div>
 
-    {/* Product Layout */}
-    <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[90px_1fr_1fr]">
+    {/* Advantages Grid */}
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-      {/* Thumbnail Gallery */}
-      <div
-        className="
-          scrollbar-hide
-          flex w-full gap-4 overflow-x-auto pb-2
-          lg:h-[500px] lg:w-[90px] lg:flex-col
-          lg:justify-center lg:overflow-y-auto lg:overflow-x-hidden lg:pb-0
-        "
-      >
-        {generators.map((generator) => (
-          <button
-            key={generator.name}
-            onClick={() => setSelectedProduct(generator)}
-            className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border transition-all duration-300 ${
-              selectedProduct.name === generator.name
-                ? "border-primary ring-2 ring-primary/30 shadow-lg"
-                : "border-gray-200 hover:border-primary"
-            }`}
-          >
-            <Image
-              src={generator.img}
-              alt={generator.name}
-              fill
-              className="object-cover"
-            />
-          </button>
-        ))}
-      </div>
+      {/* 01 - Fuel Efficiency */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            01
+          </span>
 
-      {/* Product Image */}
-      <div
-        className="
-          relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg
-          h-[280px] sm:h-[380px] md:h-[450px]
-          lg:h-[500px] xl:h-[550px]
-        "
-      >
-        <Image
-          key={selectedProduct.img}
-          src={selectedProduct.img}
-          alt={selectedProduct.name}
-          fill
-          priority
-          className="object-contain p-2 transition-transform duration-500 hover:scale-105 sm:p-4"
-        />
-      </div>
+          <Fuel
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
 
-      {/* Product Details */}
-      <div>
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+        Fuel Efficiency
+        </h3>
 
-        {/* Title */}
-        <h2 className="text-2xl font-black text-gray-900 sm:text-3xl lg:text-4xl">
-          {selectedProduct.name}
-        </h2>
-
-        {/* Description */}
-        <p className="mt-2 mb-6 text-sm text-gray-600 sm:text-base lg:mb-8 lg:text-lg">
-          {selectedProduct.desc}
+        <p className="text-xs font-sans leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Optimized engines deliver maximum power with lower fuel consumption
+          and reduced operating costs.
         </p>
-
-        {/* Highlights */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-          {selectedProduct.highlights.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-2"
-            >
-              <span className="mt-1 text-primary">⚡</span>
-
-              <span className="text-sm text-gray-700">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="mt-10 flex flex-wrap gap-4">
-          <button className="rounded-md bg-primary px-8 py-3 font-bold text-white transition-colors hover:bg-primary-hover">
-            REQUEST A QUOTE
-          </button>
-
-          <button className="rounded-md border border-gray-300 px-8 py-3 font-bold transition-colors hover:border-primary">
-            DOWNLOAD BROCHURE
-          </button>
-        </div>
-
-        {/* Specifications */}
-        <button className="mt-8 w-full rounded-md bg-gray-900 py-4 font-bold text-white transition-colors hover:bg-primary">
-          VIEW FULL SPECIFICATIONS
-        </button>
-
       </div>
+
+      {/* 02 - Silent Operation */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            02
+          </span>
+
+          <VolumeX
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Silent Operation
+        </h3>
+
+        <p className=" font-sans text-xs  leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Advanced canopy design reduces noise for comfortable and quiet
+          performance.
+        </p>
+      </div>
+
+      {/* 03 - Reliable Power */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            03
+          </span>
+
+          <Zap
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Reliable Power
+        </h3>
+
+        <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Stable and uninterrupted power supply for homes, industries, and
+          businesses.
+        </p>
+      </div>
+
+      {/* 04 - Heavy Duty */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            04
+          </span>
+
+          <HardHat
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Heavy-Duty Design
+        </h3>
+
+        <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Built with durable components to perform in demanding conditions.
+        </p>
+      </div>
+
+      {/* 05 - Maintenance */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            05
+          </span>
+
+          <Wrench
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Easy Maintenance
+        </h3>
+
+        <p className="text-xs font-sans leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          User-friendly design simplifies servicing and reduces downtime.
+        </p>
+      </div>
+
+      {/* 06 - Operating Cost */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            06
+          </span>
+
+          <CircleDollarSign
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Low Operating Cost
+        </h3>
+
+        <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Efficient performance with reduced maintenance and running expenses.
+        </p>
+      </div>
+
+      {/* 07 - Cooling */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            07
+          </span>
+
+          <Snowflake
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Advanced Cooling
+        </h3>
+
+        <p className=" font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Efficient cooling system ensures reliable operation in all
+          conditions.
+        </p>
+      </div>
+
+      {/* 08 - Stable Output */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            08
+          </span>
+
+          <SlidersHorizontal
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+       >
+          Stable Power Output
+        </h3>
+
+        <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Consistent voltage and frequency protect your electrical equipment.
+        </p>
+      </div>
+
+      {/* 09 - Continuous Operation */}
+      <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
+        <div className="mb-7 flex items-start justify-between">
+          <span className="text-[10px] font-mono text-white/60 sm:text-xs">
+            09
+          </span>
+
+          <RefreshCw
+            className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
+            strokeWidth={1.8}
+          />
+        </div>
+
+        <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
+        >
+          Continuous Operation
+        </h3>
+
+        <p className=" font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
+        >
+          Designed for long hours of reliable industrial performance.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
-        {/* ── APPLICATION SECTION ── */}
-        <section id="applications" className="py-24 bg-white relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 border border-primary/20">
-                APPLICATION
+
+
+{/* ── GET STARTED / CTA SECTION ── */}
+<section className="border-t border-gray-200 bg-white py-10 sm:py-11 md:py-12">
+  <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+
+    {/* Heading */}
+    <h2 className="font-display text-3xl font-black uppercase tracking-tight text-[#444444] sm:text-4xl md:text-[42px]"
+    >
+      Need Reliable Work ?
+    </h2>
+
+    {/* Description */}
+    <p className="font-sans mx-auto mt-3 max-w-2xl text-sm font-normal leading-6 text-gray-500 sm:text-base"
+    >
+      Contact our engineering team to select the ideal generator set for your requirements.
+    </p>
+
+    {/* Buttons */}
+    <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+
+      {/* Request Quote */}
+      <Link
+        href="/contact"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#999999] bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
+        >
+        Request a Quote
+
+        <span className="ml-2 text-sm">
+          →
+        </span>
+      </Link>
+
+      {/* Contact Team */}
+      <Link
+        href="/contact"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center bg-black px-6 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#333333] sm:min-h-[40px] sm:px-7 sm:text-[11px]"
+        >
+        Contact Team
+      </Link>
+
+    </div>
+
+  </div>
+</section>
+
+{/* ── FAQ SECTION ── */}
+<section
+  id="faq"
+  className="border-y border-[#d0d0d0] bg-[#eeeeee] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+>
+  <div className="mx-auto max-w-5xl">
+
+    {/* Badge */}
+    <div className="text-center">
+      <span className="font-sans inline-flex items-center rounded-full bg-[#555555] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white sm:px-5 sm:text-[11px]"
+      >
+        Support & FAQ
+      </span>
+    </div>
+
+    {/* Main Heading */}
+    <h2 className="font-sans mt-4 text-center text-3xl font-black leading-tight tracking-tight text-[#444444] sm:text-4xl md:text-5xl lg:text-[48px]"
+    >
+      Choose the Right Power for Your Needs
+    </h2>
+
+    {/* FAQ List */}
+    <div className="mx-auto mt-10 max-w-4xl space-y-4 sm:mt-12">
+
+      {faqs.map((faq, index) => {
+        const isOpen = openFaq === index;
+
+        return (
+          <div
+            key={index}
+            className="overflow-hidden rounded-lg bg-[#363636] shadow-sm transition-all duration-300"
+          >
+
+            {/* Question */}
+            <button
+              type="button"
+              onClick={() =>
+                setOpenFaq(isOpen ? null : index)
+              }
+              className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6 sm:py-5 md:px-7 md:py-6"
+            >
+
+              <span className="text-sm font-bold leading-6 text-white sm:text-base md:text-lg"
+              style={{fontFamily:"'Outfit', sans-serif"}}>
+                {faq.question}
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">
-                Versatile Power Across Industries
-              </h2>
-              <div className="w-16 h-1.5 bg-primary rounded-full mx-auto mb-4" />
-              <p className="text-slate-600 max-w-2xl mx-auto text-base">
-                Discover how Bonhoeffer industrial diesel generator sets provide dependable continuous and backup electricity across diverse operations.
-              </p>
-            </div>
 
-            {/* Quick Selector Pills */}
-            <div className="flex flex-wrap justify-center gap-2.5 mb-14">
-              {applications.map((app, idx) => (
-                <button
-                  key={app.title}
-                  onClick={() => setActiveApp(activeApp === idx ? null : idx)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border transition-all duration-200 ${
-                    activeApp === idx
-                      ? "bg-slate-900 text-white border-slate-900 shadow-lg scale-105"
-                      : "bg-slate-50 text-slate-700 border-slate-200 hover:border-primary hover:text-primary"
-                  }`}
+              {/* Arrow */}
+              <svg
+                className={`h-5 w-5 flex-shrink-0 text-white/80 transition-transform duration-300 sm:h-6 sm:w-6 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+
+            </button>
+
+
+            {/* Answer */}
+            <div
+              className={`grid transition-all duration-300 ${
+                isOpen
+                  ? "grid-rows-[1fr]"
+                  : "grid-rows-[0fr]"
+              }`}
+            >
+              <div className="overflow-hidden">
+
+                <p className="font-sans px-5 pb-6 text-sm leading-6 text-white/75 sm:px-6 sm:text-base sm:leading-7 md:px-7 md:text-[15px]"
                 >
-                  <span className="text-sm">{app.icon}</span>
-                  <span>{app.title}</span>
-                </button>
-              ))}
+                  {faq.answer}
+                </p>
+
+              </div>
             </div>
 
-            {/* Application Showcase Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-              {applications.map((app, idx) => (
-                <div
-                  key={app.title}
-                  id={`app-${idx}`}
-                  className={`bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col ${
-                    activeApp !== null && activeApp !== idx ? "opacity-50 blur-[0.5px]" : "opacity-100"
-                  }`}
-                >
-                  <div className="relative h-64 sm:h-72 w-full overflow-hidden">
-                    <Image
-                      src={app.img}
-                      alt={app.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width:1024px)100vw,50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                    <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-                      <span className="flex items-center gap-2 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-extrabold px-3.5 py-1.5 rounded-full shadow-md">
-                        <span>{app.icon}</span>
-                        <span>APPLICATION 0{idx + 1}</span>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-8 flex-1 flex flex-col justify-between bg-gradient-to-b from-white to-slate-50/50">
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-2.5">
-                        <span className="p-1.5 rounded-lg bg-primary-pale text-primary text-lg flex items-center justify-center">{app.icon}</span>
-                        <span>{app.title}</span>
-                      </h3>
-                      <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-                        {app.paras.map((para, pi) => (
-                          <p key={pi} className="font-normal">{para}</p>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="mt-8 pt-6 border-t border-slate-200/80 flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Industrial Grade</span>
-                      <Link href="/contact" className="inline-flex items-center gap-2 text-xs font-extrabold text-primary hover:text-primary-hover transition-colors">
-                        <span>Inquire for {app.title}</span>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
+        );
+      })}
 
-        {/* ── GET STARTED / CTA SECTION (NEW HIGH-END DESIGN) ── */}
-        <section className="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white relative overflow-hidden border-t border-slate-800">
-          {/* Ambient Lighting FX */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-primary/30 via-lime-500/20 to-transparent rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-deep/40 rounded-full blur-3xl pointer-events-none" />
+    </div>
 
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-lime-400 font-bold text-xs px-5 py-2 rounded-full uppercase tracking-widest mb-6 shadow-xl">
-              ⚡ GET STARTED
-            </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight tracking-tight">
-              Need a Reliable <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-lime-300 to-white">Silent Diesel Generator?</span>
-            </h2>
-            <p className="text-slate-300 text-base md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Our power experts are ready to help you select the ideal generator set for your application and power requirements. Contact our sales and engineering team today.
-            </p>
-            <div className="flex flex-wrap justify-center gap-5">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary-hover text-white font-extrabold px-9 py-4 rounded-xl shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:-translate-y-1 text-base">
-                <span>Request a Quote</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </Link>
-              <Link href="/contact" className="inline-flex items-center gap-3 border border-slate-700 hover:border-slate-500 bg-slate-800/80 hover:bg-slate-800 text-white font-extrabold px-9 py-4 rounded-xl transition-all hover:-translate-y-1 text-base shadow-md">
-                <span>Contact Our Team</span>
-              </Link>
-            </div>
-          </div>
-        </section>
+  </div>
+</section>
 
       </main>
     </>

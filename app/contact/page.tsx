@@ -61,14 +61,14 @@ const offices = [
     flag: "🇮🇳",
     country: "Registered & Corporate Office",
     name: "BONHOEFFER MACHINES PRIVATE LIMITED",
-    address: "Plot No 756, 2nd Floor, Udyog Vihar, Phase V, Gurugram, Haryana — Pin Code: 122001",
+    address: "Plot No 756, 2nd Floor, Udyog Vihar, Phase V, Gurugram, Haryana Pin Code: 122001",
     accent: "border-primary",
   },
   {
     flag: "🇨🇳",
     country: "China Office",
-    name: "NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD",
-    address: "Room A163, Building 003(4-1)(4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
+    name: " NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD, Room",
+    address: "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
     accent: "border-emerald-500",
   },
   {
@@ -108,55 +108,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen font-sans antialiased text-slate-800">
-      {/* ── NAVBAR ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/">
-              <Image src="/bonhoeffer_logo.webp" alt="Bonhoeffer Power" width={160} height={36} className="object-contain" priority />
-            </Link>
-            <ul className="hidden md:flex items-center gap-4 lg:gap-8">
-              <li>
-                <Link href="/" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">Home</Link>
-              </li>
-              {["About", "Products", "Contact"].map((l) => (
-                <li key={l}>
-                  {l === "About" ? (
-                    <Link href="/about" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">About</Link>
-                  ) : l === "Products" ? (
-                    <Link href="/products" className="text-slate-700 font-medium text-sm hover:text-primary transition-colors">Products</Link>
-                  ) : (
-                    <Link href="/contact" className="text-primary font-bold text-sm border-b-2 border-primary pb-1">Contact</Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <Link href="/contact" className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
-              Request a Quote
-            </Link>
-            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 text-slate-700" aria-label="menu">
-              <span className="block w-6 h-0.5 bg-slate-800 mb-1.5 transition-transform" style={{ transform: menuOpen ? "rotate(45deg) translateY(8px)" : "none" }} />
-              <span className="block w-6 h-0.5 bg-slate-800 mb-1.5" style={{ opacity: menuOpen ? 0 : 1 }} />
-              <span className="block w-6 h-0.5 bg-slate-800 transition-transform" style={{ transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "none" }} />
-            </button>
-          </div>
-          {menuOpen && (
-            <div className="lg:hidden border-t border-slate-100 py-4 flex flex-col gap-3">
-              <Link href="/" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">Home</Link>
-              {["About", "Products", "Contact"].map((l) =>
-                l === "About" ? (
-                  <Link key={l} href="/about" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">About</Link>
-                ) : l === "Products" ? (
-                  <Link key={l} href="/products" onClick={() => setMenuOpen(false)} className="text-slate-700 font-medium py-1">Products</Link>
-                ) : (
-                  <Link key={l} href="/contact" onClick={() => setMenuOpen(false)} className="text-primary font-bold py-1">Contact</Link>
-                )
-              )}
-              <Link href="/contact" className="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg text-center mt-2">Request a Quote</Link>
-            </div>
-          )}
-        </div>
-      </nav>
+    
 
       <main className="pt-16">
 
@@ -167,11 +119,11 @@ export default function ContactPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <span className="inline-block bg-primary/25 border border-primary/40 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 shadow-md">
+            <span className="font-mono inline-block bg-primary/25 border border-primary/40 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 shadow-md">
               CONTACT &amp; INQUIRY
             </span>
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
-              Get In Touch With <span className="text-primary-light">Bonhoeffer</span>
+            <h1 className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+              Get In Touch With <span className="font-display text-primary-light">Bonhoeffer</span>
             </h1>
             <p className="text-slate-300 text-sm md:text-base mt-2 max-w-xl">We are here to assist with product inquiries, distributor applications, and technical support.</p>
           </div>
@@ -181,37 +133,31 @@ export default function ContactPage() {
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 border border-primary/20">
+              <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 border border-primary/20">
                 REACH US
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900">Direct Contact Information</h2>
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900">Direct Contact Information</h2>
               <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-3" />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   icon: "📞",
                   label: "PHONE NUMBER",
-                  lines: ["096675 15523"],
-                  href: "tel:09667515523",
+                  lines: ["+91 87962 30337"],
+                  href: "tel:+918796230337.",
                   cta: "Call Now",
                 },
-                {
-                  icon: "💬",
-                  label: "WHATSAPP",
-                  lines: ["+91 96675 15523"],
-                  href: "https://wa.me/919667515523",
-                  cta: "Chat on WhatsApp",
-                },
+              
                 {
                   icon: "📧",
                   label: "EMAIL ADDRESSES",
                   lines: [
-                    "Sales: sales@bonhoeffermachines.com",
-                    "Support: support@bonhoeffermachines.com",
-                    "Career: hr@bonhoeffermachines.com",
+                    "Sales: crm.power@bonhoeffermachines.com",
+                    // "Support: support@bonhoeffermachines.com",
+                    // "Career: hr@bonhoeffermachines.com",
                   ],
-                  href: "mailto:sales@bonhoeffermachines.com",
+                  href: "mailto:crm.power@bonhoeffermachines.com",
                   cta: "Send Mail",
                 },
                 {
@@ -227,10 +173,10 @@ export default function ContactPage() {
                     <div className="w-14 h-14 rounded-2xl bg-primary-pale flex items-center justify-center text-2xl mb-5 group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
                       {card.icon}
                     </div>
-                    <p className="text-xs font-black text-primary uppercase tracking-wider mb-2">{card.label}</p>
+                    <p className="font-mono text-xs font-black text-primary uppercase tracking-wider mb-2">{card.label}</p>
                     <div className="space-y-1.5">
                       {card.lines.map((line, li) => (
-                        <p key={li} className="text-slate-700 text-sm font-semibold leading-snug">{line}</p>
+                        <p key={li} className="font-sans text-slate-700 text-sm font-semibold leading-snug">{line}</p>
                       ))}
                     </div>
                   </div>
@@ -255,23 +201,23 @@ export default function ContactPage() {
         <section className="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-14">
-              <span className="inline-block bg-primary/20 border border-primary/40 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
+              <span className="font-mono inline-block bg-primary/20 border border-primary/40 text-lime-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
                 OFFICES
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">Registered &amp; Corporate Locations</h2>
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-white">Registered &amp; Corporate Locations</h2>
               <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-3" />
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {offices.map((office) => (
                 <div
                   key={office.country}
-                  className={`bg-slate-800/60 border-t-4 ${office.accent} border-b border-l border-r border-slate-700/60 rounded-3xl p-8 hover:bg-slate-800 transition-all duration-300 shadow-xl flex flex-col justify-between`}
+                  className={`font-display bg-slate-800/60 border-t-4 ${office.accent} border-b border-l border-r border-slate-700/60 rounded-3xl p-8 hover:bg-slate-800 transition-all duration-300 shadow-xl flex flex-col justify-between`}
                 >
                   <div>
                     <div className="text-4xl mb-4">{office.flag}</div>
                     <span className="text-lime-400 text-xs font-bold uppercase tracking-wider block mb-2">{office.country}</span>
                     <h4 className="font-black text-white text-base mb-4 leading-snug">{office.name}</h4>
-                    <p className="text-slate-300 text-sm leading-relaxed font-normal">{office.address}</p>
+                    <p className="font-sans text-slate-300 text-sm leading-relaxed font-normal">{office.address}</p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-slate-700/50 text-xs text-slate-500 font-mono">
                     GLOBAL PRESENCE
@@ -286,15 +232,15 @@ export default function ContactPage() {
         <section className="py-24 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
-              <span className="inline-block bg-primary-pale border border-primary/20 text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
+              <span className="font-mono inline-block bg-primary-pale border border-primary/20 text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
                 GET IN TOUCH
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Submit Your Inquiry</h2>
-              <p className="text-slate-600 max-w-lg mx-auto text-sm">Select the form type below to reach out directly to our relevant department.</p>
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Submit Your Inquiry</h2>
+              <p className="font-sans text-slate-600 max-w-lg mx-auto text-sm">Select the form type below to reach out directly to our relevant department.</p>
             </div>
 
             {/* Form Selection Tabs */}
-            <div className="flex flex-col sm:flex-row border border-slate-200 rounded-2xl overflow-hidden mb-10 bg-slate-50 p-1.5 gap-1.5 shadow-sm">
+            {/* <div className="flex flex-col sm:flex-row border border-slate-200 rounded-2xl overflow-hidden mb-10 bg-slate-50 p-1.5 gap-1.5 shadow-sm">
               {tabs.map((tab) => (
                 <button
                   key={tab}
@@ -308,7 +254,7 @@ export default function ContactPage() {
                   {tab}
                 </button>
               ))}
-            </div>
+            </div> */}
 
             <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl p-8 md:p-12">
 
@@ -394,7 +340,7 @@ export default function ContactPage() {
                 </form>
               )}
 
-              {/* 2. DISTRIBUTOR FORM */}
+              {/* 2. DISTRIBUTOR FORM 
               {activeTab === "Distributor Form" && (
                 <form onSubmit={(e) => handleSubmit(e, "Distributor Form")} className="space-y-6">
                   <div>
@@ -449,9 +395,9 @@ export default function ContactPage() {
                     SUBMIT DISTRIBUTOR FORM
                   </button>
                 </form>
-              )}
+              )}*/}
 
-              {/* 3. INQUIRY FORM */}
+              {/* 3. INQUIRY FORM 
               {activeTab === "Inquiry Form" && (
                 <form onSubmit={(e) => handleSubmit(e, "Inquiry Form")} className="space-y-6">
                   <div>
@@ -494,62 +440,13 @@ export default function ContactPage() {
                     SUBMIT INQUIRY FORM
                   </button>
                 </form>
-              )}
+              )}*/}
             </div>
           </div>
         </section>
 
       </main>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-slate-950 text-white border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-slate-800/80">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <div>
-              <Image src="/bonhoeffer_logo.webp" alt="Bonhoeffer Power" width={160} height={36} className="object-contain brightness-0 invert mb-4" />
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Bonhoeffer Power delivers high-performance, quiet, and reliable silent diesel generators for residential, commercial, and industrial power demands.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                {socialLinks.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    title={s.label}
-                    target={s.href.startsWith("http") ? "_blank" : undefined}
-                    rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-1 transition-all"
-                  >
-                    {s.svg}
-                  </a>
-                ))}
-              </div>
-            </div>
-            {[
-              { title: "Quick Links", items: ["Home", "About Us", "Advantages", "Products", "Applications", "Contact Us"] },
-              { title: "Products & Services", items: ["Silent Generators", "Industrial Canopies", "ATS & Sync Panels", "Control Systems", "Spare Parts", "Maintenance Guidance"] },
-              { title: "Contact Details", items: ["sales@bonhoeffermachines.com", "support@bonhoeffermachines.com", "096675 15523", "Mon–Fri: 9AM – 6PM", "Gurugram, Haryana, India"] },
-            ].map((col) => (
-              <div key={col.title}>
-                <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-5 pb-2 border-b-2 border-primary inline-block">{col.title}</h4>
-                <ul className="space-y-2.5">
-                  {col.items.map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-slate-400 text-sm hover:text-white transition-colors flex items-center gap-1.5 hover:translate-x-1 duration-200">
-                        <span className="text-primary text-base">›</span>{item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-500 text-xs">
-          <p>© 2025 Bonhoeffer Power. All rights reserved.</p>
-          <p>Silent Diesel Generators – Power You Can Trust.</p>
-        </div>
-      </footer>
-    </div>
+         </div>
   );
 }

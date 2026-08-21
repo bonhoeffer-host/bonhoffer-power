@@ -133,7 +133,7 @@ export default function AboutPage() {
       <main className="pt-16">
 
         {/* ── COMPACT HERO BANNER ── */}
-        <section className="relative h-[150px] md:h-[180px] flex items-center overflow-hidden bg-dark-green">
+        {/* <section className="relative h-[150px] md:h-[180px] flex items-center overflow-hidden bg-dark-green">
           <div className="absolute inset-0">
             <Image
               src="/banner.webp"
@@ -145,14 +145,54 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-dark-green/60" />
           </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <span className="inline-block bg-primary/25 border border-primary/40 text-primary-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-1">
+            <span className="font-mono inline-block bg-primary/25 border border-primary/40 text-primary-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-1">
               Sobre Nosotros
             </span>
-            <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+            <h1 className="font-archivo text-xl md:text-2xl font-bold text-white tracking-tight">
               Bonhoeffer Machines
             </h1>
           </div>
-        </section>
+        </section> */}
+        <section className="relative h-[400px] sm:h-[430px] lg:h-[450px] overflow-hidden bg-black">
+
+  {/* Background Image */}
+  <Image
+    src="/banner/product-banner.jpeg"
+    alt="Bonhoeffer Machines"
+    fill
+    priority
+    className="object-cover object-center"
+  />
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/60" />
+
+  {/* Hero Content */}
+  <div className="relative z-10 h-full flex items-center justify-center text-center px-5">
+
+    <div className="max-w-4xl">
+
+      <h1 className="font-display text-white text-3xl sm:text-4xl md:text-[34px] lg:text-[38px] font-extrabold tracking-wide uppercase leading-tight drop-shadow-lg">
+        Sobre Nosotros
+      </h1>
+
+      <div className="flex justify-center mt-3 mb-5">
+        <div className="h-[4px] w-20 bg-lime-400 rounded-full shadow-[0_0_8px_rgba(163,230,53,0.6)]" />
+      </div>
+
+      <p className="font-sans mx-auto max-w-[760px] text-[11px] sm:text-[12px] md:text-[12px] lg:text-[13px] leading-[1.7] text-white/90 font-normal">
+        Bonhoeffer Machines is committed to delivering reliable, efficient,
+        and innovative machinery solutions designed to meet the evolving
+        needs of modern industries.
+        <br className="hidden sm:block" />
+        With a focus on quality, performance, and customer satisfaction,
+        we strive to build machines that deliver dependable results.
+      </p>
+
+    </div>
+
+  </div>
+</section>
 
         {/* ── NEW SECTION: BIENVENIDO A BONHOEFFER MACHINES (Exactly 1 Image: a5.webp) ── */}
         <section className="py-12 bg-white">
@@ -172,13 +212,13 @@ export default function AboutPage() {
               </div>
               {/* Text second (on the right on large screens) */}
               <div className="order-1 lg:order-2">
-                <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                   Bienvenido
                 </span>
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
+                <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
                   BIENVENIDO A BONHOEFFER MACHINES - ¡SU SOCIO EN EL PROGRESO!
                 </h2>
-                <div className="space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
+                <div className="font-sans space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
                   <p>
                     Nuestra historia comenzó en 2018 con Heine Corporation Private Limited. En los seis años iniciales, dimos pasos significativos en la industria y, en 2023, establecimos con orgullo Bonhoeffer Machines Private Limited como nuestra marca distintiva.
                   </p>
@@ -196,13 +236,13 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                   Descripción
                 </span>
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
+                <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
                   DESCRIPCIÓN DE LA EMPRESA
                 </h2>
-                <div className="space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
+                <div className="font-sans space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
                   <p>
                     Bonhoeffer es una marca de maquinaria, repuestos y herramientas de primera calidad para la agricultura, silvicultura, construcción, industria y jardinería, que trabaja en las tres principales regiones del mundo: América Central, América Latina y Asia. Nos esforzamos por ofrecer maquinaria de alta calidad para un uso duradero y eficiente. Tomando la simple creencia de cambiar vidas con un servicio fácil y compatible--Bonhoeffer entrega las mejores y más profesionales máquinas eléctricas. Nuestros productos satisfacen las necesidades del futuro con sus equipos avanzados y sostenibles que reducen la distancia entre la naturaleza y las personas.
                   </p>
@@ -245,15 +285,15 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="lg:col-span-7">
-                <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                   Mensaje del fundador
                 </span>
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
+                <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
                   Desde el escritorio del fundador ( Mensaje del fundador )
                 </h2>
                 <div className="relative bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100">
                   <span className="absolute top-2 left-4 text-6xl text-primary/10 font-serif">&ldquo;</span>
-                  <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed relative z-10">
+                  <div className="font-sans space-y-4 text-gray-600 text-sm md:text-base leading-relaxed relative z-10">
                     <p>
                       En Bonhoeffer Machines, nuestro viaje no se limita a las máquinas; se trata de crear asociaciones duraderas y contribuir al progreso de las industrias de todo el mundo. Acompáñenos en este increíble viaje mientras continuamos creciendo y generando un impacto positivo con nuestras soluciones de vanguardia.
                     </p>
@@ -279,13 +319,13 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                   Presencia
                 </span>
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
+                <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
                   NUESTRA PRESENCIA
                 </h2>
-                <div className="space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
+                <div className="font-sans space-y-4 text-gray-800 text-sm md:text-base leading-relaxed font-medium">
                   <p>
                     En Bonhoeffer Machines, empezamos con la visión de redefinir la industria de la maquinaria. Nuestra trayectoria es testimonio de nuestro compromiso con la innovación y la calidad. En cada máquina que creamos, infundimos la esencia de la ingeniería de precisión y la durabilidad. Nuestros clientes no se merecen menos. Nuestro éxito está profundamente arraigado en la confianza de nuestros clientes. Nos esforzamos continuamente por superar sus expectativas. La sostenibilidad no es sólo una tendencia; es nuestra responsabilidad.
                   </p>
@@ -315,10 +355,10 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-2xl md:text-3xl font-black text-white">
+                  <div className="font-sans text-2xl md:text-3xl font-black text-white">
                     <Counter target={s.value} suffix={s.suffix} />
                   </div>
-                  <div className="text-white/85 text-xs font-bold uppercase tracking-wider mt-1">
+                  <div className="font-sans text-white/85 text-xs font-bold uppercase tracking-wider mt-1">
                     {s.label}
                   </div>
                 </div>
@@ -343,13 +383,13 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="lg:col-span-7">
-                <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                   Manufactura
                 </span>
-                <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
+                <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight mb-3">
                   ¿CÓMO PRODUCIMOS?
                 </h2>
-                <div className="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+                <div className="font-sans space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
                   <p>
                     La filosofía de producción de Bonhoeffer se centra principalmente en mejorar la calidad del producto sin afectar negativamente al medio ambiente. Cada cierto tiempo introducimos los cambios necesarios en nuestro proceso de ingeniería para mejorar la calidad de nuestras máquinas, equipos y piezas. La fusión de la tecnología alemana y las normas europeas en el proceso de fabricación renueva nuestra gama de equipos de forma espectacular. Nos ayuda a mantener el decoro de nuestra marca entre los principales proveedores y exportadores.
                   </p>
@@ -366,10 +406,10 @@ export default function AboutPage() {
         <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+              <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                 Nuestra Filosofía
               </span>
-              <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
+              <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
                 Nuestra filosofía
               </h2>
             </div>
@@ -377,13 +417,13 @@ export default function AboutPage() {
               <div className="bg-dark-green rounded-2xl p-8 text-white relative overflow-hidden">
                 <span className="absolute top-2 right-4 text-6xl text-white/5 font-serif select-none">“</span>
                 <h3 className="text-xl font-bold text-primary-light mb-3">Visión</h3>
-                <p className="text-white/80 text-sm md:text-base leading-relaxed">
+                <p className="font-sans text-white/80 text-sm md:text-base leading-relaxed">
                   Tocar e influir positivamente en todas las vidas del planeta a través de nuestros excelentes productos y servicios.
                 </p>
               </div>
               <div className="bg-primary-pale rounded-2xl p-8 border border-primary/10">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Misión</h3>
-                <ul className="space-y-3 text-sm text-gray-700 leading-relaxed">
+                <ul className="font-sans space-y-3 text-sm text-gray-700 leading-relaxed">
                   <li><strong>1.</strong> Elaborar nuevas ideas y resoluciones para hacer más eficaz nuestra gama de productos. Ofrecer productos de alta calidad a precios razonables.</li>
                   <li><strong>2.</strong> Centrarnos en las ideas fundamentales respetuosas con la naturaleza en el proceso de fabricación.</li>
                   <li><strong>3.</strong> Ayudar a nuestros clientes potenciales a través de nuestros sólidos y amables servicios de atención al cliente.</li>
@@ -394,48 +434,65 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── HODs of Company (a7.webp, a8.webp, a9.webp) ── */}
         <section className="py-12 bg-gray-50 border-t border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                Liderazgo
-              </span>
-              <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
-                HOD's of Company
-              </h2>
-              <p className="text-gray-500 text-xs md:text-sm mt-2 max-w-2xl mx-auto">
-                En Bonhoeffer Machines, nuestro dinámico equipo está formado por profesionales cualificados en ventas, desarrollo de productos, mercadeo, cadena de suministro y recursos humanos.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {hods.map((hod) => (
-                <div key={hod.name} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 text-center">
-                  <div className="relative w-48 h-56 mx-auto mb-4 rounded-xl overflow-hidden border border-gray-100">
-                    <Image
-                      src={hod.img}
-                      alt={hod.name}
-                      fill
-                      className="object-cover object-top"
-                      sizes="192px"
-                    />
-                  </div>
-                  <h3 className="font-extrabold text-gray-900 text-base">{hod.name}</h3>
-                  <p className="text-gray-500 text-xs font-semibold mt-1">{hod.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div className="text-center mb-12">
+      <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+        Liderazgo
+      </span>
+
+      <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
+        HOD's of Company
+      </h2>
+
+      <p className="font-sans text-gray-500 text-xs md:text-sm mt-2 max-w-2xl mx-auto">
+        En Bonhoeffer Machines, nuestro dinámico equipo está formado por profesionales cualificados en ventas, desarrollo de productos, mercadeo, cadena de suministro y recursos humanos.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      {hods.map((hod) => (
+        <div
+          key={hod.name}
+          className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 text-center"
+        >
+      {/* Image */}
+        <div className="relative w-full h-64 sm:h-72">
+          <Image
+            src={hod.img}
+            alt={hod.name}
+            fill
+            className="object-fill"
+            sizes="(max-width: 640px) 100vw, 33vw"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="px-3 pt-1 pb-4">
+          <h3 className="font-sans font-extrabold text-gray-900 text-base">
+            {hod.name}
+          </h3>
+
+          <p className="font-sans text-gray-500 text-xs font-semibold mt-1">
+            {hod.role}
+          </p>
+        </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
         {/* ── FAQ ── */}
         <section id="faq" className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <span className="inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+              <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-2">
                 Preguntas
               </span>
-              <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
+              <h2 className="font-archivo text-xl md:text-2xl font-extrabold text-gray-900 tracking-tight">
                 PREGUNTAS FRECUENTES
               </h2>
             </div>
@@ -469,10 +526,10 @@ export default function AboutPage() {
         <section className="py-12 bg-dark-green text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="inline-block bg-primary/25 border border-primary/40 text-primary-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2">
+              <span className="font-mono inline-block bg-primary/25 border border-primary/40 text-primary-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-2">
                 Ubicaciones
               </span>
-              <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">
+              <h2 className="font-archivo text-xl md:text-2xl font-extrabold tracking-tight">
                 Sedes Registradas
               </h2>
             </div>
@@ -504,19 +561,19 @@ export default function AboutPage() {
             <h2 className="text-xl md:text-2xl font-black text-white">
               Únase a Nosotros en el Camino del Progreso
             </h2>
-            <p className="text-white/80 text-sm md:text-base mt-3 max-w-xl mx-auto">
+            <p className="font-sans text-white/80 text-sm md:text-base mt-3 max-w-xl mx-auto">
               Bonhoeffer Machines es más que una marca: es una promesa. Una promesa de calidad, sostenibilidad y un mañana más brillante.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="bg-dark-green hover:bg-dark-green/90 text-white font-bold px-6 py-3 rounded-lg text-sm transition-all"
+                className="font-mono bg-dark-green hover:bg-dark-green/90 text-white font-bold px-6 py-3 rounded-lg text-sm transition-all"
               >
                 Contáctenos Hoy
               </Link>
               <Link
                 href="/"
-                className="border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-sm transition-all"
+                className=" font-mono border-2 border-white text-white hover:bg-white/10 font-bold px-6 py-3 rounded-lg text-sm transition-all"
               >
                 Ver Productos
               </Link>
