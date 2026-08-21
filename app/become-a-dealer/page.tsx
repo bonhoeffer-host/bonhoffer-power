@@ -190,10 +190,9 @@ export default function BecomeDealerPage() {
                   Dealer Inquiry
                 </span>
 
-                <h2 className="mt-3 font-display text-2xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-4xl lg:text-5xl">
-                  Become a Bonhoeffer Dealer
+                <h2 className="mt-3 font-display text-xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-2xl lg:text-3xl">
+                Become a Bonhoeffer Dealer
                 </h2>
-
               </div>
 
               <span className="hidden shrink-0 pb-1 font-mono text-[11px] uppercase tracking-[0.18em] text-gray-400 md:block">
@@ -219,9 +218,9 @@ export default function BecomeDealerPage() {
                 [ WHY PARTNER WITH US ]
               </span>
 
-              <h3 className="mt-4 font-display text-2xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-3xl">
+             <h3 className="mt-4 font-display text-xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-2xl">
                 Let's Build a Stronger Partnership
-              </h3>
+                </h3>
 
               <p className="mt-5 max-w-xl font-sans text-sm leading-7 text-gray-600 sm:text-base">
                 Interested in becoming a Bonhoeffer dealer? Tell us about your
@@ -358,10 +357,9 @@ export default function BecomeDealerPage() {
                   [ DEALER REGISTRATION ]
                 </span>
 
-                <h3 className="mt-2 font-display text-2xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-3xl">
-                  Dealer Inquiry Form
+               <h3 className="mt-2 font-display text-xl font-black uppercase leading-tight tracking-wide text-gray-900 sm:text-2xl">
+                Dealer Inquiry Form
                 </h3>
-
                 <p className="mt-2 font-sans text-xs leading-5 text-gray-500 sm:text-sm">
                   Please provide your business details below.
                 </p>
