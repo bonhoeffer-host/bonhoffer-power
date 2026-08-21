@@ -52,7 +52,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all hover:-translate-y-0.5"
+            className="hidden md:inline-flex items-center gap-2 bg-[#353535] text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all hover:-translate-y-0.5"
           >
             <span>Request a Quote</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg text-center mt-2"
+              className="bg-[#353535] text-white text-sm font-bold px-5 py-2.5 rounded-lg text-center mt-2"
             >
               Request a Quote
             </Link>
