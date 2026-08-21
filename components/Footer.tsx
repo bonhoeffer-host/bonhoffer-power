@@ -81,7 +81,7 @@ export default function Footer() {
         {/* COPYRIGHT */}
         <div className="flex min-h-[32px] items-start pt-[7px] pb-2">
           <p className="text-[12px] font-bold uppercase leading-[13px] tracking-[1.4px]" style={{ color: "#bdbdbd", fontFamily: '"Courier New", Courier, monospace' }}>
-            © 2024 BONHOEFFER POWER - ENGINEERED PRECISION
+            © 2026 BONHOEFFER POWER - ENGINEERED PRECISION
           </p>
         </div>
       </div>
