@@ -310,7 +310,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/5" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/30 to-transparent" />  </div>
 
-      {/* Top Status */}
+      {/* Top Status
       <div className="absolute right-6 top-6 z-10 hidden text-[9px] font-mono uppercase tracking-[0.18em] text-white/60 sm:block md:right-10 md:top-8">
         <div>
           SYS.STAT: <span className="text-green-400">ONLINE</span>
@@ -323,7 +323,7 @@ export default function Home() {
         <div>
           NOISE.LVL: <span className="text-yellow-400">LOW</span>
         </div>
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 flex min-h-[520px] items-end sm:min-h-[560px] lg:min-h-[650px] xl:min-h-[680px]">
