@@ -33,7 +33,7 @@ export default function VideoPopup() {
 
         {/* VIDEO */}
         <video
-          src="/videos/video.mp4"
+          src="/videos/video2.mp4"
           autoPlay
           muted
           playsInline
