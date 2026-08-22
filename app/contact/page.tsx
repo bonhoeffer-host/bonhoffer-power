@@ -173,7 +173,7 @@ export default function ContactPage() {
                 {
                   icon: "🕒",
                   label: "WORKING HOURS",
-                  lines: ["24/7"],
+                  lines: ["24/7 Support & Assistance"],
                   href: null,
                   cta: null,
                 },
