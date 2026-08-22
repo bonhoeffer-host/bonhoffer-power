@@ -29,52 +29,37 @@ export default function BecomeDealerPage() {
       {/* =========================================================
           HERO SECTION
       ========================================================= */}
-      <section className="relative h-[400px] overflow-hidden bg-black sm:h-[430px] lg:h-[450px]">
-
-        {/* Background Image */}
+      <section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
         <Image
-          src="/banner/product-banner.jpeg"
-          alt="Become a Bonhoeffer Dealer"
+          src="/banner/contact-banner.webp"
+          alt="Product"
           fill
           priority
-          className="object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-[15%_center] sm:object-center"
         />
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* Hero Content */}
-        <div className="relative z-10 flex h-full items-center justify-center px-5 text-center sm:px-8">
-          <div className="w-full max-w-4xl">
-
-            {/* Small Label */}
-            <span className="mb-3 inline-block font-sans text-[10px] font-semibold uppercase tracking-[0.25em] text-lime-400 sm:text-xs">
-              Dealer Partnership
-            </span>
-
-            {/* Heading */}
-            <h1 className="font-display text-3xl font-extrabold uppercase leading-tight tracking-wide text-white drop-shadow-lg sm:text-4xl md:text-[34px] lg:text-[38px]">
-              Become a Dealer
+      
+       
+      
+        {/* White Text */}
+        <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+          <div className="max-w-2xl pt-4">
+            <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
+                Become a Dealer
             </h1>
-
-            {/* Green Line */}
-            <div className="mb-5 mt-3 flex justify-center">
-              <div className="h-[4px] w-20 rounded-full bg-lime-400 shadow-[0_0_8px_rgba(163,230,53,0.6)]" />
-            </div>
-
-            {/* Description */}
-            <p className="mx-auto max-w-[760px] font-sans text-[11px] font-normal leading-[1.7] text-white/90 sm:text-[12px] md:text-[12px] lg:text-[13px]">
+      
+            <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg">
               Partner with Bonhoeffer Machines and grow your business with
               reliable, efficient, and high-performance power solutions.
               <br className="hidden sm:block" />
               Join our dealer network and bring dependable machinery solutions
               to customers across your market.
             </p>
-
           </div>
         </div>
       </section>
-
+      
+      
 
       {/* =========================================================
           INTRODUCTION SECTION

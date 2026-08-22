@@ -24,12 +24,18 @@ export default async function ProductDetailPage({
       </div>
     );
   }
- const specs = Object.fromEntries( 
-  product.highlights.map((item) => { 
-    const [key, value] = item.split(" :- "); 
-    return [key.trim(), value?.trim() ?? ""]; 
-  }) 
-); 
+//  const specs = Object.fromEntries( 
+//   product.highlights.map((item) => { 
+//     const [key, value] = item.split(" :- "); 
+//     return [key.trim(), value?.trim() ?? ""]; 
+//   }) 
+// ); 
+const specs = Object.fromEntries(
+  product.highlights.map((item) => {
+    const [key, value] = item.split(" :- ");
+    return [key.trim(), value?.trim() ?? ""];
+  })
+);
  
 
 
@@ -38,7 +44,7 @@ export default async function ProductDetailPage({
         <main className="pt-16">
 
 {/* HERO BANNER */}
-<section className="relative h-[380px] overflow-hidden bg-black sm:h-[430px] lg:h-[480px] xl:h-[500px]">
+<section className="relative h-[380px] -4 overflow-hidden bg-black sm:h-[430px] lg:h-[480px] xl:h-[500px]">
 
   {/* Background */}
   <div className="absolute inset-0">
@@ -93,7 +99,7 @@ export default async function ProductDetailPage({
 </section>
 
 {/* PRODUCT DETAILS */}
-<section className="bg-white py-14 sm:py-16 lg:py-20">
+<section className="bg-white mb-4 py-14 sm:py-16 lg:py-20">
   <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
 
     <div className="grid grid-cols-1 gap-7 md:gap-8 lg:h-[430px] lg:grid-cols-[3.35fr_1.7fr_1.15fr] lg:items-stretch lg:gap-5">
@@ -121,10 +127,10 @@ export default async function ProductDetailPage({
   <div className="mt-3 grid h-[86px] shrink-0 grid-cols-4 gap-3">
 
     {[
-      "/products/Front view 1.webp",
-      "/products/Front view 2.webp",
-      "/products/2 pt. view 2 1.webp",
-      "/products/2 pt. view 1.webp",
+      "/products/side-1.webp",
+      "/products/side-2.webp",
+      "/products/side-3.webp",
+      "/products/side-4.webp",
     ].map((image, index) => (
 
       <button
@@ -181,9 +187,7 @@ export default async function ProductDetailPage({
             Classification
           </p>
           <p className="font-display mt-1 m-0 text-[9px] font-bold uppercase text-[#222]"> 
-            {product.name 
-              .replace(/^BON-DG-/i, "") 
-              .replace(/-/g, " ")} 
+            {product.name}
           </p> 
 
          
@@ -191,7 +195,7 @@ export default async function ProductDetailPage({
         </div>
 
 
-        {/* RATED */}
+                {/* RATED */}
         <div className="shrink-0 px-1.5 pb-3.5">
 
           <p className="m-0 text-[8px] font-medium uppercase tracking-[0.12em] text-[#999]">
@@ -201,11 +205,11 @@ export default async function ProductDetailPage({
           <div className="mt-1.5 grid grid-cols-2 text-[8px] font-bold uppercase text-[#222]">
 
             <span>
-              13kW
+              {specs["Prime Power"] || "-"}
             </span>
 
             <span className="text-right">
-              Phase: 1-Ph
+              Phase: {specs["Phase"] || "-"}
             </span>
 
           </div>
@@ -213,62 +217,53 @@ export default async function ProductDetailPage({
           <div className="mt-1.5 grid grid-cols-2 text-[8px] font-bold uppercase text-[#222]">
 
             <span>
-              Volt: 110/220V
+              Volt: {specs["Voltage"] || "-"}
             </span>
 
             <span className="text-right">
-              Freq: 60Hz
+              Freq: {specs["Frequency"] || "-"}
             </span>
 
           </div>
 
         </div>
 
-
-        {/* =====================================================
-            DARK SPECIFICATION BOX
-        ===================================================== */}
+                {/* =====================================================
+                    DARK SPECIFICATION BOX
+                ===================================================== */}
+                {/* DARK SPECIFICATION BOX */}
         <div className="min-h-0 flex-1 bg-[#0d1117] px-4 py-3.5">
 
           {/* STANDBY */}
           <div className="border-b border-white/20 pb-2.5">
-
-            <div className="flex items-center justify-between">
-
+            <div className="flex items-center justify-between gap-3">
               <span className="text-[8px] font-medium uppercase text-white">
                 Standby (kW/kVA)
               </span>
 
-              <span className="text-[9px] font-bold text-white">
-                13/15.1
+              <span className="text-right text-[9px] font-bold text-white">
+                {specs["Standby Power"] || "-"}
               </span>
-
             </div>
-
           </div>
 
 
           {/* PRIME */}
           <div className="border-b border-white/20 py-2.5">
-
-            <div className="flex items-center justify-between">
-
+            <div className="flex items-center justify-between gap-3">
               <span className="text-[8px] font-medium uppercase text-white">
                 Prime (kW/kVA)
               </span>
 
-              <span className="text-[9px] font-bold text-white">
-                12/15
+              <span className="text-right text-[9px] font-bold text-white">
+                {specs["Prime Power"] || "-"}
               </span>
-
             </div>
-
           </div>
 
 
           {/* ENGINE */}
           <div className="border-b border-white/20 py-2.5">
-
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
@@ -276,87 +271,93 @@ export default async function ProductDetailPage({
               </span>
 
               <span className="text-right text-[7.5px] font-semibold uppercase text-white">
-                FAW-4108D-28D
+                {specs["Engine"] || "-"}
               </span>
 
             </div>
+          </div>
 
+
+          {/* ASPIRATION */}
+          <div className="border-b border-white/20 py-2.5">
+            <div className="flex items-center justify-between gap-3">
+
+              <span className="text-[8px] font-medium uppercase text-white">
+                Aspiration
+              </span>
+
+              <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
+                {specs["Aspiration"] || "-"}
+              </span>
+
+            </div>
+          </div>
+
+
+          {/* GOVERNOR */}
+          <div className="border-b border-white/20 py-2.5">
+            <div className="flex items-center justify-between gap-3">
+
+              <span className="text-[8px] font-medium uppercase text-white">
+                Governor
+              </span>
+
+              <span className="text-right text-[7.5px] font-semibold uppercase text-white">
+                {specs["Governor"] || "-"}
+              </span>
+
+            </div>
           </div>
 
 
           {/* ALTERNATOR */}
           <div className="border-b border-white/20 py-2.5">
-
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
                 Alternator
               </span>
 
-              <span className="text-right text-[7.5px] font-semibold uppercase text-white">
-                QYI184ES
+              <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
+                {specs["Alternator"] || "-"}
               </span>
 
             </div>
-
           </div>
 
 
           {/* CONTROLLER */}
           <div className="border-b border-white/20 py-2.5">
-
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
                 Controller
               </span>
 
-              <span className="text-right text-[7.5px] font-semibold uppercase text-white">
-                DEEPSEA-DSE4520
+              <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
+                {specs["Controller"] || "-"}
               </span>
 
             </div>
-
           </div>
 
 
-          {/* ATS */}
-          <div className="border-b border-white/20 py-2.5">
-
+          {/* TANK */}
+          <div className="pt-2.5">
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                ATS
+                Tank
               </span>
 
-              <span className="text-right text-[7.5px] font-semibold uppercase text-white">
-                SUYANG-ATS-100A
-              </span>
-
-            </div>
-
-          </div>
-
-
-          {/* FUEL */}
-          <div className="pt-2.5">
-
-            <div className="flex items-center justify-between">
-
-              <span className="text-[8px] font-medium uppercase text-white">
-                Fuel Tank
-              </span>
-
-              <span className="text-[9px] font-bold uppercase text-white">
-                60L
+              <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
+                {specs["Tank"] || "-"}
               </span>
 
             </div>
-
           </div>
 
         </div>
-
 
         {/* SPECS BUTTONS */}
         <div className="mt-2.5 grid h-[25px] shrink-0 grid-cols-2 gap-1.5">

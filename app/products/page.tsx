@@ -395,21 +395,14 @@ export default function ProductsPage() {
            */
 
           const standby =
-            highlights.find((item) =>
-              item.toLowerCase().startsWith("standby")
-            )?.split(":-")[1]?.trim() || "-";
+          highlights.find((item) =>
+            item.toLowerCase().startsWith("standby power")
+          )?.split(":-")[1]?.trim() || "-";
 
-
-          /*
-           * PRIME / RATED
-           * Example:
-           * "Rated (Kva / Kw) :- 11Kva / 11Kw"
-           */
-
-          const prime =
-            highlights.find((item) =>
-              item.toLowerCase().startsWith("rated")
-            )?.split(":-")[1]?.trim() || "-";
+        const prime =
+          highlights.find((item) =>
+            item.toLowerCase().startsWith("prime power")
+          )?.split(":-")[1]?.trim() || "-";
 
 
           /*
