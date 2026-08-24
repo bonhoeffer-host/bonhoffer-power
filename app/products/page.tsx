@@ -313,7 +313,7 @@ const filteredProducts = allProducts.filter((product) => {
             {[
               { label: "50", value: "50" },
               { label: "60", value: "60" },
-              { label: "Dual", value: "Dual" },
+              // { label: "Dual", value: "Dual" },
             ].map((item) => (
 
               <label key={item.value} className="flex items-center gap-2 text-[10px] cursor-pointer">
