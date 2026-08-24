@@ -183,9 +183,9 @@ export default function ProductsPage() {
 
         </div>
 
-
+{/* 
         {/* UNITS */}
-
+{/* 
         <div className="mb-6">
 
           <h3 className="font-mono text-[10px] font-semibold tracking-[0.10em] uppercase mb-2">
@@ -214,7 +214,7 @@ export default function ProductsPage() {
 
           </div>
 
-        </div>
+        </div> */} 
 
 
         {/* FREQUENCY */}
@@ -298,7 +298,7 @@ export default function ProductsPage() {
 
         {/* DUTY */}
 
-        <div>
+        {/* <div>
 
           <h3 className="font-mono text-[10px] font-semibold tracking-[0.10em] uppercase mb-2">
             Duty
@@ -329,7 +329,7 @@ export default function ProductsPage() {
 
           </div>
 
-        </div>
+        </div> */}
 
       </aside>
 
