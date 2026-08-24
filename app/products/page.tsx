@@ -16,56 +16,139 @@ export default function ProductsPage() {
   const [selectedDuty, setSelectedDuty] = useState("All");
   const [selectedUnit, setSelectedUnit] = useState("English");
 
-  /* =========================================================
-     FILTER PRODUCTS
-  ========================================================= */
+ /* =========================================================
+   GET PRODUCT FREQUENCY
+========================================================= */
 
-  const filteredProducts = allProducts.filter((product) => {
-    const productText = [
-      product.name,
-      product.series,
-      product.desc,
-      product.phase,
-      ...(product.highlights || []),
-    ]
-      .join(" ")
-      .toLowerCase();
+const getProductFrequency = (product: (typeof allProducts)[number]) => {
+  const frequencyItem = product.highlights?.find((item) =>
+    item.toLowerCase().startsWith("frequency")
+  );
 
-    /* SEARCH */
+  if (!frequencyItem) return "";
 
-    const searchMatch =
-      searchTerm.trim() === "" ||
-      productText.includes(searchTerm.toLowerCase().trim());
+  const value = frequencyItem.split(":-")[1]?.trim().toLowerCase() || "";
 
-    /* PHASE */
+  if (value.includes("60")) return "60";
+  if (value.includes("50")) return "50";
 
-    const phaseMatch =
-      selectedPhase === "All" ||
-      (selectedPhase === "1-P" &&
-        product.phase?.toLowerCase().includes("1")) ||
-      (selectedPhase === "3-P" &&
-        product.phase?.toLowerCase().includes("3"));
+  if (value.includes("dual")) return "Dual";
 
-    /* FREQUENCY */
+  return "";
+};
 
-    const frequencyMatch =
-      selectedFrequency === "All" ||
-      productText.includes(selectedFrequency.toLowerCase());
 
-    /* DUTY */
+/* =========================================================
+   GET PRODUCT PHASE
+========================================================= */
 
-    const dutyMatch =
-      selectedDuty === "All" ||
-      productText.includes(selectedDuty.toLowerCase());
+const getProductPhase = (product: (typeof allProducts)[number]) => {
+  const phaseValue = product.phase?.toLowerCase().trim();
 
-    return (
-      searchMatch &&
-      phaseMatch &&
-      frequencyMatch &&
-      dutyMatch
-    );
-  });
+  // First check the main phase property
+  if (phaseValue) {
+    if (
+      phaseValue === "1-phase" ||
+      phaseValue === "1 phase" ||
+      phaseValue === "1p"
+    ) {
+      return "1-P";
+    }
 
+    if (
+      phaseValue === "3-phase" ||
+      phaseValue === "3 phase" ||
+      phaseValue === "3p"
+    ) {
+      return "3-P";
+    }
+  }
+
+  // Fallback: check highlights
+  const phaseItem = product.highlights?.find((item) =>
+    item.toLowerCase().startsWith("phase")
+  );
+
+  if (!phaseItem) return "";
+
+  const value = phaseItem.split(":-")[1]?.trim().toLowerCase() || "";
+
+  if (
+    value === "1-phase" ||
+    value === "1 phase" ||
+    value.includes("1-phase")
+  ) {
+    return "1-P";
+  }
+
+  if (
+    value === "3-phase" ||
+    value === "3 phase" ||
+    value.includes("3-phase")
+  ) {
+    return "3-P";
+  }
+
+  return "";
+};
+
+
+/* =========================================================
+   FILTER PRODUCTS
+========================================================= */
+
+const filteredProducts = allProducts.filter((product) => {
+
+  const productText = [
+    product.name,
+    product.series,
+    product.desc,
+    product.phase,
+    ...(product.highlights || []),
+  ]
+    .join(" ")
+    .toLowerCase();
+
+
+  /* ================= SEARCH ================= */
+
+  const searchMatch =
+    searchTerm.trim() === "" ||
+    productText.includes(searchTerm.toLowerCase().trim());
+
+
+  /* ================= EXACT PHASE ================= */
+
+  const productPhase = getProductPhase(product);
+
+  const phaseMatch =
+    selectedPhase === "All" ||
+    productPhase === selectedPhase;
+
+
+  /* ================= EXACT FREQUENCY ================= */
+
+  const productFrequency = getProductFrequency(product);
+
+  const frequencyMatch =
+    selectedFrequency === "All" ||
+    productFrequency === selectedFrequency;
+
+
+  /* ================= DUTY ================= */
+
+  const dutyMatch =
+    selectedDuty === "All" ||
+    productText.includes(selectedDuty.toLowerCase());
+
+
+  return (
+    searchMatch &&
+    phaseMatch &&
+    frequencyMatch &&
+    dutyMatch
+  );
+});
   /* =========================================================
      PAGINATION
   ========================================================= */
