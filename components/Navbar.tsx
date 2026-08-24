@@ -9,13 +9,15 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Products", href: "/products" },
-    { label: "Become a Dealer", href: "/become-a-dealer" },
-    { label: "Contact", href: "/contact" },
+    { label: "Inicio", href: "/" },
+    { label: "Nosotros", href: "/about" },
+    { label: "Productos", href: "/products" },
+    { label: "Conviértase en distribuidor", href: "/become-a-dealer" },
+    { label: "Contacto", href: "/contact" },
   ];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -54,7 +56,7 @@ export default function Navbar() {
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 bg-[#353535] text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all hover:-translate-y-0.5"
           >
-            <span>Request a Quote</span>
+            <span>Solicitar cotización</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>

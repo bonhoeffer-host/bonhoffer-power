@@ -1,31 +1,31 @@
 import Link from "next/link";
 
 const footerColumns = [
-  {
-    title: "Products",
+    {
+    title: "Productos",
     items: [
-      { label: "Portable Generators", href: "/products" },
-      { label: "Standby Systems", href: "/products" },
-      { label: "Transfer Switches", href: "/products" },
-      { label: "Accessories", href: "/products" },
+      { label: "Generadores portátiles", href: "/products" },
+      { label: "Sistemas de respaldo", href: "/products" },
+      { label: "Interruptores de transferencia", href: "/products" },
+      { label: "Accesorios", href: "/products" },
     ],
   },
   {
-    title: "Resources",
+    title: "Recursos",
     items: [
-      { label: "Sizing Guide", href: "#" },
-      { label: "Installation Checklist", href: "#" },
-      { label: "Safety Manual", href: "#" },
-      { label: "Warranty", href: "#" },
+      { label: "Guía de dimensionamiento", href: "#" },
+      { label: "Lista de verificación de instalación", href: "#" },
+      { label: "Manual de seguridad", href: "#" },
+      { label: "Garantía", href: "#" },
     ],
   },
   {
-    title: "Company",
+    title: "Empresa",
     items: [
-      { label: "About VoltForge", href: "/about" },
-      { label: "Careers", href: "#" },
-      { label: "Privacy", href: "#" },
-      { label: "Contact", href: "/contact" },
+      { label: "Sobre Bonhoeffer", href: "/about" },
+      { label: "Carreras", href: "#" },
+      { label: "Privacidad", href: "#" },
+      { label: "Contacto", href: "/contact" },
     ],
   },
 ];
@@ -44,12 +44,15 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="mt-4 max-w-[330px] text-[15px] leading-[19px]" style={{ color: "#c2c2c2" }}>
-              Reliable power for homes, businesses, and
+                    <p
+              className="mt-4 max-w-[330px] text-[15px] leading-[19px]"
+              style={{ color: "#c2c2c2" }}
+            >
+              Energía confiable para hogares, empresas y
               <br />
-              job sites. Built for the field, backed by
+              lugares de trabajo. Diseñada para el campo y respaldada por
               <br />
-              industrial engineering.
+              ingeniería industrial.
             </p>
           </div>
 
