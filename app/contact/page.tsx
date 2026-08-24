@@ -59,23 +59,28 @@ const socialLinks = [
 const offices = [
   {
     flag: "🇮🇳",
-    country: "Registered & Corporate Office",
+    country: "Oficina Registrada y Corporativa",
     name: "BONHOEFFER MACHINES PRIVATE LIMITED",
-    address: "Plot No 756, 2nd Floor, Udyog Vihar, Phase V, Gurugram, Haryana Pin Code: 122001",
+    address:
+      "Plot No 756, 2nd Floor, Udyog Vihar, Phase V, Gurugram, Haryana Pin Code: 122001",
     accent: "border-primary",
   },
+
   {
     flag: "🇨🇳",
-    country: "China Office",
-    name: " NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD, Room",
-    address: "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
+    country: "Oficina de China",
+    name: "NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD, Room",
+    address:
+      "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
     accent: "border-emerald-500",
   },
+
   {
     flag: "🇭🇰",
-    country: "Hong Kong Office",
+    country: "Oficina de Hong Kong",
     name: "HEINE CORPORATION HK PRIVATE LIMITED",
-    address: "RM 1607 TREND CTR 29-31 CHEUNG LEE ST CHAI WAN HONG KONG",
+    address:
+      "RM 1607 TREND CTR 29-31 CHEUNG LEE ST CHAI WAN HONG KONG",
     accent: "border-lime-500",
   },
 ];
@@ -112,71 +117,78 @@ export default function ContactPage() {
 
       <main className="pt-16">
 
-        {/* ── HERO BANNER ── */}
-       <section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
-  <Image
-    src="/banner/contact-banner.webp"
-    alt="Contact Us"
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover object-[15%_center] sm:object-center"
-  />
+     {/* ── HERO BANNER ── */}
+      <section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
+        <Image 
+          src="/banner/contact-banner.webp" 
+          alt="Contáctenos" 
+          fill 
+          priority 
+          sizes="100vw" 
+          className="object-cover object-[15%_center] sm:object-center" 
+        /> 
+      
+        {/* White Text */} 
+        <div className="absolute inset-0 flex items-center justify-center px-4 text-center"> 
+          <div className="max-w-2xl"> 
+            <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl"> 
+              Contáctenos
+            </h1> 
+      
+            <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg"> 
+              ¿Tiene preguntas o necesita asistencia? Nuestro equipo está aquí para
+              ayudarle con soluciones de energía confiables y soporte especializado.
+            </p> 
+          </div> 
+        </div> 
+      </section>
 
+       {/* ── TARJETAS DE INFORMACIÓN DE CONTACTO ── */}
+<section className="py-20 bg-slate-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-  {/* White Text */}
-  <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
-    <div className="max-w-2xl">
-      <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
-        Get In Touch
-      </h1>
+    <div className="text-center mb-14">
+      <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 border border-primary/20">
+        CONTÁCTANOS
+      </span>
 
-      <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg">
-        Have questions or need assistance? Our team is here to help with
-        reliable power solutions and expert support.
-      </p>
+      <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900">
+        Información de Contacto Directo
+      </h2>
+
+      <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-3" />
     </div>
-  </div>
-</section>
 
-        {/* ── CONTACT INFO CARDS ── */}
-        <section className="py-20 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <span className="font-mono inline-block bg-primary-pale text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 border border-primary/20">
-                REACH US
-              </span>
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900">Direct Contact Information</h2>
-              <div className="w-16 h-1 bg-primary rounded-full mx-auto mt-3" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: "📞",
-                  label: "PHONE NUMBER",
-                  lines: ["+91 87962 30337"],
-                  href: "tel:+918796230337.",
-                  cta: "Call Now",
-                },
-              
-                {
-                  icon: "📧",
-                  label: "EMAIL ADDRESSES",
-                  lines: [
-                    "Sales: crm.power@bonhoeffermachines.com",
-                    // "Support: support@bonhoeffermachines.com",
-                    // "Career: hr@bonhoeffermachines.com",
-                  ],
-                  href: "mailto:crm.power@bonhoeffermachines.com",
-                  cta: "Send Mail",
-                },
-                {
-                  icon: "🕒",
-                  label: "WORKING HOURS",
-                  lines: ["24/7 Support & Assistance"],
-                  href: null,
-                  cta: null,
-                },
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          icon: "📞",
+          label: "NÚMERO DE TELÉFONO",
+          lines: ["+91 87962 30337"],
+          href: "tel:+918796230337",
+          cta: "Llamar Ahora",
+        },
+
+        {
+          icon: "📧",
+          label: "DIRECCIÓN DE CORREO",
+          lines: [
+            "Ventas: crm.power@bonhoeffermachines.com",
+            // "Soporte: support@bonhoeffermachines.com",
+            // "Carreras: hr@bonhoeffermachines.com",
+          ],
+          href: "mailto:crm.power@bonhoeffermachines.com",
+          cta: "Enviar Correo",
+        },
+
+        {
+          icon: "🕒",
+          label: "HORARIO DE ATENCIÓN",
+          lines: ["Soporte y asistencia 24/7"],
+          href: null,
+          cta: null,
+        },
+     
               ].map((card) => (
                 <div key={card.label} className="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 group flex flex-col justify-between">
                   <div>
@@ -239,16 +251,23 @@ export default function ContactPage() {
         </section>
 
         {/* ── FORMS SECTION ── */}
-        <section className="py-24 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <span className="font-mono inline-block bg-primary-pale border border-primary/20 text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
-                GET IN TOUCH
-              </span>
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">Submit Your Inquiry</h2>
-              <p className="font-sans text-slate-600 max-w-lg mx-auto text-sm">Select the form type below to reach out directly to our relevant department.</p>
-            </div>
+       <section className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <div className="text-center mb-14">
+          <span className="font-mono inline-block bg-primary-pale border border-primary/20 text-primary font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3">
+            PONTE EN CONTACTO
+          </span>
+
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">
+            Envía Tu Consulta
+          </h2>
+
+          <p className="font-sans text-slate-600 max-w-lg mx-auto text-sm">
+            Selecciona el tipo de formulario a continuación para contactar
+            directamente con el departamento correspondiente.
+          </p>
+        </div>
             {/* Form Selection Tabs */}
             {/* <div className="flex flex-col sm:flex-row border border-slate-200 rounded-2xl overflow-hidden mb-10 bg-slate-50 p-1.5 gap-1.5 shadow-sm">
               {tabs.map((tab) => (
@@ -266,89 +285,257 @@ export default function ContactPage() {
               ))}
             </div> */}
 
-            <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl p-8 md:p-12">
+           <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl p-8 md:p-12">
 
-              {/* Success Message */}
-              {submittedTab === activeTab && (
-                <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-6 mb-8 flex items-center gap-4 shadow-sm">
-                  <span className="text-3xl">✅</span>
-                  <div>
-                    <p className="font-extrabold text-emerald-900 text-base">Form Submitted Successfully!</p>
-                    <p className="text-emerald-700 text-xs mt-1">Thank you for contacting Bonhoeffer. Our team will get back to you shortly.</p>
-                  </div>
-                </div>
-              )}
+  {/* Mensaje de Éxito */}
+  {submittedTab === activeTab && (
+    <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-6 mb-8 flex items-center gap-4 shadow-sm">
+      <span className="text-3xl">✅</span>
+      <div>
+        <p className="font-extrabold text-emerald-900 text-base">
+          ¡Formulario enviado correctamente!
+        </p>
+        <p className="text-emerald-700 text-xs mt-1">
+          Gracias por contactar con Bonhoeffer. Nuestro equipo se pondrá en
+          contacto contigo a la brevedad.
+        </p>
+      </div>
+    </div>
+  )}
 
-              {/* 1. REQUEST FORM / ENQUIRY FORM */}
-              {activeTab === "Request a Quote / Enquiry" && (
-                <form onSubmit={(e) => handleSubmit(e, "Request a Quote / Enquiry")} className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-black text-slate-900">Request Form / Inquiry Form</h3>
-                    <p className="text-slate-500 text-xs mt-1">Please provide your details and product interest below.</p>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="eq-name" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Full Name *</label>
-                      <input id="eq-name" type="text" required placeholder="Enter full name" value={enquiryForm.name}
-                        onChange={(e) => setEnquiryForm({ ...enquiryForm, name: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50" />
-                    </div>
-                    <div>
-                      <label htmlFor="eq-company" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Company Name</label>
-                      <input id="eq-company" type="text" placeholder="Enter company name" value={enquiryForm.company}
-                        onChange={(e) => setEnquiryForm({ ...enquiryForm, company: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50" />
-                    </div>
-                    <div>
-                      <label htmlFor="eq-mobile" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Mobile Number *</label>
-                      <input id="eq-mobile" type="tel" required placeholder="Enter mobile number" value={enquiryForm.mobile}
-                        onChange={(e) => setEnquiryForm({ ...enquiryForm, mobile: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50" />
-                    </div>
-                    <div>
-                      <label htmlFor="eq-email" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Email Address</label>
-                      <input id="eq-email" type="email" placeholder="name@example.com" value={enquiryForm.email}
-                        onChange={(e) => setEnquiryForm({ ...enquiryForm, email: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50" />
-                    </div>
-                    <div>
-                      <label htmlFor="eq-country" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Country</label>
-                      <select id="eq-country" value={enquiryForm.country} onChange={(e) => setEnquiryForm({ ...enquiryForm, country: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white">
-                        <option value="">Select Country</option>
-                        <option>India</option><option>China</option><option>Hong Kong</option><option>Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label htmlFor="eq-state" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">State</label>
-                      <input id="eq-state" type="text" placeholder="Enter state" value={enquiryForm.state}
-                        onChange={(e) => setEnquiryForm({ ...enquiryForm, state: e.target.value })}
-                        className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50" />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="eq-product" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Product Interest</label>
-                    <select id="eq-product" value={enquiryForm.product} onChange={(e) => setEnquiryForm({ ...enquiryForm, product: e.target.value })}
-                      className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white">
-                      <option value="">Select Product Range</option>
-                      <option>BON-DG-20KW-1P Silent Diesel Generator</option>
-                      <option>BON-DG-17KW-1P Silent Diesel Generator</option>
-                      <option>BON-DG-15KW-1P Silent Diesel Generator</option>
-                      <option>BON-DG-11KW-1P Silent Diesel Generator</option>
-                      <option>General Product Inquiry</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="eq-message" className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider">Message</label>
-                    <textarea id="eq-message" rows={4} placeholder="Describe your power requirements or questions..." value={enquiryForm.message}
-                      onChange={(e) => setEnquiryForm({ ...enquiryForm, message: e.target.value })}
-                      className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50 resize-none" />
-                  </div>
-                  <button type="submit" className="w-full bg-gradient-to-r from-primary to-primary-hover text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm tracking-wide">
-                    SUBMIT REQUEST FORM
-                  </button>
-                </form>
-              )}
+  {/* 1. FORMULARIO DE SOLICITUD / CONSULTA */}
+  {activeTab === "Request a Quote / Enquiry" && (
+    <form
+      onSubmit={(e) =>
+        handleSubmit(e, "Request a Quote / Enquiry")
+      }
+      className="space-y-6"
+    >
+      <div>
+        <h3 className="text-xl font-black text-slate-900">
+          Formulario de Solicitud / Consulta
+        </h3>
+
+        <p className="text-slate-500 text-xs mt-1">
+          Proporciona tus datos y selecciona el producto que te interesa.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        {/* NOMBRE COMPLETO */}
+        <div>
+          <label
+            htmlFor="eq-name"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            Nombre Completo *
+          </label>
+
+          <input
+            id="eq-name"
+            type="text"
+            required
+            placeholder="Ingresa tu nombre completo"
+            value={enquiryForm.name}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                name: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50"
+          />
+        </div>
+
+        {/* NOMBRE DE LA EMPRESA */}
+        <div>
+          <label
+            htmlFor="eq-company"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            Nombre de la Empresa
+          </label>
+
+          <input
+            id="eq-company"
+            type="text"
+            placeholder="Ingresa el nombre de la empresa"
+            value={enquiryForm.company}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                company: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50"
+          />
+        </div>
+
+        {/* NÚMERO DE MÓVIL */}
+        <div>
+          <label
+            htmlFor="eq-mobile"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            Número de Móvil *
+          </label>
+
+          <input
+            id="eq-mobile"
+            type="tel"
+            required
+            placeholder="Ingresa el número de móvil"
+            value={enquiryForm.mobile}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                mobile: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50"
+          />
+        </div>
+
+        {/* CORREO ELECTRÓNICO */}
+        <div>
+          <label
+            htmlFor="eq-email"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            Dirección de Correo Electrónico
+          </label>
+
+          <input
+            id="eq-email"
+            type="email"
+            placeholder="nombre@ejemplo.com"
+            value={enquiryForm.email}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                email: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50"
+          />
+        </div>
+
+        {/* PAÍS */}
+        <div>
+          <label
+            htmlFor="eq-country"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            País
+          </label>
+
+          <select
+            id="eq-country"
+            value={enquiryForm.country}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                country: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"
+          >
+            <option value="">Seleccionar País</option>
+            <option>India</option>
+            <option>China</option>
+            <option>Hong Kong</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        {/* ESTADO / PROVINCIA */}
+        <div>
+          <label
+            htmlFor="eq-state"
+            className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+          >
+            Estado / Provincia
+          </label>
+
+          <input
+            id="eq-state"
+            type="text"
+            placeholder="Ingresa el estado o provincia"
+            value={enquiryForm.state}
+            onChange={(e) =>
+              setEnquiryForm({
+                ...enquiryForm,
+                state: e.target.value,
+              })
+            }
+            className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50"
+          />
+        </div>
+      </div>
+
+      {/* PRODUCTO DE INTERÉS */}
+      <div>
+        <label
+          htmlFor="eq-product"
+          className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+        >
+          Producto de Interés
+        </label>
+
+        <select
+          id="eq-product"
+          value={enquiryForm.product}
+          onChange={(e) =>
+            setEnquiryForm({
+              ...enquiryForm,
+              product: e.target.value,
+            })
+          }
+          className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-white"
+        >
+          <option value="">Seleccionar Línea de Productos</option>
+          <option>BON-DG-20KW-1P Generador Diésel Silencioso</option>
+          <option>BON-DG-17KW-1P Generador Diésel Silencioso</option>
+          <option>BON-DG-15KW-1P Generador Diésel Silencioso</option>
+          <option>BON-DG-11KW-1P Generador Diésel Silencioso</option>
+          <option>Consulta General sobre Productos</option>
+        </select>
+      </div>
+
+      {/* MENSAJE */}
+      <div>
+        <label
+          htmlFor="eq-message"
+          className="block text-xs font-extrabold text-slate-700 mb-2 uppercase tracking-wider"
+        >
+          Mensaje
+        </label>
+
+        <textarea
+          id="eq-message"
+          rows={4}
+          placeholder="Describe tus necesidades de energía o tus preguntas..."
+          value={enquiryForm.message}
+          onChange={(e) =>
+            setEnquiryForm({
+              ...enquiryForm,
+              message: e.target.value,
+            })
+          }
+          className="w-full px-4 py-3.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all bg-slate-50/50 resize-none"
+        />
+      </div>
+
+      {/* BOTÓN */}
+      <button
+        type="submit"
+        className="w-full bg-gradient-to-r from-primary to-primary-hover text-white font-extrabold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm tracking-wide"
+      >
+        ENVIAR FORMULARIO DE SOLICITUD
+      </button>
+    </form>
+  )}
 
               {/* 2. DISTRIBUTOR FORM 
               {activeTab === "Distributor Form" && (

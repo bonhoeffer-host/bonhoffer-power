@@ -181,12 +181,13 @@ export default function AboutPage() {
       </div>
 
       <p className="font-sans mx-auto max-w-[760px] text-[11px] sm:text-[12px] md:text-[12px] lg:text-[13px] leading-[1.7] text-white/90 font-normal">
-        Bonhoeffer Machines is committed to delivering reliable, efficient,
-        and innovative machinery solutions designed to meet the evolving
-        needs of modern industries.
+        Bonhoeffer Machines se compromete a ofrecer soluciones de maquinaria
+        confiables, eficientes e innovadoras, diseñadas para satisfacer las
+        necesidades cambiantes de las industrias modernas.
         <br className="hidden sm:block" />
-        With a focus on quality, performance, and customer satisfaction,
-        we strive to build machines that deliver dependable results.
+        Con un enfoque en la calidad, el rendimiento y la satisfacción del
+        cliente, nos esforzamos por fabricar máquinas que ofrezcan resultados
+        confiables.
       </p>
 
     </div>

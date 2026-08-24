@@ -68,17 +68,17 @@ const specs = Object.fromEntries(
 
     <div className="max-w-[480px] pt-2 text-left">
 
-      {/* Small Tag */}
+     {/* Small Tag */}
       <span className="mb-3 inline-block text-[10px] font-bold uppercase tracking-[0.18em] text-lime-300 sm:text-[11px]">
-        ⚡ Our Complete Range
+        ⚡ Nuestra Gama Completa
       </span>
 
       {/* Heading */}
       <h1 className="mb-3 text-[32px] font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-[38px] lg:text-[44px]">
-        Silent Diesel
+        Gama de Generadores
         <br />
         <span className="text-transparent [-webkit-text-stroke:1px_white]">
-          Generator Range
+          Diésel Silenciosos
         </span>
       </h1>
 
@@ -87,11 +87,11 @@ const specs = Object.fromEntries(
 
       {/* Description */}
       <p className="max-w-[440px] text-[11px] font-medium leading-[1.55] text-white/90 sm:text-[12px] lg:text-[13px]">
-        Explore our full catalog of{" "}
+        Explora nuestro catálogo completo de{" "}
         <span className="font-bold text-white">
           {allProducts.length}
         </span>{" "}
-        high-performance, fuel-efficient silent diesel generators.
+        generadores diésel silenciosos de alto rendimiento y bajo consumo de combustible.
       </p>
 
     </div>
@@ -184,7 +184,7 @@ const specs = Object.fromEntries(
         <div className="shrink-0 px-1.5 pt-5 pb-2.5">
 
           <p className="m-0 text-[8px] font-medium uppercase tracking-[0.12em] text-[#999]">
-            Classification
+            Clasificación
           </p>
           <p className="font-display mt-1 m-0 text-[9px] font-bold uppercase text-[#222]"> 
             {product.name}
@@ -199,7 +199,7 @@ const specs = Object.fromEntries(
         <div className="shrink-0 px-1.5 pb-3.5">
 
           <p className="m-0 text-[8px] font-medium uppercase tracking-[0.12em] text-[#999]">
-            Rated:
+             Potencia Nominal:
           </p>
 
           <div className="mt-1.5 grid grid-cols-2 text-[8px] font-bold uppercase text-[#222]">
@@ -209,7 +209,7 @@ const specs = Object.fromEntries(
             </span>
 
             <span className="text-right">
-              Phase: {specs["Phase"] || "-"}
+              Fases: {specs["Phase"] || "-"}
             </span>
 
           </div>
@@ -217,11 +217,11 @@ const specs = Object.fromEntries(
           <div className="mt-1.5 grid grid-cols-2 text-[8px] font-bold uppercase text-[#222]">
 
             <span>
-              Volt: {specs["Voltage"] || "-"}
+               Voltaje: {specs["Voltage"] || "-"}
             </span>
 
             <span className="text-right">
-              Freq: {specs["Frequency"] || "-"}
+             Frecuencia: {specs["Frequency"] || "-"}
             </span>
 
           </div>
@@ -238,7 +238,7 @@ const specs = Object.fromEntries(
           <div className="border-b border-white/20 pb-2.5">
             <div className="flex items-center justify-between gap-3">
               <span className="text-[8px] font-medium uppercase text-white">
-                Standby (kW/kVA)
+                    Reserva (kW/kVA)
               </span>
 
               <span className="text-right text-[9px] font-bold text-white">
@@ -252,7 +252,7 @@ const specs = Object.fromEntries(
           <div className="border-b border-white/20 py-2.5">
             <div className="flex items-center justify-between gap-3">
               <span className="text-[8px] font-medium uppercase text-white">
-                Prime (kW/kVA)
+                Principal (kW/kVA)
               </span>
 
               <span className="text-right text-[9px] font-bold text-white">
@@ -267,7 +267,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Engine
+                 Motor
               </span>
 
               <span className="text-right text-[7.5px] font-semibold uppercase text-white">
@@ -283,7 +283,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Aspiration
+               Aspiración
               </span>
 
               <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
@@ -299,7 +299,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Governor
+                Gobernador
               </span>
 
               <span className="text-right text-[7.5px] font-semibold uppercase text-white">
@@ -315,7 +315,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Alternator
+                Alternador
               </span>
 
               <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
@@ -331,7 +331,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Controller
+                 Controlador
               </span>
 
               <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
@@ -347,7 +347,7 @@ const specs = Object.fromEntries(
             <div className="flex items-center justify-between gap-3">
 
               <span className="text-[8px] font-medium uppercase text-white">
-                Tank
+               Tanque
               </span>
 
               <span className="max-w-[65%] text-right text-[7.5px] font-semibold uppercase text-white">
@@ -368,7 +368,7 @@ const specs = Object.fromEntries(
           >
 
             <span>
-              Specs Sheet (EN)
+              Ficha Técnica (EN)
             </span>
 
             <svg
@@ -390,7 +390,7 @@ const specs = Object.fromEntries(
           >
 
             <span>
-              Specs Sheet (ES)
+                Ficha Técnica (ES)
             </span>
 
             <svg
@@ -413,7 +413,7 @@ const specs = Object.fromEntries(
           href="/contact"
           className="mt-1.5 flex h-[27px] shrink-0 items-center justify-center bg-[#111111] text-[7.5px] font-extrabold uppercase tracking-[0.12em] text-white transition hover:bg-[#1689d8]"
         >
-          Get a Quote
+          Solicitar Cotización
         </Link>
 
       </div>
@@ -427,19 +427,19 @@ const specs = Object.fromEntries(
         <div className="h-full bg-[#e9e9e9] px-4 py-4">
 
           <h3 className="m-0 mb-4 text-[9px] font-bold uppercase tracking-[0.04em] text-[#222]">
-            Optionals:
+             Opcionales:
           </h3>
 
 
           <ul className="m-0 list-none space-y-3 p-0">
 
             {[
-              "Engine preheater, diesel preheater, alternator space heater",
-              "Electric pump for diesel inlet with air purge",
-              "Removable tank made by metal alloy",
-              "Special painting (RAL 6018, C3, C4, C5), reinforced protection degree",
-              "ABB breaker",
-              "Electronic tank level meter",
+                "Precalentador de motor, precalentador diésel y calefactor del alternador",
+                "Bomba eléctrica para la entrada de diésel con purga de aire",
+                "Tanque desmontable fabricado en aleación metálica",
+                "Pintura especial (RAL 6018, C3, C4, C5), grado de protección reforzado",
+                "Interruptor ABB",
+                "Medidor electrónico del nivel del tanque",
             ].map((item, index) => (
 
               <li
@@ -472,7 +472,7 @@ const specs = Object.fromEntries(
 {/* ── BANNER TAGLINE ── */}
 <section className="w-full h-[80px] sm:h-[86px] bg-white border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">
   <p className="w-full max-w-[900px] font-sans m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
-  Trusted by contractors, homeowners, and site operators worldwide
+    Con la confianza de contratistas, propietarios y operadores de obras en todo el mundo
   </p>
 </section>
 

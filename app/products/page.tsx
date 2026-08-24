@@ -104,33 +104,32 @@ export default function ProductsPage() {
 <section className="relative h-[280px] overflow-hidden bg-black sm:h-[340px] md:h-[400px] lg:h-[450px]">
   <Image
     src="/banner/contact-banner.webp"
-    alt="Product"
+    alt="Soluciones de Energía"
     fill
     priority
     sizes="100vw"
     className="object-cover object-[15%_center] sm:object-center"
   />
 
- 
-
   {/* White Text */}
   <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
     <div className="max-w-2xl">
       <h1 className="font-display text-2xl font-black uppercase tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
-         Power Solutions
+        Soluciones de Energía
       </h1>
 
       <p className="mt-2 text-sm font-medium leading-relaxed text-white/90 sm:mt-3 sm:text-base md:text-lg">
-        Explore our reliable range of high-performance generators, built for
-        dependable power and lasting performance.
+        Explora nuestra gama confiable de generadores de alto rendimiento,
+        diseñados para ofrecer energía confiable y un rendimiento duradero.
       </p>
     </div>
   </div>
 </section>
-  {/* ── BANNER TAGLINE ── */}
+
+{/* ── BANNER TAGLINE ── */}
 <section className="w-full h-[80px] sm:h-[86px] bg-[#EAE9E9] border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">
-  <p className="font-sans w-full max-w-[900px] font-sans m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
-    Driven by engineering, built for dependable power.
+  <p className="font-sans w-full max-w-[900px] m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
+    Impulsados por la ingeniería, construidos para ofrecer energía confiable.
   </p>
 </section>
 {/* =========================================================
@@ -562,9 +561,9 @@ export default function ProductsPage() {
 
 {/* ── BANNER TAGLINE ── */}
 <section className="w-full h-[80px] sm:h-[86px] bg-white border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">
-  <p className="font-sans w-full max-w-[900px] font-sans m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
-  Trusted by contractors, homeowners, and site operators worldwide
-  </p>
+ <p className="font-sans w-full max-w-[900px] m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
+  Con la confianza de contratistas, propietarios y operadores de obras en todo el mundo
+</p>
 </section>
 </main>
 

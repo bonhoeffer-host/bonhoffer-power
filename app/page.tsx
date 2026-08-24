@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import {Fuel, VolumeX, Zap, HardHat, Wrench, CircleDollarSign, Snowflake,SlidersHorizontal,RefreshCw,
 } from "lucide-react";
+import SystemAdvantages from "@/components/SystemAdvantages";
 
 const generators = [
   {
-  img: "/products/side-1.webp",
+  img: "/products/side-2.webp",
   name: "BON-D3300-3P60",
   slug: "bon-d3300-3p60",
   tag: "3000 kW",
@@ -31,29 +32,8 @@ const generators = [
     "Governor :- Electronic",
   ]
 },
-  // {
-  //   img: "/products/side-1.webp",
-  //   name: "BON-DG-11KW-1P",
-  //   tag: "11 kW",
-  //   desc: "11 kW Silent Diesel Generator",
-  //   highlights: [
-  //     "Standby ( Kva / Kw) :- 12Kva / 12Kw",
-  //     "Rated ( Kva / Kw) :- 11Kva / 11Kw",
-  //     "Phase:- 1-phase",
-  //     "Power Factor :- 1",
-  //     "Volt :- 110/220V",
-  //     "Frequency:- 50 HZ",
-  //     "Current (A) :- 55",
-  //     "Engine:- Faw 4DW81-23D",
-  //     "Alternator:- 1st All QYI184ES",
-  //     "Controller:- Deepsea DSE4520",
-  //     "ATS :- Suyang ATS-100A",
-  //     "Aspiration :- Natural",
-  //     "Governor :- Mechanical",
-  //   ],
-  // },
   {
-    img: "/products/side-2.webp",
+    img: "/products/side-1.webp",
     name: "BON-DG-17KW-1P",
     tag: "17 kW",
     desc: "17 kW Silent Diesel Generator",
@@ -120,20 +100,23 @@ const generators = [
 
 const faqs = [
   {
-    question: "What size generator do I need for my home?",
+    question: "¿Qué tamaño de generador necesito para mi hogar?",
     answer:
-      "Size depends on the critical loads you want to keep running (HVAC, lights, fridge, well pump). Use our sizing calculator or consult a licensed electrician for a precise load calculation.",
+      "El tamaño depende de las cargas esenciales que desea mantener en funcionamiento, como climatización, luces, refrigerador y bomba de agua. Utilice nuestra calculadora de dimensionamiento o consulte a un electricista certificado para realizar un cálculo preciso de la carga.",
   },
+
   {
-    question: "How often should I maintain my portable generator?",
+    question: "¿Con qué frecuencia debo realizar el mantenimiento de mi generador portátil?",
     answer:
-      "Check oil and filters after every 50 hours of use. Run a monthly exercise cycle (5–10 minutes) to keep the engine and alternator healthy. Store fuel with a stabilizer when not in use.",
+      "Revise el aceite y los filtros cada 50 horas de uso. Realice un ciclo de funcionamiento mensual de 5 a 10 minutos para mantener el motor y el alternador en buenas condiciones. Cuando no esté en uso, almacene el combustible con un estabilizador.",
   },
+
   {
-    question: "Do i have to turn on my generator manually at the time of power cut",
+    question: "¿Tengo que encender manualmente el generador cuando se corta la electricidad?",
     answer:
-      "No you do not need to start it manually our generator have ATS system it will start automatically",
+      "No, no es necesario encenderlo manualmente. Nuestros generadores cuentan con un sistema ATS que permite que el generador se encienda automáticamente cuando se produce un corte de energía.",
   },
+];
   // {
   //   question: "Can I install a standby generator myself?",
   //   answer:
@@ -144,150 +127,140 @@ const faqs = [
   //   answer:
   //     "Refuel when the tank reaches 1/4 full. Running too low can cause condensation in the tank and reduce engine life. Always follow safe shutdown and refueling procedures.",
   // },
-];
+// ];
 const applications = [
   {
-    title: "Residential",
+    title: "RESIDENCIAL",
     img: "Applications/Residential.webp",
   },
-
   {
-    title: "CONSTRUCTION",
+    title: "CONSTRUCCIÓN",
     img: "Applications/Construction.webp",
-
   },
-
   {
-    title: "COMMERCIAL",
+    title: "COMERCIAL",
     img: "Applications/Commercial.webp",
-    },
-
+  },
   {
     title: "INDUSTRIAL",
     img: "Applications/Commercial.webp",
   },
-
   {
-    title: "HOSPITAL & HEALTHCARE",
+    title: "HOSPITALES Y SALUD",
     img: "Applications/Hospital.webp",
   },
-
   {
-    title: "HOTEL & Restaurants",
+    title: "HOTELES Y RESTAURANTES",
     img: "Applications/Hotel.webp",
-   
   },
-
   {
-    title: "Retail Stores",
+    title: "TIENDAS MINORISTAS",
     img: "Applications/Retail.webp",
   },
-
   {
-    title: "Event Power Supply",
+    title: " ENERGÍA PARA EVENTOS",
     img: "Applications/Event.webp",
   },
-
   {
-    title: "WAREHOUSES",
+    title: "ALMACENES",
     img: "Applications/Warehouse.webp",
   },
-
-  
 ];
+
+
 const slides = [
   {
     image: "/banner/banner2.jpeg",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
       <>
-        Trusted Power.
+        Energía Confiable.
         <br />
-        Lasting Performance.
+        Rendimiento Duradero.
       </>
     ),
     description:
-      "VoltForge generators deliver heavy-duty performance with industrial-grade fuel efficiency, quiet operation, and weatherproof construction. Built to keep you running—no matter what.",
+      "Los generadores VoltForge ofrecen un rendimiento de alta resistencia con eficiencia de combustible de nivel industrial, funcionamiento silencioso y construcción resistente a la intemperie. Diseñados para mantenerte en marcha, sin importar las circunstancias.",
   },
   {
     image: "/banner/BON Power .webp",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
       <>
-        Power You Can
+        Energía en la que
         <br />
-        Count On.
+        Puedes Confiar.
       </>
     ),
     description:
-      "Dependable generator solutions engineered for consistent performance, fuel efficiency, and long-lasting operation in demanding conditions.",
+      "Soluciones de generación de energía confiables, diseñadas para ofrecer un rendimiento constante, eficiencia de combustible y una operación duradera en condiciones exigentes.",
   },
   {
     image: "/banner/Power-banner-4.webp",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
       <>
-        Performance That
+        Rendimiento que
         <br />
-        Goes Further.
+        Va Más Lejos.
       </>
     ),
     description:
-      "Advanced power technology designed to deliver efficient operation, strong performance, and dependable power whenever you need it.",
-  },{
+      "Tecnología avanzada de generación de energía diseñada para proporcionar una operación eficiente, un alto rendimiento y energía confiable cuando más la necesitas.",
+  },
+  {
     image: "/banner/Power-banner2.webp",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
       <>
-        Stay Powered.
+        Mantente con Energía.
         <br />
-        Stay Productive.
+        Mantente Productivo.
       </>
     ),
     description:
-      "Keep your home, business, and essential equipment running with reliable generators built for continuous and efficient power delivery.",
+      "Mantén tu hogar, negocio y equipos esenciales funcionando con generadores confiables diseñados para un suministro continuo y eficiente de energía.",
   },
   {
     image: "/banner/Power-banner5.webp",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
-       <>
-        Powerful Solutions.
+      <>
+        Soluciones Potentes.
         <br />
-        Proven Reliability.
+        Confiabilidad Comprobada.
       </>
     ),
     description:
-      "From everyday backup power to demanding applications, our generators are built to deliver dependable performance when it matters most.",
+      "Desde energía de respaldo para el día a día hasta aplicaciones exigentes, nuestros generadores están diseñados para ofrecer un rendimiento confiable cuando más importa.",
   },
   {
     image: "/banner/Power-banner6.webp",
-    label: "Built for Reliability",
+    label: "Diseñado para la Confiabilidad",
     title: (
       <>
-        Ready for the
+        Preparados para los
         <br />
-        Toughest Jobs.
+        Trabajos Más Difíciles.
       </>
     ),
     description:
-      "Rugged generator solutions built to perform across residential, commercial, agricultural, and industrial environments.",
+      "Soluciones de generación de energía robustas, diseñadas para funcionar en entornos residenciales, comerciales, agrícolas e industriales.",
   },
   {
     image: "/banner/web banner power.webp",
-    label: "Engineered for Performance",
+    label: "Diseñado para el Rendimiento",
     title: (
       <>
-        Power When.
+        Energía Cuando
         <br />
-        You Need It Most.
+        Más la Necesitas.
       </>
     ),
     description:
-      "Advanced generator technology delivers dependable power, efficient operation, and rugged durability for homes, businesses, and demanding industrial applications.",
+      "La tecnología avanzada de generación ofrece energía confiable, operación eficiente y gran durabilidad para hogares, empresas y aplicaciones industriales exigentes.",
   },
 ];
-
 
 export default function Home() {
   const [activeApp, setActiveApp] = useState<number | null>(null);
@@ -383,14 +356,13 @@ export default function Home() {
             >
               {slide.description}
             </p>
-
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="/contact"
                 className="font-mono inline-flex min-h-[40px] items-center justify-center border border-white/80 bg-black/30 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-white hover:text-black sm:min-h-[44px] sm:px-6 sm:text-xs"
               >
-                Request a Quote
+                Solicitar Cotización
 
                 <span className="ml-2 text-sm">
                   →
@@ -401,7 +373,7 @@ export default function Home() {
                 href="#products"
                 className="font-mono inline-flex min-h-[40px] items-center justify-center border border-white/50 bg-white px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#353535] backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black sm:min-h-[44px] sm:px-6 sm:text-xs"
               >
-                Explore Generator
+                Explorar Generadores
 
                 <span className="ml-2 text-sm">
                   →
@@ -435,161 +407,158 @@ export default function Home() {
       </div>
     </section>
 
-
-    {/* Trust Strip */}
-    <section className="w-full bg-white">
-      <div className="mx-auto flex min-h-[100px] items-center justify-center px-4 py-7 sm:min-h-[110px] sm:py-8 md:min-h-[120px]">
-        <p className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm"
-        >
-          Trusted by Contractors, Homeowners, and Site Operators Worldwide
-        </p>
-      </div>
-    </section>
-
-
-
-  {/* GLOBAL PRESENCE */}
-  <section className="relative overflow-hidden bg-[#050505] py-16 sm:py-20 lg:py-24">
-    <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-5 sm:px-8 lg:flex-row lg:gap-14 lg:px-10">
-
-      {/* LEFT CONTENT */}
-      <div className="relative z-10 w-full lg:w-[44%]">
-
-        {/* Heading Area */}
-        <div className="relative">
-
-          {/* Small Label */}
-          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#9a9c3b]/30 bg-[#9a9c3b]/5 px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-[#9a9c3b] shadow-[0_0_12px_#9a9c3b]" />
-
-            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#b4b65a] sm:text-[11px]">
-              Our Global Reach
-            </span>
-          </div>
-
-          {/* Heading */}
-          <h2 className="max-w-[520px] text-[48px] font-black uppercase leading-[0.88] tracking-[-0.045em] text-white sm:text-[60px] lg:text-[70px]">
-            Global
-            <br />
-
-            <span className="text-transparent [-webkit-text-stroke:1px_#ffffff]">
-              Presence
-            </span>
-          </h2>
-
-          {/* Accent */}
-          <div className="mt-7 flex items-center gap-3">
-            <span className="h-[4px] w-20 bg-[#9a9c3b]" />
-            <span className="h-[4px] w-8 bg-white/20" />
-            <span className="h-[4px] w-3 bg-white/10" />
-          </div>
-
-          {/* Description */}
-          <p className="mt-6 max-w-[450px] text-[13px] leading-6 text-white/55 sm:text-[14px]">
-            Delivering reliable power solutions across borders, industries
-            and markets with a growing global network.
+      {/* Trust Strip */}
+      <section className="w-full bg-white">
+        <div className="mx-auto flex min-h-[100px] items-center justify-center px-4 py-7 sm:min-h-[110px] sm:py-8 md:min-h-[120px]">
+          <p
+            className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm"
+          >
+            Con la confianza de Contratistas, Propietarios y Operadores de Sitios en todo el Mundo
           </p>
+        </div>
+      </section>
 
+
+
+ {/* GLOBAL PRESENCE */}
+<section className="relative overflow-hidden bg-[#050505] py-16 sm:py-20 lg:py-24">
+  <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-5 sm:px-8 lg:flex-row lg:gap-14 lg:px-10">
+
+    {/* LEFT CONTENT */}
+    <div className="relative z-10 w-full lg:w-[44%]">
+
+      {/* Heading Area */}
+      <div className="relative">
+
+        {/* Small Label */}
+        <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#9a9c3b]/30 bg-[#9a9c3b]/5 px-4 py-2">
+          <span className="h-2 w-2 rounded-full bg-[#9a9c3b] shadow-[0_0_12px_#9a9c3b]" />
+
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#b4b65a] sm:text-[11px]">
+            Nuestro Alcance Global
+          </span>
         </div>
 
+        {/* Heading */}
+        <h2 className="max-w-[520px] text-[48px] font-black uppercase leading-[0.88] tracking-[-0.045em] text-white sm:text-[60px] lg:text-[70px]">
+          Presencia
+          <br />
 
-        {/* STATS */}
-        <div className="relative mt-9 space-y-3">
+          <span className="text-transparent [-webkit-text-stroke:1px_#ffffff]">
+            Global
+          </span>
+        </h2>
 
-          {/* Vertical Accent */}
-          <div className="absolute bottom-5 left-0 top-5 w-[2px] bg-gradient-to-b from-[#9a9c3b] via-[#9a9c3b]/50 to-transparent" />
+        {/* Accent */}
+        <div className="mt-7 flex items-center gap-3">
+          <span className="h-[4px] w-20 bg-[#9a9c3b]" />
+          <span className="h-[4px] w-8 bg-white/20" />
+          <span className="h-[4px] w-3 bg-white/10" />
+        </div>
 
-          {/* CONTINENTS */}
-          <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+        {/* Description */}
+        <p className="mt-6 max-w-[450px] text-[13px] leading-6 text-white/55 sm:text-[14px]">
+          Ofrecemos soluciones de energía confiables a través de fronteras,
+          industrias y mercados, respaldados por una red global en constante crecimiento.
+        </p>
 
-            {/* Hover Glow */}
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      </div>
 
-            <div className="relative flex items-center gap-5">
+            {/* STATS */}
+      <div className="relative mt-9 space-y-3">
 
-              <div className="min-w-[105px]">
-                <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
-                  3<span className="text-[25px] align-top">+</span>
-                </span>
-              </div>
+      {/* Vertical Accent */}
+      <div className="absolute bottom-5 left-0 top-5 w-[2px] bg-gradient-to-b from-[#9a9c3b] via-[#9a9c3b]/50 to-transparent" />
 
-              <div className="h-10 w-px bg-white/10" />
+      {/* CONTINENTS */}
+      <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
 
-              <div>
-                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
-                  Reach Across
-                </p>
+        {/* Hover Glow */}
+        <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
-                  Continents
-                </p>
-              </div>
+        <div className="relative flex items-center gap-5">
 
-            </div>
+          <div className="min-w-[105px]">
+            <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+              3<span className="text-[25px] align-top">+</span>
+            </span>
           </div>
 
+          <div className="h-10 w-px bg-white/10" />
 
-          {/* COUNTRIES */}
-          <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+              Alcance en
+            </p>
 
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <div className="relative flex items-center gap-5">
-
-              <div className="min-w-[105px]">
-                <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
-                  23<span className="text-[25px] align-top">+</span>
-                </span>
-              </div>
-
-              <div className="h-10 w-px bg-white/10" />
-
-              <div>
-                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
-                  Worldwide
-                </p>
-
-                <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
-                  Countries
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-
-          {/* PRODUCTS */}
-          <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
-
-            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <div className="relative flex items-center gap-5">
-
-              <div className="min-w-[105px]">
-                <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
-                  4500<span className="text-[25px] align-top">+</span>
-                </span>
-              </div>
-
-              <div className="h-10 w-px bg-white/10" />
-
-              <div>
-                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
-                  Complete Range
-                </p>
-
-                <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
-                  Products
-                </p>
-              </div>
-
-            </div>
+            <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+              Continentes
+            </p>
           </div>
 
         </div>
       </div>
 
 
+      {/* COUNTRIES */}
+      <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+
+        <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        <div className="relative flex items-center gap-5">
+
+          <div className="min-w-[105px]">
+            <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+              23<span className="text-[25px] align-top">+</span>
+            </span>
+          </div>
+
+          <div className="h-10 w-px bg-white/10" />
+
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+              En todo el mundo
+            </p>
+
+            <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+              Países
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+
+      {/* PRODUCTS */}
+      <div className="group relative ml-4 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] px-5 py-4 transition-all duration-500 hover:-translate-y-1 hover:border-[#9a9c3b]/40 hover:bg-[#9a9c3b]/[0.06] sm:px-6 sm:py-5">
+
+        <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#9a9c3b]/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        <div className="relative flex items-center gap-5">
+
+          <div className="min-w-[105px]">
+            <span className="text-[46px] font-black leading-none tracking-[-0.05em] text-[#9a9c3b] sm:text-[54px]">
+              4500<span className="text-[25px] align-top">+</span>
+            </span>
+          </div>
+
+          <div className="h-10 w-px bg-white/10" />
+
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/40">
+              Gama Completa de
+            </p>
+
+            <p className="mt-1 text-[15px] font-bold uppercase tracking-[0.12em] text-white sm:text-[17px]">
+              Productos
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+      </div>
       {/* RIGHT GIF */}
       <div className="relative flex w-full items-center justify-center lg:w-[56%]">
 
@@ -610,94 +579,98 @@ export default function Home() {
 
 
 
-  {/* ── APPLICATION SECTION ── */}
-  <section
-    id="applications"
-    className="overflow-hidden border-b border-white/20 bg-black py-0"
-  >
-    {/* Section Header */}
-    <div className="border-b border-white/25">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
+        {/* ── APPLICATION SECTION ── */}
+      <section
+        id="applications"
+        className="overflow-hidden border-b border-white/20 bg-black py-0"
+      >
+        {/* Section Header */}
+        <div className="border-b border-white/25">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
 
-        <h2 className="font-mono text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base"
-        >
-          Versatile Power Applications
-        </h2>
+            <h2
+              className="font-mono text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base"
+            >
+              Aplicaciones Versátiles de Energía
+            </h2>
 
-        <span className="font-mono hidden font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-light sm:block"
-        >
-          [ DEPLOYMENT ZONES ]
-        </span>
+            <span
+              className="font-mono hidden font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-primary-light sm:block"
+            >
+              [ ZONAS DE DESPLIEGUE ]
+            </span>
+
+          </div>
+        </div>
+  
+        {/* Applications Grid */}
+      <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+
+          {applications.map((app) => (
+
+            <Link
+              href="/contact"
+              key={app.title}
+              className="group block overflow-hidden rounded-[3px] border border-white/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-light hover:shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
+            >
+
+              {/* Card Title */}
+              <div className="flex h-[36px] items-center justify-center bg-white px-3">
+                <h3 className="font-mono font-bold text-[10px]  uppercase tracking-[0.12em] text-[#000000] sm:text-[16px]">
+                  {app.title}
+                </h3>
+              </div>
+
+              {/* Image */}
+              <div className="relative aspect-[301/153] w-full overflow-hidden bg-gray-200">
+
+                <Image
+                  src={app.img}
+                  alt={app.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Black Overlay */}
+                <div className="absolute inset-0 bg-black/25 transition-all duration-300 group-hover:bg-black/15" />
+
+              </div>
+
+            </Link>
+
+          ))}
+
+        </div>
 
       </div>
-    </div>
-
-  {/* Applications Grid */}
-  <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
-
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-
-      {applications.map((app) => (
-
-        <Link
-          href="/contact"
-          key={app.title}
-          className="group block overflow-hidden rounded-[3px] border border-white/80 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-primary-light hover:shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
-        >
-
-          {/* Card Title */}
-          <div className="flex h-[36px] items-center justify-center bg-white px-3">
-            <h3 className="font-mono font-bold text-[10px]  uppercase tracking-[0.12em] text-[#000000] sm:text-[16px]">
-              {app.title}
-            </h3>
-          </div>
-
-          {/* Image */}
-          <div className="relative aspect-[301/153] w-full overflow-hidden bg-gray-200">
-
-            <Image
-              src={app.img}
-              alt={app.title}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-
-            {/* Black Overlay */}
-            <div className="absolute inset-0 bg-black/25 transition-all duration-300 group-hover:bg-black/15" />
-
-          </div>
-
-        </Link>
-
-      ))}
-
-    </div>
-
-  </div>
-  </section>
+      </section>
 
 
 
-  {/* ── OUR PRODUCT RANGE ── */}
-  <section
-    id="products"
-    className="border-b border-gray-200 bg-white"
-  >
-    {/* Section Header */}
-    <div className="bg-[#eeeeee] px-4 py-10 text-center sm:py-12 lg:py-14">
-
-      <span className="font-sans inline-flex items-center rounded-full bg-[#555555] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.08em] text-white sm:text-[10px]"
+        {/* ── OUR PRODUCT RANGE ── */}
+      <section
+        id="products"
+        className="border-b border-gray-200 bg-white"
       >
-        Engineered for the Field
-      </span>
+        {/* Section Header */}
+        <div className="bg-[#eeeeee] px-4 py-10 text-center sm:py-12 lg:py-14">
 
-      <h2 className="font-sans mt-3 text-3xl font-black tracking-tight text-[#444444] sm:text-4xl md:text-5xl"
-      >
-        Built for real-world reliability
-      </h2>
+          <span
+            className="font-sans inline-flex items-center rounded-full bg-[#555555] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.08em] text-white sm:text-[10px]"
+          >
+            Diseñado para el Trabajo
+          </span>
 
-    </div>
+          <h2
+            className="font-sans mt-3 text-3xl font-black tracking-tight text-[#444444] sm:text-4xl md:text-5xl"
+          >
+            Diseñado para una Fiabilidad Real
+          </h2>
+
+        </div>
 
 
     {/* Product Showcase */}
@@ -984,330 +957,80 @@ export default function Home() {
 
   </section>
 
-  {/* Advantages Section */}
-  <section className="relative overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
-    <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-      {/* Section Header */}
-      <div className="mb-10 border-b border-white/20 pb-6 sm:mb-12 lg:mb-14">
-        <div className="flex items-start justify-between gap-6">
-
-          <div className="max-w-3xl">
-            <h2 className="font-mono text-xl font-bold uppercase tracking-[0.14em] text-white sm:text-base"
-            >
-            SYSTEM ADVANTAGES
-          </h2>  
-
-            {/* <h2 className="mt-3 text-3xl font-black uppercase leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
-              Why Choose Bonhoeffer Power?
-            </h2>
-
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
-              Engineered to maximize efficiency, quietness, and performance under
-              demanding industrial and residential operational conditions.
-            </p> */}
-          </div>
-
-          <span className="hidden pt-2 text-[12px] font-mono uppercase tracking-[0.18em] text-primary-light md:block">
-            [ METRICS ]
-          </span>
-
-        </div>
-      </div>
-
-      {/* Advantages Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-        {/* 01 - Fuel Efficiency */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              01
-            </span>
-
-            <Fuel
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-          Fuel Efficiency
-          </h3>
-
-          <p className="text-xs font-sans leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Optimized engines deliver maximum power with lower fuel consumption
-            and reduced operating costs.
-          </p>
-        </div>
-
-        {/* 02 - Silent Operation */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              02
-            </span>
-
-            <VolumeX
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Silent Operation
-          </h3>
-
-          <p className=" font-sans text-xs  leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Advanced canopy design reduces noise for comfortable and quiet
-            performance.
-          </p>
-        </div>
-
-        {/* 03 - Reliable Power */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              03
-            </span>
-
-            <Zap
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Reliable Power
-          </h3>
-
-          <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Stable and uninterrupted power supply for homes, industries, and
-            businesses.
-          </p>
-        </div>
-
-        {/* 04 - Heavy Duty */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              04
-            </span>
-
-            <HardHat
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Heavy-Duty Design
-          </h3>
-
-          <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Built with durable components to perform in demanding conditions.
-          </p>
-        </div>
-
-        {/* 05 - Maintenance */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              05
-            </span>
-
-            <Wrench
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Easy Maintenance
-          </h3>
-
-          <p className="text-xs font-sans leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            User-friendly design simplifies servicing and reduces downtime.
-          </p>
-        </div>
-
-        {/* 06 - Operating Cost */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              06
-            </span>
-
-            <CircleDollarSign
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Low Operating Cost
-          </h3>
-
-          <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Efficient performance with reduced maintenance and running expenses.
-          </p>
-        </div>
-
-        {/* 07 - Cooling */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              07
-            </span>
-
-            <Snowflake
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Advanced Cooling
-          </h3>
-
-          <p className=" font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Efficient cooling system ensures reliable operation in all
-            conditions.
-          </p>
-        </div>
-
-        {/* 08 - Stable Output */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              08
-            </span>
-
-            <SlidersHorizontal
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-        >
-            Stable Power Output
-          </h3>
-
-          <p className="font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Consistent voltage and frequency protect your electrical equipment.
-          </p>
-        </div>
-
-        {/* 09 - Continuous Operation */}
-        <div className="group min-h-[190px] border border-white/35 p-6 transition-all duration-300 hover:border-primary-light hover:bg-white/[0.04] sm:p-7">
-          <div className="mb-7 flex items-start justify-between">
-            <span className="text-[10px] font-mono text-white/60 sm:text-xs">
-              09
-            </span>
-
-            <RefreshCw
-              className="h-5 w-5 text-primary-light sm:h-6 sm:w-6"
-              strokeWidth={1.8}
-            />
-          </div>
-
-          <h3 className="font-display mb-3 text-base font-black uppercase tracking-wide text-white sm:text-lg"
-          >
-            Continuous Operation
-          </h3>
-
-          <p className=" font-sans text-xs leading-6 text-white/65 sm:text-sm sm:leading-6"
-          >
-            Designed for long hours of reliable industrial performance.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <SystemAdvantages/>
 
 
 
   {/* ── GET STARTED / CTA SECTION ── */}
-  <section className="border-t border-gray-200 bg-white py-10 sm:py-11 md:py-12">
-    <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+<section className="border-t border-gray-200 bg-white py-10 sm:py-11 md:py-12">
+  <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
 
-      {/* Heading */}
-      <h2 className="font-display text-3xl font-black uppercase tracking-tight text-[#444444] sm:text-4xl md:text-[42px]"
+    {/* Heading */}
+    <h2
+      className="font-display text-3xl font-black uppercase tracking-tight text-[#444444] sm:text-4xl md:text-[42px]"
+    >
+      ¿Necesita Energía Confiable?
+    </h2>
+
+    {/* Description */}
+    <p
+      className="font-sans mx-auto mt-3 max-w-2xl text-sm font-normal leading-6 text-gray-500 sm:text-base"
+    >
+      Contacte a nuestro equipo de ingeniería para seleccionar el grupo
+      electrógeno ideal según sus necesidades.
+    </p>
+
+    {/* Buttons */}
+    <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+
+      {/* Request Quote */}
+      <Link
+        href="/contact"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#999999] bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
       >
-        Need Reliable Work ?
-      </h2>
+        Solicitar Cotización
 
-      {/* Description */}
-      <p className="font-sans mx-auto mt-3 max-w-2xl text-sm font-normal leading-6 text-gray-500 sm:text-base"
+        <span className="ml-2 text-sm">
+          →
+        </span>
+      </Link>
+
+      {/* Contact Team */}
+      <Link
+        href="/contact"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center bg-black px-6 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#333333] sm:min-h-[40px] sm:px-7 sm:text-[11px]"
       >
-        Contact our engineering team to select the ideal generator set for your requirements.
-      </p>
-
-      {/* Buttons */}
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-
-        {/* Request Quote */}
-        <Link
-          href="/contact"
-          className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#999999] bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
-          >
-          Request a Quote
-
-          <span className="ml-2 text-sm">
-            →
-          </span>
-        </Link>
-
-        {/* Contact Team */}
-        <Link
-          href="/contact"
-          className="font-sans inline-flex min-h-[38px] items-center justify-center bg-black px-6 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#333333] sm:min-h-[40px] sm:px-7 sm:text-[11px]"
-          >
-          Contact Team
-        </Link>
-
-      </div>
+        Contactar al Equipo
+      </Link>
 
     </div>
-  </section>
 
-  {/* ── FAQ SECTION ── */}
-  <section
-    id="faq"
-    className="border-y border-[#d0d0d0] bg-[#eeeeee] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
-  >
-    <div className="mx-auto max-w-5xl">
+  </div>
+</section>
 
-      {/* Badge */}
-      <div className="text-center">
-        <span className="font-sans inline-flex items-center rounded-full bg-[#555555] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white sm:px-5 sm:text-[11px]"
+    {/* ── FAQ SECTION ── */}
+    <section
+      id="faq"
+      className="border-y border-[#d0d0d0] bg-[#eeeeee] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+    >
+      <div className="mx-auto max-w-5xl">
+
+        {/* Badge */}
+        <div className="text-center">
+          <span
+            className="font-sans inline-flex items-center rounded-full bg-[#555555] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white sm:px-5 sm:text-[11px]"
+          >
+            Soporte y Preguntas Frecuentes
+          </span>
+        </div>
+
+        {/* Main Heading */}
+        <h2
+          className="font-sans mt-4 text-center text-3xl font-black leading-tight tracking-tight text-[#444444] sm:text-4xl md:text-5xl lg:text-[48px]"
         >
-          Support & FAQ
-        </span>
-      </div>
-
-      {/* Main Heading */}
-      <h2 className="font-sans mt-4 text-center text-3xl font-black leading-tight tracking-tight text-[#444444] sm:text-4xl md:text-5xl lg:text-[48px]"
-      >
-        Choose the Right Power for Your Needs
-      </h2>
+          Elija la Energía Adecuada para Sus Necesidades
+        </h2>
 
       {/* FAQ List */}
       <div className="mx-auto mt-10 max-w-4xl space-y-4 sm:mt-12">
