@@ -101,10 +101,11 @@ const faqs = [
     answer:
       "No, no es necesario encenderlo manualmente. Nuestros generadores cuentan con un sistema ATS que permite que el generador se encienda automáticamente cuando se produce un corte de energía.",
   },
-   {
+  {
     question: "2. ¿Quién fue el fundador de Bonhoeffer Machines?",
     answer: "El fundador de Bonhoeffer Machines es Varun Gupta, quien inició este viaje con la visión de crear asociaciones duraderas y contribuir al progreso de las industrias en todo el mundo.",
   },
+  
 ];
   // {
   //   question: "Can I install a standby generator myself?",
