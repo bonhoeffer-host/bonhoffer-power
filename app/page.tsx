@@ -9,7 +9,7 @@ import SystemAdvantages from "@/components/SystemAdvantages";
 
 const generators = [
   {
-  img: "/products/side-2.webp",
+  img: "/products/main.png",
   name: "BON-D3300-3P60",
   slug: "bon-d3300-3p60",
   tag: "3000 kW",
@@ -33,7 +33,7 @@ const generators = [
   ]
 },
 {
-  img: "/products/side-1.webp",
+  img: "/products/side-2.webp",
   name: "BON-D2200-3P50",
   slug: "bon-d2200-3p50",
   tag: "2200 kW",
