@@ -113,7 +113,7 @@ const specs = Object.fromEntries(
   <div className="relative min-h-0 flex-1 overflow-hidden border border-[#bdbdbd] bg-white">
 
     <Image
-      src="/products/Front view 1.webp"
+      src="/products/side-2.webp"
       alt={product.name}
       fill
       priority
@@ -124,13 +124,13 @@ const specs = Object.fromEntries(
   </div>
 
   {/* THUMBNAILS */}
-  <div className="mt-3 grid h-[86px] shrink-0 grid-cols-4 gap-3">
+  <div className="mt-3 grid h-[86px] shrink-0 grid-cols-3 gap-3">
 
     {[
       "/products/side-1.webp",
       "/products/side-2.webp",
       "/products/side-3.webp",
-      "/products/side-4.webp",
+      // "/products/side-4.webp",
     ].map((image, index) => (
 
       <button
