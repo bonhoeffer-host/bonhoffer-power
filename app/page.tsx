@@ -158,97 +158,197 @@ const applications = [
 ];
 
 
+// const slides = [
+//   {
+//     image: "/banner/banner2.jpeg",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Energía Confiable.
+//         <br />
+//         Rendimiento Duradero.
+//       </>
+//     ),
+//     description:
+//       "Los generadores VoltForge ofrecen un rendimiento de alta resistencia con eficiencia de combustible de nivel industrial, funcionamiento silencioso y construcción resistente a la intemperie. Diseñados para mantenerte en marcha, sin importar las circunstancias.",
+//   },
+//   {
+//     image: "/banner/BON Power .webp",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Energía en la que
+//         <br />
+//         Puedes Confiar.
+//       </>
+//     ),
+//     description:
+//       "Soluciones de generación de energía confiables, diseñadas para ofrecer un rendimiento constante, eficiencia de combustible y una operación duradera en condiciones exigentes.",
+//   },
+//   {
+//     image: "/banner/Power-banner-4.webp",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Rendimiento que
+//         <br />
+//         Va Más Lejos.
+//       </>
+//     ),
+//     description:
+//       "Tecnología avanzada de generación de energía diseñada para proporcionar una operación eficiente, un alto rendimiento y energía confiable cuando más la necesitas.",
+//   },
+//   {
+//     image: "/banner/Power-banner2.webp",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Mantente con Energía.
+//         <br />
+//         Mantente Productivo.
+//       </>
+//     ),
+//     description:
+//       "Mantén tu hogar, negocio y equipos esenciales funcionando con generadores confiables diseñados para un suministro continuo y eficiente de energía.",
+//   },
+//   {
+//     image: "/banner/Power-banner5.webp",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Soluciones Potentes.
+//         <br />
+//         Confiabilidad Comprobada.
+//       </>
+//     ),
+//     description:
+//       "Desde energía de respaldo para el día a día hasta aplicaciones exigentes, nuestros generadores están diseñados para ofrecer un rendimiento confiable cuando más importa.",
+//   },
+//   {
+//     image: "/banner/Power-banner6.webp",
+//     label: "Diseñado para la Confiabilidad",
+//     title: (
+//       <>
+//         Preparados para los
+//         <br />
+//         Trabajos Más Difíciles.
+//       </>
+//     ),
+//     description:
+//       "Soluciones de generación de energía robustas, diseñadas para funcionar en entornos residenciales, comerciales, agrícolas e industriales.",
+//   },
+//   {
+//     image: "/banner/web banner power.webp",
+//     label: "Diseñado para el Rendimiento",
+//     title: (
+//       <>
+//         Energía Cuando
+//         <br />
+//         Más la Necesitas.
+//       </>
+//     ),
+//     description:
+//       "La tecnología avanzada de generación ofrece energía confiable, operación eficiente y gran durabilidad para hogares, empresas y aplicaciones industriales exigentes.",
+//   },
+// ];
+
 const slides = [
   {
     image: "/banner/banner2.jpeg",
-    label: "Diseñado para la Confiabilidad",
+    label: "POTENCIA QUE NUNCA SE DETIENE",
     title: (
       <>
-        Energía Confiable.
+        POTENCIA QUE
         <br />
-        Rendimiento Duradero.
+        NUNCA SE DETIENE
       </>
     ),
     description:
-      "Los generadores VoltForge ofrecen un rendimiento de alta resistencia con eficiencia de combustible de nivel industrial, funcionamiento silencioso y construcción resistente a la intemperie. Diseñados para mantenerte en marcha, sin importar las circunstancias.",
+      "Nuestros generadores están diseñados para ofrecer potencia confiable, máxima resistencia y rendimiento continuo, incluso en las condiciones más exigentes",
   },
+
   {
     image: "/banner/BON Power .webp",
-    label: "Diseñado para la Confiabilidad",
+    label: "RENDIMIENTO EN EL QUE PUEDES CONFIAR",
     title: (
       <>
-        Energía en la que
+        RENDIMIENTO EN EL
         <br />
-        Puedes Confiar.
+        QUE PUEDES CONFIAR
       </>
     ),
     description:
-      "Soluciones de generación de energía confiables, diseñadas para ofrecer un rendimiento constante, eficiencia de combustible y una operación duradera en condiciones exigentes.",
+      "Energía estable, alta eficiencia y rendimiento constante para mantener tus operaciones siempre en marcha.",
   },
+
   {
     image: "/banner/Power-banner-4.webp",
-    label: "Diseñado para la Confiabilidad",
+    label: "TECNOLOGÍA QUE IMPULSA TU ENERGÍA",
     title: (
       <>
-        Rendimiento que
+        TECNOLOGÍA QUE
         <br />
-        Va Más Lejos.
+        IMPULSA TU ENERGÍA
       </>
     ),
     description:
-      "Tecnología avanzada de generación de energía diseñada para proporcionar una operación eficiente, un alto rendimiento y energía confiable cuando más la necesitas.",
+      "Tecnología avanzada diseñada para ofrecer mayor eficiencia, rendimiento superior y energía confiable cuando más la necesitas.",
   },
+
   {
     image: "/banner/Power-banner2.webp",
-    label: "Diseñado para la Confiabilidad",
+    label: "PROTEGE LO QUE MÁS IMPORTA",
     title: (
       <>
-        Mantente con Energía.
+        PROTEGE LO QUE
         <br />
-        Mantente Productivo.
+        MÁS IMPORTA
       </>
     ),
     description:
-      "Mantén tu hogar, negocio y equipos esenciales funcionando con generadores confiables diseñados para un suministro continuo y eficiente de energía.",
+      "Mantén tu hogar, negocio y equipos esenciales funcionando con una fuente de energía confiable cuando la red eléctrica falla.",
   },
+
   {
     image: "/banner/Power-banner5.webp",
-    label: "Diseñado para la Confiabilidad",
+    label: "LISTO PARA CUALQUIER DESAFÍO",
     title: (
       <>
-        Soluciones Potentes.
+        LISTO PARA
         <br />
-        Confiabilidad Comprobada.
+        CUALQUIER DESAFÍO
       </>
     ),
     description:
-      "Desde energía de respaldo para el día a día hasta aplicaciones exigentes, nuestros generadores están diseñados para ofrecer un rendimiento confiable cuando más importa.",
+      "Desde el respaldo diario hasta las aplicaciones más exigentes, nuestros generadores ofrecen la potencia que necesitas en el momento preciso.",
   },
+
   {
     image: "/banner/Power-banner6.webp",
-    label: "Diseñado para la Confiabilidad",
+    label: "UNA SOLUCIÓN PARA CADA NECESIDAD",
     title: (
       <>
-        Preparados para los
+        UNA SOLUCIÓN PARA
         <br />
-        Trabajos Más Difíciles.
+        CADA NECESIDAD
       </>
     ),
     description:
-      "Soluciones de generación de energía robustas, diseñadas para funcionar en entornos residenciales, comerciales, agrícolas e industriales.",
+      "Generadores diseñados para aplicaciones residenciales, comerciales, agrícolas e industriales, con rendimiento confiable en cada entorno.",
   },
+
   {
     image: "/banner/web banner power.webp",
-    label: "Diseñado para el Rendimiento",
+    label: "POWER FOR EVERY SCALE",
     title: (
       <>
-        Energía Cuando
+        POWER FOR
         <br />
-        Más la Necesitas.
+        EVERY SCALE
       </>
     ),
     description:
-      "La tecnología avanzada de generación ofrece energía confiable, operación eficiente y gran durabilidad para hogares, empresas y aplicaciones industriales exigentes.",
+      "A versatile range of generators designed to meet different power requirements, from everyday needs to demanding operations.",
   },
 ];
 
