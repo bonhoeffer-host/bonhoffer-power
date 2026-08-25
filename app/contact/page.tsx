@@ -86,21 +86,30 @@ const socialLinks = [
 // ];
 const offices = [
   {
-    flag: "🇦🇪",
-    country: "Dubai Office",
-    name: "BONHOEFFER POWER",
+    flag: "🇨🇳",
+    country: "China Office",
+    name: "NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD",
     address:
-      "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates",
-    accent: "border-primary",
+      "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
+    accent: "border-red-500",
   },
 
   {
     flag: "🇮🇳",
-    country: "Faridabad Office",
-    name: "SUPERTECH FARIDABAD",
+    country: "Gurgaon Office",
+    name: "BONHOEFFER MACHINES PRIVATE LIMITED",
     address:
-      "Khasra No-205/437, Mahalaxmi Temple, Ballabhgarh-Sohna Rd, near Radha Swami Ghar, Nangla Gujran, Faridabad, Pali, Haryana 121005",
-    accent: "border-emerald-500",
+      "2nd Floor, Plot No. 756, Phase V, Udyog Vihar, Gurugram, Gurugram, Haryana, 122001",
+    accent: "border-primary",
+  },
+
+  {
+    flag: "🇭🇰",
+    country: "Hong Kong Office",
+    name: "HEINE CORPORATION HK PRIVATE LIMITED",
+    address:
+      "RM 1607 TREND CTR 29-31 CHEUNG, LEE ST CHAI WAN, HONG KONG",
+    accent: "border-cyan-500",
   },
 
   {
@@ -113,12 +122,39 @@ const offices = [
   },
 
   {
-    flag: "🇭🇰",
-    country: "Hong Kong Office",
-    name: "HEINE CORPORATION HK PRIVATE LIMITED",
+    flag: "🇦🇪",
+    country: "Dubai Office",
+    name: "BONHOEFFER POWER",
     address:
-      "RM 1607 TREND CTR 29-31 CHEUNG, LEE ST CHAI WAN, HONG KONG",
-    accent: "border-cyan-500",
+      "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates",
+    accent: "border-primary",
+  },
+
+  {
+    flag: "🇮🇳",
+    country: "Tamil Nadu Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Building No./Flat No.: D.NO.77/1A, Road/Street: SHANTHIGEARS ROAD, City/Town/Village: Kannampalayam, District: Coimbatore, State: Tamil Nadu, PIN Code: 641402",
+    accent: "border-purple-500",
+  },
+
+  {
+    flag: "🇮🇳",
+    country: "Odisha Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Building No./Flat No.: PLOT NO. 3274/4841, Road/Street: Bhanapur, City/Town/Village: Telengapentha, District: Cuttack, State: Odisha, PIN Code: 753011",
+    accent: "border-pink-500",
+  },
+
+  {
+    flag: "🇮🇳",
+    country: "Gujarat Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Floor No.: Survey No. 727, Building No./Flat No.: Plot No. 16, Name Of Premises/Building: Giriraj Industrial Park-2, Road/Street: Kankaj Ode, City/Town/Village: Bareja, District: Ahmedabad, State: Gujarat, PIN Code: 382425",
+    accent: "border-yellow-500",
   },
 
   {
@@ -141,50 +177,13 @@ const offices = [
 
   {
     flag: "🇮🇳",
-    country: "Tamil Nadu Office",
-    name: "BONHOEFFER POWER",
+    country: "Faridabad Office",
+    name: "SUPERTECH FARIDABAD",
     address:
-      "Building No./Flat No.: D.NO.77/1A, Road/Street: SHANTHIGEARS ROAD, City/Town/Village: Kannampalayam, District: Coimbatore, State: Tamil Nadu, PIN Code: 641402",
-    accent: "border-purple-500",
-  },
-
-  {
-    flag: "🇮🇳",
-    country: "Gujarat Office",
-    name: "BONHOEFFER POWER",
-    address:
-      "Floor No.: Survey No. 727, Building No./Flat No.: Plot No. 16, Name Of Premises/Building: Giriraj Industrial Park-2, Road/Street: Kankaj Ode, City/Town/Village: Bareja, District: Ahmedabad, State: Gujarat, PIN Code: 382425",
-    accent: "border-yellow-500",
-  },
-
-  {
-    flag: "🇮🇳",
-    country: "Odisha Office",
-    name: "BONHOEFFER POWER",
-    address:
-      "Building No./Flat No.: PLOT NO. 3274/4841, Road/Street: Bhanapur, City/Town/Village: Telengapentha, District: Cuttack, State: Odisha, PIN Code: 753011",
-    accent: "border-pink-500",
-  },
-
-  {
-    flag: "🇮🇳",
-    country: "Corporate Office",
-    name: "BONHOEFFER MACHINES PRIVATE LIMITED",
-    address:
-      "2nd Floor, Plot No. 756, Phase V, Udyog Vihar, Gurugram, Gurugram, Haryana, 122001",
-    accent: "border-primary",
-  },
-
-  {
-    flag: "🇨🇳",
-    country: "China Office",
-    name: "NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD",
-    address:
-      "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
-    accent: "border-red-500",
+      "Khasra No-205/437, Mahalaxmi Temple, Ballabhgarh-Sohna Rd, near Radha Swami Ghar, Nangla Gujran, Faridabad, Pali, Haryana 121005",
+    accent: "border-emerald-500",
   },
 ];
-
 const tabs = ["Request a Quote / Enquiry", "Distributor Form", "Inquiry Form"] as const;
 type Tab = typeof tabs[number];
 

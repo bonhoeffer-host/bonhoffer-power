@@ -102,6 +102,8 @@ const faqs = [
   },
 ];
 
+
+
 const offices = [
   {
     icon: "🇨🇳",
@@ -109,21 +111,100 @@ const offices = [
     name: "NINGBO BONHOEFFER MACHINES IMPORT & EXPORT CO. LTD",
     address:
       "Room A163, Building 003(4-1) (4-2), No.1083 Zhongshan East Road, Yinzhou District, Ningbo, Zhejiang, China.",
+    accent: "border-red-500",
   },
+
+  {
+    icon: "🇮🇳",
+    country: "Gurgaon Office",
+    name: "BONHOEFFER MACHINES PRIVATE LIMITED",
+    address:
+      "2nd Floor, Plot No. 756, Phase V, Udyog Vihar, Gurugram, Gurugram, Haryana, 122001",
+    accent: "border-primary",
+  },
+
   {
     icon: "🇭🇰",
     country: "Hong Kong Office",
     name: "HEINE CORPORATION HK PRIVATE LIMITED",
-    address: "RM 1607 TREND CTR 29-31 CHEUNG LEE ST CHAI WAN HONG KONG",
+    address:
+      "RM 1607 TREND CTR 29-31 CHEUNG, LEE ST CHAI WAN, HONG KONG",
+    accent: "border-cyan-500",
   },
+
+  {
+    icon: "🇭🇰",
+    country: "Hong Kong Office",
+    name: "GLOBAL TOOL",
+    address:
+      "UNIT 1510 SEAPOWER TOWER, CONCORDIA PLAZA, 1 SCIENCE MUSEUM RD, TSIM SHA TSUI, HONG KONG",
+    accent: "border-lime-500",
+  },
+
+  {
+    icon: "🇦🇪",
+    country: "Dubai Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates",
+    accent: "border-primary",
+  },
+
   {
     icon: "🇮🇳",
-    country: "Registered and Corporate Office",
-    name: "BONHOEFFER MACHINES PRIVATE LIMITED",
+    country: "Tamil Nadu Office",
+    name: "BONHOEFFER POWER",
     address:
-      "Plot No 756, 2nd Floor, Udyog Vihar, Phase V, Gurugram, Haryana Pin Code: 122001",
+      "Building No./Flat No.: D.NO.77/1A, Road/Street: SHANTHIGEARS ROAD, City/Town/Village: Kannampalayam, District: Coimbatore, State: Tamil Nadu, PIN Code: 641402",
+    accent: "border-purple-500",
+  },
+
+  {
+    icon: "🇮🇳",
+    country: "Odisha Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Building No./Flat No.: PLOT NO. 3274/4841, Road/Street: Bhanapur, City/Town/Village: Telengapentha, District: Cuttack, State: Odisha, PIN Code: 753011",
+    accent: "border-pink-500",
+  },
+
+  {
+    icon: "🇮🇳",
+    country: "Gujarat Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Floor No.: Survey No. 727, Building No./Flat No.: Plot No. 16, Name Of Premises/Building: Giriraj Industrial Park-2, Road/Street: Kankaj Ode, City/Town/Village: Bareja, District: Ahmedabad, State: Gujarat, PIN Code: 382425",
+    accent: "border-yellow-500",
+  },
+
+  {
+    icon: "🇮🇳",
+    country: "Assam Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "Dag No. 203, Patta No. 58, Road/Street: Mouza-Sila Sinduri Ghopa, Locality/Sub Locality: Numali Jalah, City/Town/Village: Guwahati, District: Kamrup Metropolitan, State: Assam - 781001",
+    accent: "border-orange-500",
+  },
+
+  {
+    icon: "🇮🇳",
+    country: "Ambala Office",
+    name: "BONHOEFFER POWER",
+    address:
+      "KHEWAT NO. 568, KHATAUNI NO. 738, KHASRA NO. 42/19, KITE 01, RAKBA 411, MOHRA, AMBALA, Ambala, Haryana, 133004",
+    accent: "border-blue-500",
+  },
+
+  {
+    icon: "🇮🇳",
+    country: "Faridabad Office",
+    name: "SUPERTECH FARIDABAD",
+    address:
+      "Khasra No-205/437, Mahalaxmi Temple, Ballabhgarh-Sohna Rd, near Radha Swami Ghar, Nangla Gujran, Faridabad, Pali, Haryana 121005",
+    accent: "border-emerald-500",
   },
 ];
+
 
 export default function AboutPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
