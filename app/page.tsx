@@ -496,17 +496,43 @@ export default function Home() {
         0{currentSlide + 1} / 0{slides.length}
       </div>
     </section>
+{/* Trust Strip */}
+<section className="w-full bg-white">
+  <div className="mx-auto flex min-h-[150px] flex-col items-center justify-center px-4 py-7 sm:min-h-[165px] sm:py-8">
 
-      {/* Trust Strip */}
-      <section className="w-full bg-white">
-        <div className="mx-auto flex min-h-[100px] items-center justify-center px-4 py-7 sm:min-h-[110px] sm:py-8 md:min-h-[120px]">
-          <p
-            className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm"
-          >
-            Con la confianza de Contratistas, Propietarios y Operadores de Sitios en todo el Mundo
-          </p>
-        </div>
-      </section>
+    {/* Trust Text */}
+    <p className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm">
+      Con la confianza de Contratistas, Propietarios y Operadores de Sitios en todo el Mundo
+    </p>
+
+    {/* Catalogue Buttons */}
+    <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+      {/* View Catalogue */}
+      <a
+        href="/Final-Catalogo-2026.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#444444] bg-[#444444] px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
+      >
+        Ver Catálogo
+        <span className="ml-2 text-sm">↗</span>
+      </a>
+
+      {/* Download Catalogue */}
+      <a
+        href="/Final-Catalogo-2026.pdf"
+        download="Final-Catalogo-2026.pdf"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-gray-300 bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
+      >
+        Descargar Catálogo
+        <span className="ml-2 text-sm">↓</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -1074,10 +1100,10 @@ export default function Home() {
 
     
 
-    {/* Buttons */}
+  
     <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
 
-      {/* Request Quote
+      
       <Link
         href="/contact"
         className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#999999] bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
@@ -1089,34 +1115,13 @@ export default function Home() {
         </span>
       </Link>
 
-      {/* Contact Team 
+      
       <Link
         href="/contact"
         className="font-sans inline-flex min-h-[38px] items-center justify-center bg-black px-6 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-[#333333] sm:min-h-[40px] sm:px-7 sm:text-[11px]"
       >
         Contactar al Equipo
-      </Link> */}
-
-            {/* View Catalogue */}
-        <a
-          href="/Final-Catalogo-2026.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#444444] bg-[#444444] px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
-        >
-          Ver Catálogo
-          <span className="ml-2 text-sm">↗</span>
-        </a>
-
-        {/* Download Catalogue */}
-        <a
-          href="/Final-Catalogo-2026.pdf"
-          download="Final-Catalogo-2026.pdf"
-          className="font-sans inline-flex min-h-[38px] items-center justify-center border border-gray-300 bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
-        >
-          Descargar Catálogo
-          <span className="ml-2 text-sm">↓</span>
-        </a>
+      </Link> *
 
     </div>
 
