@@ -299,12 +299,51 @@ const filteredProducts = (() => {
   </div>
 </section>
 
+
+{/* Trust Strip */}
+<section className="w-full bg-white">
+  <div className="mx-auto flex min-h-[150px] flex-col items-center border-t-[2px] border-[#1689d8]  bg-[#EAE9E9] justify-center px-4 py-7 sm:min-h-[165px] sm:py-8">
+
+    {/* Trust Text */}
+    <p className="font-sans text-center text-[11px] font-semibold uppercase tracking-[0.08em] text-black sm:text-xs md:text-sm">
+      Impulsados por la ingeniería, construidos para ofrecer energía confiable. </p>
+
+    {/* Catalogue Buttons */}
+    <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+      {/* View Catalogue */}
+      <a
+        href="/Final-Catalogo-2026.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-[#444444] bg-[#444444] px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
+      >
+        Ver Catálogo
+        <span className="ml-2 text-sm">↗</span>
+      </a>
+
+      {/* Download Catalogue */}
+      <a
+        href="/Final-Catalogo-2026.pdf"
+        download="Final-Catalogo-2026.pdf"
+        className="font-sans inline-flex min-h-[38px] items-center justify-center border border-gray-300 bg-white px-5 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#555555] transition-all duration-300 hover:border-black hover:bg-gray-50 hover:text-black sm:min-h-[40px] sm:px-6 sm:text-[11px]"
+      >
+        Descargar Catálogo
+        <span className="ml-2 text-sm">↓</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
 {/* ── BANNER TAGLINE ── */}
-<section className="w-full h-[80px] sm:h-[86px] bg-[#EAE9E9] border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">
+{/* <section className="w-full h-[80px] sm:h-[86px] bg-[#EAE9E9] border-t-[2px] border-[#1689d8] flex items-center justify-center px-5 sm:px-8">
   <p className="font-sans w-full max-w-[900px] m-0 text-center text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.02em] text-black leading-relaxed">
     Impulsados por la ingeniería, construidos para ofrecer energía confiable.
   </p>
-</section>
+</section> */}
 {/* =========================================================
     PRODUCT CATALOG
 ========================================================= */}
