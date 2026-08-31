@@ -16,139 +16,228 @@ export default function ProductsPage() {
   const [selectedDuty, setSelectedDuty] = useState("All");
   const [selectedUnit, setSelectedUnit] = useState("English");
 
- /* =========================================================
-   GET PRODUCT FREQUENCY
-========================================================= */
+   /* =========================================================
+     GET PRODUCT FREQUENCY
+  ========================================================= */
 
-const getProductFrequency = (product: (typeof allProducts)[number]) => {
-  const frequencyItem = product.highlights?.find((item) =>
-    item.toLowerCase().startsWith("frequency")
-  );
+  const getProductFrequency = (
+    product: (typeof allProducts)[number]
+  ) => {
+    const frequencyItem = product.highlights?.find((item) =>
+      item.toLowerCase().startsWith("frequency")
+    );
 
-  if (!frequencyItem) return "";
+    if (!frequencyItem) return "";
 
-  const value = frequencyItem.split(":-")[1]?.trim().toLowerCase() || "";
+    const value =
+      frequencyItem.split(":-")[1]?.trim().toLowerCase() || "";
 
-  if (value.includes("60")) return "60";
-  if (value.includes("50")) return "50";
+    // Check Dual FIRST
+    if (value.includes("dual")) return "Dual";
+    if (value.includes("60")) return "60";
+    if (value.includes("50")) return "50";
 
-  if (value.includes("dual")) return "Dual";
-
-  return "";
-};
+    return "";
+  };
 
 
-/* =========================================================
-   GET PRODUCT PHASE
-========================================================= */
+  /* =========================================================
+     GET PRODUCT PHASE
+  ========================================================= */
 
-const getProductPhase = (product: (typeof allProducts)[number]) => {
-  const phaseValue = product.phase?.toLowerCase().trim();
+  const getProductPhase = (
+    product: (typeof allProducts)[number]
+  ) => {
+    const phaseValue = product.phase?.toLowerCase().trim();
 
-  // First check the main phase property
-  if (phaseValue) {
+    // Main phase property
+    if (phaseValue) {
+      if (
+        phaseValue === "1-phase" ||
+        phaseValue === "1 phase" ||
+        phaseValue === "1p" ||
+        phaseValue.includes("1-phase")
+      ) {
+        return "1-P";
+      }
+
+      if (
+        phaseValue === "3-phase" ||
+        phaseValue === "3 phase" ||
+        phaseValue === "3p" ||
+        phaseValue.includes("3-phase")
+      ) {
+        return "3-P";
+      }
+    }
+
+    // Fallback: highlights
+    const phaseItem = product.highlights?.find((item) =>
+      item.toLowerCase().startsWith("phase")
+    );
+
+    if (!phaseItem) return "";
+
+    const value =
+      phaseItem.split(":-")[1]?.trim().toLowerCase() || "";
+
     if (
-      phaseValue === "1-phase" ||
-      phaseValue === "1 phase" ||
-      phaseValue === "1p"
+      value.includes("1-phase") ||
+      value.includes("1 phase") ||
+      value === "1p"
     ) {
       return "1-P";
     }
 
     if (
-      phaseValue === "3-phase" ||
-      phaseValue === "3 phase" ||
-      phaseValue === "3p"
+      value.includes("3-phase") ||
+      value.includes("3 phase") ||
+      value === "3p"
     ) {
       return "3-P";
     }
-  }
 
-  // Fallback: check highlights
-  const phaseItem = product.highlights?.find((item) =>
-    item.toLowerCase().startsWith("phase")
-  );
-
-  if (!phaseItem) return "";
-
-  const value = phaseItem.split(":-")[1]?.trim().toLowerCase() || "";
-
-  if (
-    value === "1-phase" ||
-    value === "1 phase" ||
-    value.includes("1-phase")
-  ) {
-    return "1-P";
-  }
-
-  if (
-    value === "3-phase" ||
-    value === "3 phase" ||
-    value.includes("3-phase")
-  ) {
-    return "3-P";
-  }
-
-  return "";
-};
+    return "";
+  };
 
 
-/* =========================================================
-   FILTER PRODUCTS
+  /* =========================================================
+     GET PRODUCT POWER
+     Used for ASCENDING ORDER
+  ========================================================= */
+
+  const getProductPower = (
+    product: (typeof allProducts)[number]
+  ) => {
+    const highlights = product.highlights || [];
+
+    // First preference: Standby Power
+    const standbyItem = highlights.find((item) => {
+      const text = item.toLowerCase();
+
+      return (
+        text.startsWith("standby power") ||
+        text.startsWith("standby")
+      );
+    });
+
+    if (!standbyItem) return 0;
+
+    const value =
+      standbyItem.split(":-")[1]?.trim() || "";
+
+    /*
+      Example:
+      "Standby Power :- 12 Kva / 12 Kw"
+
+      Extracts:
+      12
+    */
+
+    const match = value.match(/[\d,.]+/);
+
+    if (!match) return 0;
+
+    const number = parseFloat(
+      match[0].replace(/,/g, "")
+    );
+
+    return Number.isNaN(number) ? 0 : number;
+  };
+
+
+ /* =========================================================
+   FILTER + REMOVE DUPLICATES + SORT
 ========================================================= */
 
-const filteredProducts = allProducts.filter((product) => {
+const filteredProducts = (() => {
+  const seen = new Set<string>();
 
-  const productText = [
-    product.name,
-    product.series,
-    product.desc,
-    product.phase,
-    ...(product.highlights || []),
-  ]
-    .join(" ")
-    .toLowerCase();
+  return allProducts
+    .filter((product) => {
 
-
-  /* ================= SEARCH ================= */
-
-  const searchMatch =
-    searchTerm.trim() === "" ||
-    productText.includes(searchTerm.toLowerCase().trim());
+      const productText = [
+        product.name,
+        product.series,
+        product.desc,
+        product.phase,
+        ...(product.highlights || []),
+      ]
+        .join(" ")
+        .toLowerCase();
 
 
-  /* ================= EXACT PHASE ================= */
+      /* SEARCH */
 
-  const productPhase = getProductPhase(product);
-
-  const phaseMatch =
-    selectedPhase === "All" ||
-    productPhase === selectedPhase;
-
-
-  /* ================= EXACT FREQUENCY ================= */
-
-  const productFrequency = getProductFrequency(product);
-
-  const frequencyMatch =
-    selectedFrequency === "All" ||
-    productFrequency === selectedFrequency;
+      const searchMatch =
+        searchTerm.trim() === "" ||
+        productText.includes(
+          searchTerm.toLowerCase().trim()
+        );
 
 
-  /* ================= DUTY ================= */
+      /* PHASE */
 
-  const dutyMatch =
-    selectedDuty === "All" ||
-    productText.includes(selectedDuty.toLowerCase());
+      const productPhase =
+        getProductPhase(product);
+
+      const phaseMatch =
+        selectedPhase === "All" ||
+        productPhase === selectedPhase;
 
 
-  return (
-    searchMatch &&
-    phaseMatch &&
-    frequencyMatch &&
-    dutyMatch
-  );
-});
+      /* FREQUENCY */
+
+      const productFrequency =
+        getProductFrequency(product);
+
+      const frequencyMatch =
+        selectedFrequency === "All" ||
+        productFrequency === selectedFrequency;
+
+
+      /* DUTY */
+
+      const dutyMatch =
+        selectedDuty === "All" ||
+        productText.includes(
+          selectedDuty.toLowerCase()
+        );
+
+
+      return (
+        searchMatch &&
+        phaseMatch &&
+        frequencyMatch &&
+        dutyMatch
+      );
+    })
+
+    /* =====================================================
+       REMOVE DUPLICATES
+       Based on PRODUCT SLUG
+    ===================================================== */
+
+    .filter((product) => {
+
+      if (seen.has(product.slug)) {
+        return false;
+      }
+
+      seen.add(product.slug);
+
+      return true;
+    })
+
+    /* =====================================================
+       ASCENDING POWER ORDER
+    ===================================================== */
+
+    .sort((a, b) => {
+      return getProductPower(a) - getProductPower(b);
+    });
+})();
+
   /* =========================================================
      PAGINATION
   ========================================================= */
@@ -157,13 +246,15 @@ const filteredProducts = allProducts.filter((product) => {
     filteredProducts.length / ITEMS_PER_PAGE
   );
 
-  const currentProducts = filteredProducts.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
+  const currentProducts =
+    filteredProducts.slice(
+      (currentPage - 1) * ITEMS_PER_PAGE,
+      currentPage * ITEMS_PER_PAGE
+    );
+
 
   /* =========================================================
-     RESET
+     RESET FILTERS
   ========================================================= */
 
   const clearFilters = () => {
@@ -173,7 +264,6 @@ const filteredProducts = allProducts.filter((product) => {
     setSelectedDuty("All");
     setCurrentPage(1);
   };
-
   return (
     <>
     <div className="min-h-screen w-full overflow-x-hidden">
