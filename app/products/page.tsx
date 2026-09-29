@@ -605,16 +605,50 @@ const filteredProducts = (() => {
            * "Standby (Kva / Kw) :- 12Kva / 12Kw"
            */
 
-          const standby =
-          highlights.find((item) =>
-            item.toLowerCase().startsWith("standby power")
-          )?.split(":-")[1]?.trim() || "-";
+          // const standby =
+          // highlights.find((item) =>
+          //   item.toLowerCase().startsWith("standby power")
+          // )?.split(":-")[1]?.trim() || "-";
+       
+        // const prime =
+        //   highlights.find((item) =>
+        //     item.toLowerCase().startsWith("prime power")
+        //   )?.split(":-")[1]?.trim() || "-";
+         const productPhase = getProductPhase(product);
 
-        const prime =
-          highlights.find((item) =>
-            item.toLowerCase().startsWith("prime power")
-          )?.split(":-")[1]?.trim() || "-";
+const standbyRaw =
+  highlights.find((item) =>
+    item.toLowerCase().startsWith("standby power")
+  )?.split(":-")[1]?.trim() || "";
 
+const standby =
+  productPhase === "1-P"
+    ? (() => {
+        const value = standbyRaw.split("/")[0].trim();
+        const number = parseFloat(value);
+
+        if (Number.isNaN(number)) return "-";
+
+        return `${Math.round(number)} kW`;
+      })()
+    : standbyRaw || "-";
+
+const primeRaw =
+  highlights.find((item) =>
+    item.toLowerCase().startsWith("prime power")
+  )?.split(":-")[1]?.trim() || "";
+
+const prime =
+  productPhase === "1-P"
+    ? (() => {
+        const value = primeRaw.split("/")[0].trim();
+        const number = parseFloat(value);
+
+        if (Number.isNaN(number)) return "-";
+
+        return `${Math.round(number)} kW`;
+      })()
+    : primeRaw || "-";
 
           /*
            * ENGINE
