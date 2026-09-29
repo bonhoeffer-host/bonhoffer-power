@@ -1,12 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function VideoPopup() {
   const [showVideo, setShowVideo] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = showVideo ? "hidden" : "";
+
+    if (!showVideo) return;
+
+    const video = videoRef.current;
+
+    if (video) {
+      video.muted = true;
+
+      video
+        .play()
+        .then(() => {
+          // Try to enable sound after playback starts
+          video.muted = false;
+        })
+        .catch(() => {
+          // Autoplay blocked by browser
+        });
+    }
 
     return () => {
       document.body.style.overflow = "";
@@ -17,11 +36,9 @@ export default function VideoPopup() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 px-4">
-
-      {/* POPUP */}
       <div className="relative w-full max-w-[580px] bg-white p-[18px] shadow-2xl">
 
-        {/* CLOSE BUTTON - RIGHT SIDE */}
+        {/* CLOSE BUTTON */}
         <button
           type="button"
           onClick={() => setShowVideo(false)}
@@ -33,6 +50,7 @@ export default function VideoPopup() {
 
         {/* VIDEO */}
         <video
+          ref={videoRef}
           src="/videos/video2.mp4"
           autoPlay
           muted
